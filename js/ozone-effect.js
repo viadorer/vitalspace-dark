@@ -1,14 +1,14 @@
 /* ═══════════════════════════════════════════════════
    VITALSPACE OZONE EFFECT
-   "Spustit ozonizaci" — O₃ molecules start tiny,
-   grow larger while floating down, and fade out.
-   Fun easter-egg for visitors.
+   O₃ molecules burst from the button position,
+   spread outward, grow larger, and fade away.
+   Smooth requestAnimationFrame-based animation.
    ═══════════════════════════════════════════════════ */
 (function () {
     'use strict';
 
-    var PARTICLE_COUNT = 80;
-    var DURATION_MS = 10000;
+    var PARTICLE_COUNT = 60;
+    var SPAWN_DURATION = 2500;
     var isRunning = false;
     var bound = false;
 
@@ -24,131 +24,183 @@
 
     function rand(a, b) { return a + Math.random() * (b - a); }
 
-    function spawnParticle(container) {
-        var p = document.createElement('span');
-        var startX = rand(0, 100);
-        var drift = rand(-100, 100);
-        var fallDur = rand(4, 9);
-        var delay = rand(0, 3.5);
-        var endScale = rand(2, 5.5);
-        var rotation = rand(-90, 90);
+    /* ── Get button center in viewport coords ── */
+    function getBtnOrigin() {
+        var btn = document.getElementById('ozoneBtn');
+        if (!btn) return { x: window.innerWidth / 2, y: 40 };
+        var r = btn.getBoundingClientRect();
+        return { x: r.left + r.width / 2, y: r.top + r.height / 2 };
+    }
+
+    /* ── Single particle state ── */
+    function makeParticle(origin) {
+        var angle = rand(0, Math.PI * 2);
+        var speed = rand(60, 200);
+        var gravity = rand(30, 80);
+        var life = rand(4000, 8000);
+        var maxScale = rand(2.5, 5);
+        var rotSpeed = rand(-90, 90);
         var hue = Math.round(rand(195, 225));
-        var lightness = Math.round(rand(55, 75));
+        var light = Math.round(rand(55, 75));
 
-        // Mix of O₃ text styles
-        var variants = ['O₃', 'O₃', 'O₃', 'O\u2083', '03'];
-        p.textContent = variants[Math.floor(Math.random() * variants.length)];
+        return {
+            el: null,
+            x: origin.x,
+            y: origin.y,
+            vx: Math.cos(angle) * speed,
+            vy: Math.sin(angle) * speed - rand(80, 160),
+            gravity: gravity,
+            life: life,
+            age: 0,
+            scale: 0.3,
+            maxScale: maxScale,
+            rot: 0,
+            rotSpeed: rotSpeed,
+            hue: hue,
+            light: light
+        };
+    }
 
-        p.style.cssText =
-            'position:absolute;' +
-            'left:' + startX + '%;' +
-            'top:-30px;' +
-            'font-size:10px;' +
-            'font-weight:800;' +
+    function createParticleEl(container) {
+        var el = document.createElement('span');
+        el.textContent = 'O₃';
+        el.style.cssText =
+            'position:absolute;left:0;top:0;' +
+            'font-size:10px;font-weight:800;' +
             'font-family:Inter,system-ui,sans-serif;' +
-            'color:hsl(' + hue + ',85%,' + lightness + '%);' +
-            'text-shadow:0 0 8px hsla(' + hue + ',90%,60%,0.4), 0 0 20px hsla(' + hue + ',80%,50%,0.15);' +
-            'pointer-events:none;' +
-            'user-select:none;' +
-            'opacity:0;' +
+            'pointer-events:none;user-select:none;' +
             'will-change:transform,opacity;' +
-            'animation:ozoneGrow ' + fallDur + 's ' + delay + 's cubic-bezier(0.25,0.1,0.25,1) forwards;' +
-            '--drift:' + drift + 'px;' +
-            '--end-scale:' + endScale + ';' +
-            '--end-rot:' + rotation + 'deg;';
-
-        container.appendChild(p);
+            'white-space:nowrap;';
+        container.appendChild(el);
+        return el;
     }
 
     function injectStyles() {
         if (document.getElementById('ozoneStyles')) return;
-        var style = document.createElement('style');
-        style.id = 'ozoneStyles';
-        style.textContent =
-            '@keyframes ozoneGrow {' +
-            '  0%   { opacity:0;   transform:translateY(0)     translateX(0)                       scale(0.25) rotate(0deg); }' +
-            '  3%   { opacity:0.7; transform:translateY(2vh)   translateX(calc(var(--drift)*0.02))  scale(0.35) rotate(2deg); }' +
-            '  8%   { opacity:0.9; transform:translateY(6vh)   translateX(calc(var(--drift)*0.06))  scale(0.5)  rotate(calc(var(--end-rot)*0.08)); }' +
-            '  15%  { opacity:0.85;transform:translateY(12vh)  translateX(calc(var(--drift)*0.13))  scale(calc(var(--end-scale)*0.25)) rotate(calc(var(--end-rot)*0.15)); }' +
-            '  30%  { opacity:0.7; transform:translateY(26vh)  translateX(calc(var(--drift)*0.28))  scale(calc(var(--end-scale)*0.45)) rotate(calc(var(--end-rot)*0.3)); }' +
-            '  50%  { opacity:0.45;transform:translateY(45vh)  translateX(calc(var(--drift)*0.5))   scale(calc(var(--end-scale)*0.65)) rotate(calc(var(--end-rot)*0.5)); }' +
-            '  70%  { opacity:0.2; transform:translateY(65vh)  translateX(calc(var(--drift)*0.72))  scale(calc(var(--end-scale)*0.82)) rotate(calc(var(--end-rot)*0.72)); }' +
-            '  85%  { opacity:0.07;transform:translateY(80vh)  translateX(calc(var(--drift)*0.87))  scale(calc(var(--end-scale)*0.93)) rotate(calc(var(--end-rot)*0.87)); }' +
-            '  100% { opacity:0;   transform:translateY(105vh) translateX(var(--drift))              scale(var(--end-scale))            rotate(var(--end-rot)); }' +
+        var s = document.createElement('style');
+        s.id = 'ozoneStyles';
+        s.textContent =
+            '@keyframes ozonePulse{' +
+            '0%,100%{box-shadow:0 0 8px rgba(51,136,255,0.3)}' +
+            '50%{box-shadow:0 0 20px rgba(51,136,255,0.7)}' +
             '}' +
-            '@keyframes ozonePulse {' +
-            '  0%,100% { box-shadow:0 0 8px rgba(51,136,255,0.3), inset 0 0 4px rgba(51,136,255,0.1); }' +
-            '  50%     { box-shadow:0 0 20px rgba(51,136,255,0.7), inset 0 0 8px rgba(51,136,255,0.2); }' +
-            '}' +
-            '#ozoneBtn { position:relative; }' +
-            '#ozoneBtn:hover { border-color:rgba(51,136,255,0.5) !important; color:var(--blue-300) !important; background:rgba(51,136,255,0.06) !important; }' +
-            '#ozoneBtn.ozone-active {' +
-            '  animation:ozonePulse 0.8s ease-in-out infinite;' +
-            '  border-color:rgba(51,136,255,0.6) !important;' +
-            '  color:#fff !important;' +
-            '  background:rgba(51,136,255,0.15) !important;' +
-            '}';
-        document.head.appendChild(style);
+            '#ozoneBtn{position:relative}' +
+            '#ozoneBtn:hover{border-color:rgba(51,136,255,0.5)!important;color:var(--blue-300)!important;background:rgba(51,136,255,0.06)!important}' +
+            '#ozoneBtn.ozone-active{animation:ozonePulse .8s ease-in-out infinite;border-color:rgba(51,136,255,0.6)!important;color:#fff!important;background:rgba(51,136,255,0.15)!important}';
+        document.head.appendChild(s);
     }
 
     function startOzone() {
         if (isRunning) return;
         isRunning = true;
-
         injectStyles();
 
         var container = document.getElementById('ozoneContainer') || createContainer();
         container.innerHTML = '';
 
         var btn = document.getElementById('ozoneBtn');
-        if (btn) {
-            btn.classList.add('ozone-active');
-            btn.title = 'Ozonizace probíhá… 🧪';
+        if (btn) btn.classList.add('ozone-active');
+
+        var origin = getBtnOrigin();
+        var particles = [];
+        var spawned = 0;
+        var spawnStart = performance.now();
+        var lastTime = spawnStart;
+
+        /* ── Main animation loop ── */
+        function tick(now) {
+            var dt = (now - lastTime) / 1000;
+            lastTime = now;
+            if (dt > 0.1) dt = 0.1; // cap for tab-switch
+
+            /* Spawn new particles over time */
+            var spawnElapsed = now - spawnStart;
+            if (spawned < PARTICLE_COUNT && spawnElapsed < SPAWN_DURATION) {
+                var target = Math.floor((spawnElapsed / SPAWN_DURATION) * PARTICLE_COUNT);
+                while (spawned < target && spawned < PARTICLE_COUNT) {
+                    var p = makeParticle(origin);
+                    p.el = createParticleEl(container);
+                    particles.push(p);
+                    spawned++;
+                }
+            }
+
+            /* Update each particle */
+            var alive = false;
+            for (var i = 0; i < particles.length; i++) {
+                var p = particles[i];
+                if (!p.el) continue;
+
+                p.age += dt * 1000;
+                if (p.age >= p.life) {
+                    p.el.remove();
+                    p.el = null;
+                    continue;
+                }
+                alive = true;
+
+                var t = p.age / p.life; // 0→1
+
+                /* Physics */
+                p.vy += p.gravity * dt;
+                p.vx *= (1 - 0.3 * dt); // air drag
+                p.x += p.vx * dt;
+                p.y += p.vy * dt;
+
+                /* Scale: grow from small to max */
+                p.scale = 0.3 + (p.maxScale - 0.3) * Math.min(t * 2.5, 1);
+
+                /* Rotation */
+                p.rot += p.rotSpeed * dt;
+
+                /* Opacity: fade in fast, fade out smoothly */
+                var opacity;
+                if (t < 0.08) {
+                    opacity = t / 0.08;
+                } else if (t < 0.3) {
+                    opacity = 1 - (t - 0.08) * 0.5;
+                } else {
+                    opacity = Math.max(0, 0.89 - (t - 0.3) * 1.27);
+                }
+
+                p.el.style.transform =
+                    'translate(' + p.x.toFixed(1) + 'px,' + p.y.toFixed(1) + 'px) ' +
+                    'scale(' + p.scale.toFixed(2) + ') ' +
+                    'rotate(' + p.rot.toFixed(1) + 'deg)';
+                p.el.style.opacity = opacity.toFixed(3);
+                p.el.style.color = 'hsl(' + p.hue + ',85%,' + p.light + '%)';
+                p.el.style.textShadow =
+                    '0 0 ' + (6 * p.scale).toFixed(0) + 'px hsla(' + p.hue + ',90%,60%,' + (opacity * 0.5).toFixed(2) + ')';
+            }
+
+            if (alive || spawned < PARTICLE_COUNT) {
+                requestAnimationFrame(tick);
+            } else {
+                /* All done */
+                container.innerHTML = '';
+                isRunning = false;
+                if (btn) btn.classList.remove('ozone-active');
+            }
         }
 
-        // Spawn particles in waves for natural feel
-        var spawned = 0;
-        var waveInterval = setInterval(function () {
-            var batch = Math.min(5 + Math.floor(Math.random() * 4), PARTICLE_COUNT - spawned);
-            for (var i = 0; i < batch; i++) {
-                spawnParticle(container);
-                spawned++;
-            }
-            if (spawned >= PARTICLE_COUNT) clearInterval(waveInterval);
-        }, 250);
-
-        // Cleanup
-        setTimeout(function () {
-            container.innerHTML = '';
-            isRunning = false;
-            if (btn) {
-                btn.classList.remove('ozone-active');
-                btn.title = 'Spustit ozonizaci';
-            }
-        }, DURATION_MS + 3000);
+        requestAnimationFrame(tick);
     }
 
     window.startOzoneEffect = startOzone;
 
-    // Bind click handler — safe to call multiple times
+    /* ── Bind ── */
     function bind() {
         if (bound) return;
         var btn = document.getElementById('ozoneBtn');
         if (!btn) return;
         bound = true;
-
-        btn.title = 'Spustit ozonizaci';
-
         btn.addEventListener('click', function (e) {
             e.preventDefault();
             startOzone();
         });
-
-        // Inject styles early for hover effect
         injectStyles();
     }
 
-    // Poll for button (handles components.js injecting it later)
     function waitForButton() {
         if (bound) return;
         bind();

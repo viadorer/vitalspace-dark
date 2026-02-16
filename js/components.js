@@ -57,8 +57,8 @@
         '      <li><a href="' + P + 'o-nas.html"' + ac('o-nas') + '>O nás</a></li>' +
         '    </ul>' +
         '    <div class="nav-cta">' +
-        '      <button id="ozoneBtn" style="background:none;border:1px solid rgba(51,136,255,0.25);border-radius:8px;padding:0.45rem 0.75rem;cursor:pointer;color:var(--blue-400);display:flex;align-items:center;gap:0.375rem;font-size:0.8125rem;font-weight:600;font-family:inherit;transition:all 0.2s;" aria-label="Spustit ozonizaci">' +
-        '        <i data-lucide="atom" style="width:18px;height:18px;"></i> O₃' +
+        '      <button id="ozoneBtn" style="background:none;border:1px solid rgba(51,136,255,0.25);border-radius:8px;padding:0.45rem 0.75rem;cursor:pointer;color:var(--blue-400);display:flex;align-items:center;gap:0.375rem;font-size:0.8125rem;font-weight:600;font-family:inherit;transition:all 0.2s;" aria-label="Spustit ozonizaci" title="Spustit ozonizaci">' +
+        '        <i data-lucide="atom" style="width:18px;height:18px;"></i> Spustit ozonizaci' +
         '      </button>' +
         '      <button id="themeToggle" style="background:none;border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:0.45rem;cursor:pointer;color:var(--text-secondary);display:flex;align-items:center;justify-content:center;transition:all 0.2s;" aria-label="Přepnout téma">' +
         '        <i data-lucide="sun" style="width:20px;height:20px;"></i>' +
