@@ -867,9 +867,8 @@
             });
         });
 
-        // ── Form submission (Realvisor API) ──
-        const REALVISOR_URL = 'https://api-production-88cf.up.railway.app/api/v1/public/api-leads/submit';
-        const REALVISOR_KEY = 'rv_live_62dc00262fbe285311b37d67426084504bcca592703f38d6';
+        // ── Form submission (via Vercel proxy) ──
+        const SUBMIT_URL = '/api/submit-lead';
 
         const FIELD_MAP = {
             'name':          { apiField: 'name',          root: true },
@@ -938,12 +937,9 @@
             var payload = Object.assign({}, rootFields, { data: dataFields });
 
             try {
-                var res = await fetch(REALVISOR_URL, {
+                var res = await fetch(SUBMIT_URL, {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-API-Key': REALVISOR_KEY
-                    },
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
                 });
 
