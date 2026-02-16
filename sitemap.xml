@@ -86,6 +86,14 @@
         <priority>0.8</priority>
     </url>
 
+    <!-- Jak to probíhá -->
+    <url>
+        <loc>https://vitalspace.cz/jak-to-probiha.html</loc>
+        <lastmod>2026-02-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
     <!-- O nás -->
     <url>
         <loc>https://vitalspace.cz/o-nas.html</loc>

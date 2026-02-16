@@ -57,6 +57,7 @@
         '          <a href="' + R + 'sluzby/clinic.html">Clinic Standard</a>' +
         '        </div>' +
         '      </li>' +
+        '      <li><a href="' + R + 'jak-to-probiha.html"' + ac('jak-to-probiha') + '>Jak to probíhá</a></li>' +
         '      <li><a href="' + R + 'o-nas.html"' + ac('o-nas') + '>O nás</a></li>' +
         '    </ul>' +
         '    <div class="nav-cta">' +
@@ -86,7 +87,8 @@
         '  <a href="' + R + 'sluzby/reset.html">Reset prostoru</a>' +
         '  <a href="' + R + 'sluzby/prevent.html">Prevent program</a>' +
         '  <a href="' + R + 'sluzby/clinic.html">Clinic Standard</a>' +
-        '  <div style="margin-top:1.5rem;"><a href="' + R + 'o-nas.html">O nás</a></div>' +
+        '  <div style="margin-top:1.5rem;"><a href="' + R + 'jak-to-probiha.html">Jak to probíhá</a></div>' +
+        '  <div style="margin-top:0.5rem;"><a href="' + R + 'o-nas.html">O nás</a></div>' +
         '  <div style="margin-top:1.5rem;"><a href="#kontakt" class="btn-primary" style="display:block;text-align:center;">Získat nabídku</a></div>' +
         '</div>';
     }
