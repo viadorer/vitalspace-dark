@@ -68,46 +68,9 @@
     </style>
 </head>
 <body>
+    <!-- ═══════════════ HEADER (injected by components.js) ═══════════════ -->
+    <div id="site-header"></div>
 
-    <!-- ═══════════════ NAVIGATION ═══════════════ -->
-    <nav class="nav" id="mainNav">
-        <div class="nav-inner">
-            <a href="../" class="nav-logo"><i data-lucide="shield-check" style="width:28px;height:28px;"></i> VitalSpace</a>
-            <ul class="nav-links">
-                <li class="nav-dropdown">
-                    <a href="../zarizeni/" class="active">Zařízení</a>
-                    <div class="dropdown-menu">
-                        <a href="ozon-cleaner-pro.html">OZON CLEANER PRO I PLUS</a>
-                        <a href="ozon-clean-up.html">OZON CLEAN UP</a>
-                        <a href="ozon-clean-box.html">OZON CLEAN BOX – DRY</a>
-                        <a href="srovnani.html">Srovnání zařízení</a>
-                    </div>
-                </li>
-                <li class="nav-dropdown">
-                    <a href="../pronajem/">Pronájem</a>
-                    <div class="dropdown-menu">
-                        <a href="../pronajem/dlouhodoby.html">Dlouhodobý pronájem</a>
-                        <a href="../pronajem/kratkodoba.html">Krátkodobý pronájem</a>
-                    </div>
-                </li>
-                <li class="nav-dropdown">
-                    <a href="../sluzby/">Služby</a>
-                    <div class="dropdown-menu">
-                        <a href="../sluzby/reset.html">Reset prostoru</a>
-                        <a href="../sluzby/prevent.html">Prevent program</a>
-                        <a href="../sluzby/clinic.html">Clinic Standard</a>
-                    </div>
-                </li>
-                <li><a href="../o-nas.html">O nás</a></li>
-            </ul>
-            <div class="nav-cta"><button id="themeToggle" style="background:none;border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:0.45rem;cursor:pointer;color:var(--text-secondary);display:flex;align-items:center;justify-content:center;transition:all 0.2s;" aria-label="Přepnout téma"><i data-lucide="sun" style="width:20px;height:20px;"></i></button><a href="#kontakt" class="btn-primary" style="padding:0.6rem 1.25rem; font-size:0.875rem;">Získat nabídku</a></div>
-            <button class="mobile-toggle" id="mobileToggle" aria-label="Menu"><i data-lucide="menu" style="width:24px;height:24px;"></i></button>
-        </div>
-    </nav>
-    <div class="mobile-overlay" id="mobileOverlay"></div>
-    <div class="mobile-menu" id="mobileMenu">
-        <button class="mobile-close" id="mobileClose" aria-label="Zavřít"><i data-lucide="x" style="width:24px;height:24px;"></i></button>
-        <div class="mobile-section-title">Zařízení</div>
         <a href="ozon-cleaner-pro.html">OZON CLEANER PRO I PLUS</a>
         <a href="ozon-clean-up.html">OZON CLEAN UP</a>
         <a href="ozon-clean-box.html">OZON CLEAN BOX – DRY</a>
@@ -286,50 +249,11 @@
             </div>
         </div>
     </section>
+    <!-- ═══════════════ FOOTER (injected by components.js) ═══════════════ -->
+    <div id="site-footer"></div>
 
-    <!-- ═══════════════ FOOTER ═══════════════ -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="../" class="nav-logo" style="margin-bottom:0.5rem;"><i data-lucide="shield-check" style="width:24px;height:24px;"></i> VitalSpace</a>
-                    <p>Autorizovaný dealer certifikovaných zařízení OZON CLEANER od Health-City pro celou Českou republiku.</p>
-                </div>
-                <div>
-                    <h4>Zařízení</h4>
-                    <ul class="footer-links">
-                        <li><a href="ozon-cleaner-pro.html">OZON CLEANER PRO I PLUS</a></li>
-                        <li><a href="ozon-clean-up.html">OZON CLEAN UP</a></li>
-                        <li><a href="ozon-clean-box.html">OZON CLEAN BOX – DRY</a></li>
-                        <li><a href="srovnani.html">Srovnání zařízení</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Pronájem a služby</h4>
-                    <ul class="footer-links">
-                        <li><a href="../pronajem/dlouhodoby.html">Dlouhodobý pronájem</a></li>
-                        <li><a href="../pronajem/kratkodoba.html">Krátkodobý pronájem</a></li>
-                        <li><a href="../sluzby/reset.html">Reset prostoru</a></li>
-                        <li><a href="../sluzby/prevent.html">Prevent program</a></li>
-                        <li><a href="../sluzby/clinic.html">Clinic Standard</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Kontakt</h4>
-                    <ul class="footer-contact">
-                        <li><i data-lucide="phone"></i> +420 603 834 921</li>
-                        <li><i data-lucide="mail"></i> info@vitalspace.cz</li>
-                        <li><i data-lucide="map-pin"></i> Plzeň &amp; Praha | Celá ČR</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <span>&copy; 2025 VitalSpace. Všechna práva vyhrazena.</span>
-                <div class="footer-legal"><a href="#">VOP</a><a href="#">Ochrana osobních údajů</a></div>
-            </div>
-        </div>
-    </footer>
 
-    <script src="../js/site.js"></script>
+    <script src="../js/components.js"></script>
+    <script src="../js/ozone-effect.js" defer></script>
 </body>
 </html>

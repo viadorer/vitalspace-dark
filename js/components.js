@@ -1,0 +1,192 @@
+/* ═══════════════════════════════════════════════════
+   VITALSPACE SHARED COMPONENTS
+   Injects consistent header (nav) and footer
+   into every page. Detects root vs subfolder
+   and highlights the active nav item.
+   ═══════════════════════════════════════════════════ */
+(function () {
+    'use strict';
+
+    // Detect if page is in a subfolder (zarizeni/, pronajem/, sluzby/, pages/)
+    var path = window.location.pathname;
+    var inSub = /\/(zarizeni|pronajem|sluzby|pages|private)\//.test(path);
+    var P = inSub ? '../' : '';  // prefix for links
+
+    // Detect active section from URL
+    var activeSec = '';
+    if (/zarizeni/.test(path)) activeSec = 'zarizeni';
+    else if (/pronajem/.test(path)) activeSec = 'pronajem';
+    else if (/sluzby/.test(path)) activeSec = 'sluzby';
+    else if (/o-nas/.test(path)) activeSec = 'o-nas';
+
+    function ac(sec) { return activeSec === sec ? ' class="active"' : ''; }
+
+    // ══════════════════════════════════════
+    //  HEADER (nav + mobile menu)
+    // ══════════════════════════════════════
+    function renderHeader() {
+        return '' +
+        '<nav class="nav" id="mainNav">' +
+        '  <div class="nav-inner">' +
+        '    <a href="' + P + '/" class="nav-logo"><i data-lucide="shield-check" style="width:28px;height:28px;"></i> VitalSpace</a>' +
+        '    <ul class="nav-links">' +
+        '      <li class="nav-dropdown">' +
+        '        <a href="' + P + 'zarizeni/"' + ac('zarizeni') + '>Zařízení</a>' +
+        '        <div class="dropdown-menu">' +
+        '          <a href="' + P + 'zarizeni/ozon-cleaner-pro.html">OZON CLEANER PRO I PLUS</a>' +
+        '          <a href="' + P + 'zarizeni/ozon-clean-up.html">OZON CLEAN UP</a>' +
+        '          <a href="' + P + 'zarizeni/ozon-clean-box.html">OZON CLEAN BOX – DRY</a>' +
+        '          <a href="' + P + 'zarizeni/srovnani.html">Srovnání zařízení</a>' +
+        '        </div>' +
+        '      </li>' +
+        '      <li class="nav-dropdown">' +
+        '        <a href="' + P + 'pronajem/"' + ac('pronajem') + '>Pronájem</a>' +
+        '        <div class="dropdown-menu">' +
+        '          <a href="' + P + 'pronajem/dlouhodoby.html">Dlouhodobý pronájem</a>' +
+        '          <a href="' + P + 'pronajem/kratkodoba.html">Krátkodobý pronájem</a>' +
+        '        </div>' +
+        '      </li>' +
+        '      <li class="nav-dropdown">' +
+        '        <a href="' + P + 'sluzby/"' + ac('sluzby') + '>Služby</a>' +
+        '        <div class="dropdown-menu">' +
+        '          <a href="' + P + 'sluzby/reset.html">Reset prostoru</a>' +
+        '          <a href="' + P + 'sluzby/prevent.html">Prevent program</a>' +
+        '          <a href="' + P + 'sluzby/clinic.html">Clinic Standard</a>' +
+        '        </div>' +
+        '      </li>' +
+        '      <li><a href="' + P + 'o-nas.html"' + ac('o-nas') + '>O nás</a></li>' +
+        '    </ul>' +
+        '    <div class="nav-cta">' +
+        '      <button id="ozoneBtn" style="background:none;border:1px solid rgba(51,136,255,0.25);border-radius:8px;padding:0.45rem 0.75rem;cursor:pointer;color:var(--blue-400);display:flex;align-items:center;gap:0.375rem;font-size:0.8125rem;font-weight:600;font-family:inherit;transition:all 0.2s;" aria-label="Spustit ozonizaci">' +
+        '        <i data-lucide="atom" style="width:18px;height:18px;"></i> O₃' +
+        '      </button>' +
+        '      <button id="themeToggle" style="background:none;border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:0.45rem;cursor:pointer;color:var(--text-secondary);display:flex;align-items:center;justify-content:center;transition:all 0.2s;" aria-label="Přepnout téma">' +
+        '        <i data-lucide="sun" style="width:20px;height:20px;"></i>' +
+        '      </button>' +
+        '      <a href="#kontakt" class="btn-primary" style="padding:0.6rem 1.25rem;font-size:0.875rem;">Získat nabídku</a>' +
+        '    </div>' +
+        '    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu"><i data-lucide="menu" style="width:24px;height:24px;"></i></button>' +
+        '  </div>' +
+        '</nav>' +
+        '<div class="mobile-overlay" id="mobileOverlay"></div>' +
+        '<div class="mobile-menu" id="mobileMenu">' +
+        '  <button class="mobile-close" id="mobileClose" aria-label="Zavřít"><i data-lucide="x" style="width:24px;height:24px;"></i></button>' +
+        '  <div class="mobile-section-title">Zařízení</div>' +
+        '  <a href="' + P + 'zarizeni/ozon-cleaner-pro.html">OZON CLEANER PRO I PLUS</a>' +
+        '  <a href="' + P + 'zarizeni/ozon-clean-up.html">OZON CLEAN UP</a>' +
+        '  <a href="' + P + 'zarizeni/ozon-clean-box.html">OZON CLEAN BOX – DRY</a>' +
+        '  <a href="' + P + 'zarizeni/srovnani.html">Srovnání zařízení</a>' +
+        '  <div class="mobile-section-title">Pronájem</div>' +
+        '  <a href="' + P + 'pronajem/dlouhodoby.html">Dlouhodobý pronájem</a>' +
+        '  <a href="' + P + 'pronajem/kratkodoba.html">Krátkodobý pronájem</a>' +
+        '  <div class="mobile-section-title">Služby</div>' +
+        '  <a href="' + P + 'sluzby/reset.html">Reset prostoru</a>' +
+        '  <a href="' + P + 'sluzby/prevent.html">Prevent program</a>' +
+        '  <a href="' + P + 'sluzby/clinic.html">Clinic Standard</a>' +
+        '  <div style="margin-top:1.5rem;"><a href="' + P + 'o-nas.html">O nás</a></div>' +
+        '  <div style="margin-top:1.5rem;"><a href="#kontakt" class="btn-primary" style="display:block;text-align:center;">Získat nabídku</a></div>' +
+        '</div>';
+    }
+
+    // ══════════════════════════════════════
+    //  FOOTER
+    // ══════════════════════════════════════
+    function renderFooter() {
+        return '' +
+        '<footer class="footer">' +
+        '  <div class="container">' +
+        '    <div class="footer-grid">' +
+        '      <div class="footer-brand">' +
+        '        <a href="' + P + '/" class="nav-logo" style="margin-bottom:0.5rem;"><i data-lucide="shield-check" style="width:24px;height:24px;"></i> VitalSpace</a>' +
+        '        <p>Autorizovaný dealer certifikovaných zařízení OZON CLEANER od Health-City pro celou Českou republiku.</p>' +
+        '      </div>' +
+        '      <div>' +
+        '        <h4>Zařízení</h4>' +
+        '        <ul class="footer-links">' +
+        '          <li><a href="' + P + 'zarizeni/ozon-cleaner-pro.html">OZON CLEANER PRO I PLUS</a></li>' +
+        '          <li><a href="' + P + 'zarizeni/ozon-clean-up.html">OZON CLEAN UP</a></li>' +
+        '          <li><a href="' + P + 'zarizeni/ozon-clean-box.html">OZON CLEAN BOX – DRY</a></li>' +
+        '          <li><a href="' + P + 'zarizeni/srovnani.html">Srovnání zařízení</a></li>' +
+        '        </ul>' +
+        '      </div>' +
+        '      <div>' +
+        '        <h4>Pronájem a služby</h4>' +
+        '        <ul class="footer-links">' +
+        '          <li><a href="' + P + 'pronajem/dlouhodoby.html">Dlouhodobý pronájem</a></li>' +
+        '          <li><a href="' + P + 'pronajem/kratkodoba.html">Krátkodobý pronájem</a></li>' +
+        '          <li><a href="' + P + 'sluzby/reset.html">Reset prostoru</a></li>' +
+        '          <li><a href="' + P + 'sluzby/prevent.html">Prevent program</a></li>' +
+        '          <li><a href="' + P + 'sluzby/clinic.html">Clinic Standard</a></li>' +
+        '        </ul>' +
+        '      </div>' +
+        '      <div>' +
+        '        <h4>Kontakt</h4>' +
+        '        <ul class="footer-contact">' +
+        '          <li><i data-lucide="phone"></i> +420 603 834 921</li>' +
+        '          <li><i data-lucide="mail"></i> info@vitalspace.cz</li>' +
+        '          <li><i data-lucide="map-pin"></i> Plzeň &amp; Praha | Celá ČR</li>' +
+        '        </ul>' +
+        '      </div>' +
+        '    </div>' +
+        '    <div class="footer-bottom">' +
+        '      <span>&copy; 2025 VitalSpace. Všechna práva vyhrazena.</span>' +
+        '      <div class="footer-legal"><a href="#">VOP</a><a href="#">Ochrana osobních údajů</a></div>' +
+        '    </div>' +
+        '  </div>' +
+        '</footer>';
+    }
+
+    // ══════════════════════════════════════
+    //  INJECT
+    // ══════════════════════════════════════
+    var headerEl = document.getElementById('site-header');
+    var footerEl = document.getElementById('site-footer');
+
+    if (headerEl) headerEl.innerHTML = renderHeader();
+    if (footerEl) footerEl.innerHTML = renderFooter();
+
+    // Re-init Lucide icons after injection
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+
+    // ══════════════════════════════════════
+    //  MOBILE MENU LOGIC
+    // ══════════════════════════════════════
+    var mobileToggle = document.getElementById('mobileToggle');
+    var mobileMenu = document.getElementById('mobileMenu');
+    var mobileOverlay = document.getElementById('mobileOverlay');
+    var mobileClose = document.getElementById('mobileClose');
+
+    function openMobile() {
+        if (!mobileMenu) return;
+        mobileMenu.classList.add('open');
+        mobileMenu.style.display = 'block';
+        if (mobileOverlay) mobileOverlay.classList.add('open');
+    }
+    function closeMobile() {
+        if (!mobileMenu) return;
+        mobileMenu.classList.remove('open');
+        if (mobileOverlay) mobileOverlay.classList.remove('open');
+        setTimeout(function () {
+            if (mobileMenu && !mobileMenu.classList.contains('open')) mobileMenu.style.display = 'none';
+        }, 400);
+    }
+
+    if (mobileToggle) mobileToggle.addEventListener('click', openMobile);
+    if (mobileClose) mobileClose.addEventListener('click', closeMobile);
+    if (mobileOverlay) mobileOverlay.addEventListener('click', closeMobile);
+    if (mobileMenu) {
+        mobileMenu.querySelectorAll('a[href^="#"]').forEach(function (a) {
+            a.addEventListener('click', closeMobile);
+        });
+    }
+
+    // ══════════════════════════════════════
+    //  NAV SCROLL EFFECT
+    // ══════════════════════════════════════
+    var nav = document.getElementById('mainNav');
+    if (nav) {
+        window.addEventListener('scroll', function () {
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
+    }
+})();
