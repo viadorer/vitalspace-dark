@@ -101,7 +101,7 @@
         '    <div class="footer-grid">' +
         '      <div class="footer-brand">' +
         '        <a href="' + HOME + '" class="nav-logo" style="margin-bottom:0.5rem;"><i data-lucide="shield-check" style="width:24px;height:24px;"></i> VitalSpace</a>' +
-        '        <p>Autorizovaný dealer certifikovaných zařízení OZON CLEANER od Health-City pro celou Českou republiku.</p>' +
+        '        <p>Certifikovaná ozonová sanitace pro celou Českou republiku. Prodej, pronájem a servis profesionálních ozonových zařízení.</p>' +
         '      </div>' +
         '      <div>' +
         '        <h4>Zařízení</h4>' +
