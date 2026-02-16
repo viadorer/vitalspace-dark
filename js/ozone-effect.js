@@ -9,6 +9,7 @@
 
     var PARTICLE_COUNT = 60;
     var SPAWN_DURATION = 2500;
+    var MAX_DURATION = 15000; // hard cutoff at 15s
     var isRunning = false;
     var bound = false;
 
@@ -173,10 +174,11 @@
                     '0 0 ' + (6 * p.scale).toFixed(0) + 'px hsla(' + p.hue + ',90%,60%,' + (opacity * 0.5).toFixed(2) + ')';
             }
 
-            if (alive || spawned < PARTICLE_COUNT) {
+            var elapsed = now - spawnStart;
+            if ((alive || spawned < PARTICLE_COUNT) && elapsed < MAX_DURATION) {
                 requestAnimationFrame(tick);
             } else {
-                /* All done */
+                /* All done or 15s hard cutoff */
                 container.innerHTML = '';
                 isRunning = false;
                 if (btn) btn.classList.remove('ozone-active');
