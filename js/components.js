@@ -7,10 +7,10 @@
 (function () {
     'use strict';
 
-    // Detect if page is in a subfolder (zarizeni/, pronajem/, sluzby/, pages/)
+    // Detect if page is in a subfolder
     var path = window.location.pathname;
     var inSub = /\/(zarizeni|pronajem|sluzby|pages|private)\//.test(path);
-    var P = inSub ? '../' : '';  // prefix for links
+    var R = inSub ? '../' : '';  // root prefix
 
     // Detect active section from URL
     var activeSec = '';
@@ -21,6 +21,9 @@
 
     function ac(sec) { return activeSec === sec ? ' class="active"' : ''; }
 
+    // Home link — always points to vitalspace-homepage.html
+    var HOME = R + 'vitalspace-homepage.html';
+
     // ══════════════════════════════════════
     //  HEADER (nav + mobile menu)
     // ══════════════════════════════════════
@@ -28,33 +31,33 @@
         return '' +
         '<nav class="nav" id="mainNav">' +
         '  <div class="nav-inner">' +
-        '    <a href="' + P + '/" class="nav-logo"><i data-lucide="shield-check" style="width:28px;height:28px;"></i> VitalSpace</a>' +
+        '    <a href="' + HOME + '" class="nav-logo"><i data-lucide="shield-check" style="width:28px;height:28px;"></i> VitalSpace</a>' +
         '    <ul class="nav-links">' +
         '      <li class="nav-dropdown">' +
-        '        <a href="' + P + 'zarizeni/"' + ac('zarizeni') + '>Zařízení</a>' +
+        '        <a href="' + R + 'zarizeni/"' + ac('zarizeni') + '>Zařízení</a>' +
         '        <div class="dropdown-menu">' +
-        '          <a href="' + P + 'zarizeni/ozon-cleaner-pro.html">OZON CLEANER PRO I PLUS</a>' +
-        '          <a href="' + P + 'zarizeni/ozon-clean-up.html">OZON CLEAN UP</a>' +
-        '          <a href="' + P + 'zarizeni/ozon-clean-box.html">OZON CLEAN BOX – DRY</a>' +
-        '          <a href="' + P + 'zarizeni/srovnani.html">Srovnání zařízení</a>' +
+        '          <a href="' + R + 'zarizeni/ozon-cleaner-pro.html">OZON CLEANER PRO I PLUS</a>' +
+        '          <a href="' + R + 'zarizeni/ozon-clean-up.html">OZON CLEAN UP</a>' +
+        '          <a href="' + R + 'zarizeni/ozon-clean-box.html">OZON CLEAN BOX – DRY</a>' +
+        '          <a href="' + R + 'zarizeni/srovnani.html">Srovnání zařízení</a>' +
         '        </div>' +
         '      </li>' +
         '      <li class="nav-dropdown">' +
-        '        <a href="' + P + 'pronajem/"' + ac('pronajem') + '>Pronájem</a>' +
+        '        <a href="' + R + 'pronajem/"' + ac('pronajem') + '>Pronájem</a>' +
         '        <div class="dropdown-menu">' +
-        '          <a href="' + P + 'pronajem/dlouhodoby.html">Dlouhodobý pronájem</a>' +
-        '          <a href="' + P + 'pronajem/kratkodoba.html">Krátkodobý pronájem</a>' +
+        '          <a href="' + R + 'pronajem/dlouhodoby.html">Dlouhodobý pronájem</a>' +
+        '          <a href="' + R + 'pronajem/kratkodoba.html">Krátkodobý pronájem</a>' +
         '        </div>' +
         '      </li>' +
         '      <li class="nav-dropdown">' +
-        '        <a href="' + P + 'sluzby/"' + ac('sluzby') + '>Služby</a>' +
+        '        <a href="' + R + 'sluzby/"' + ac('sluzby') + '>Služby</a>' +
         '        <div class="dropdown-menu">' +
-        '          <a href="' + P + 'sluzby/reset.html">Reset prostoru</a>' +
-        '          <a href="' + P + 'sluzby/prevent.html">Prevent program</a>' +
-        '          <a href="' + P + 'sluzby/clinic.html">Clinic Standard</a>' +
+        '          <a href="' + R + 'sluzby/reset.html">Reset prostoru</a>' +
+        '          <a href="' + R + 'sluzby/prevent.html">Prevent program</a>' +
+        '          <a href="' + R + 'sluzby/clinic.html">Clinic Standard</a>' +
         '        </div>' +
         '      </li>' +
-        '      <li><a href="' + P + 'o-nas.html"' + ac('o-nas') + '>O nás</a></li>' +
+        '      <li><a href="' + R + 'o-nas.html"' + ac('o-nas') + '>O nás</a></li>' +
         '    </ul>' +
         '    <div class="nav-cta">' +
         '      <button id="ozoneBtn" style="background:none;border:1px solid rgba(51,136,255,0.25);border-radius:8px;padding:0.45rem 0.75rem;cursor:pointer;color:var(--blue-400);display:flex;align-items:center;gap:0.375rem;font-size:0.8125rem;font-weight:600;font-family:inherit;transition:all 0.2s;" aria-label="Spustit ozonizaci" title="Spustit ozonizaci">' +
@@ -72,18 +75,18 @@
         '<div class="mobile-menu" id="mobileMenu">' +
         '  <button class="mobile-close" id="mobileClose" aria-label="Zavřít"><i data-lucide="x" style="width:24px;height:24px;"></i></button>' +
         '  <div class="mobile-section-title">Zařízení</div>' +
-        '  <a href="' + P + 'zarizeni/ozon-cleaner-pro.html">OZON CLEANER PRO I PLUS</a>' +
-        '  <a href="' + P + 'zarizeni/ozon-clean-up.html">OZON CLEAN UP</a>' +
-        '  <a href="' + P + 'zarizeni/ozon-clean-box.html">OZON CLEAN BOX – DRY</a>' +
-        '  <a href="' + P + 'zarizeni/srovnani.html">Srovnání zařízení</a>' +
+        '  <a href="' + R + 'zarizeni/ozon-cleaner-pro.html">OZON CLEANER PRO I PLUS</a>' +
+        '  <a href="' + R + 'zarizeni/ozon-clean-up.html">OZON CLEAN UP</a>' +
+        '  <a href="' + R + 'zarizeni/ozon-clean-box.html">OZON CLEAN BOX – DRY</a>' +
+        '  <a href="' + R + 'zarizeni/srovnani.html">Srovnání zařízení</a>' +
         '  <div class="mobile-section-title">Pronájem</div>' +
-        '  <a href="' + P + 'pronajem/dlouhodoby.html">Dlouhodobý pronájem</a>' +
-        '  <a href="' + P + 'pronajem/kratkodoba.html">Krátkodobý pronájem</a>' +
+        '  <a href="' + R + 'pronajem/dlouhodoby.html">Dlouhodobý pronájem</a>' +
+        '  <a href="' + R + 'pronajem/kratkodoba.html">Krátkodobý pronájem</a>' +
         '  <div class="mobile-section-title">Služby</div>' +
-        '  <a href="' + P + 'sluzby/reset.html">Reset prostoru</a>' +
-        '  <a href="' + P + 'sluzby/prevent.html">Prevent program</a>' +
-        '  <a href="' + P + 'sluzby/clinic.html">Clinic Standard</a>' +
-        '  <div style="margin-top:1.5rem;"><a href="' + P + 'o-nas.html">O nás</a></div>' +
+        '  <a href="' + R + 'sluzby/reset.html">Reset prostoru</a>' +
+        '  <a href="' + R + 'sluzby/prevent.html">Prevent program</a>' +
+        '  <a href="' + R + 'sluzby/clinic.html">Clinic Standard</a>' +
+        '  <div style="margin-top:1.5rem;"><a href="' + R + 'o-nas.html">O nás</a></div>' +
         '  <div style="margin-top:1.5rem;"><a href="#kontakt" class="btn-primary" style="display:block;text-align:center;">Získat nabídku</a></div>' +
         '</div>';
     }
@@ -97,26 +100,26 @@
         '  <div class="container">' +
         '    <div class="footer-grid">' +
         '      <div class="footer-brand">' +
-        '        <a href="' + P + '/" class="nav-logo" style="margin-bottom:0.5rem;"><i data-lucide="shield-check" style="width:24px;height:24px;"></i> VitalSpace</a>' +
+        '        <a href="' + HOME + '" class="nav-logo" style="margin-bottom:0.5rem;"><i data-lucide="shield-check" style="width:24px;height:24px;"></i> VitalSpace</a>' +
         '        <p>Autorizovaný dealer certifikovaných zařízení OZON CLEANER od Health-City pro celou Českou republiku.</p>' +
         '      </div>' +
         '      <div>' +
         '        <h4>Zařízení</h4>' +
         '        <ul class="footer-links">' +
-        '          <li><a href="' + P + 'zarizeni/ozon-cleaner-pro.html">OZON CLEANER PRO I PLUS</a></li>' +
-        '          <li><a href="' + P + 'zarizeni/ozon-clean-up.html">OZON CLEAN UP</a></li>' +
-        '          <li><a href="' + P + 'zarizeni/ozon-clean-box.html">OZON CLEAN BOX – DRY</a></li>' +
-        '          <li><a href="' + P + 'zarizeni/srovnani.html">Srovnání zařízení</a></li>' +
+        '          <li><a href="' + R + 'zarizeni/ozon-cleaner-pro.html">OZON CLEANER PRO I PLUS</a></li>' +
+        '          <li><a href="' + R + 'zarizeni/ozon-clean-up.html">OZON CLEAN UP</a></li>' +
+        '          <li><a href="' + R + 'zarizeni/ozon-clean-box.html">OZON CLEAN BOX – DRY</a></li>' +
+        '          <li><a href="' + R + 'zarizeni/srovnani.html">Srovnání zařízení</a></li>' +
         '        </ul>' +
         '      </div>' +
         '      <div>' +
         '        <h4>Pronájem a služby</h4>' +
         '        <ul class="footer-links">' +
-        '          <li><a href="' + P + 'pronajem/dlouhodoby.html">Dlouhodobý pronájem</a></li>' +
-        '          <li><a href="' + P + 'pronajem/kratkodoba.html">Krátkodobý pronájem</a></li>' +
-        '          <li><a href="' + P + 'sluzby/reset.html">Reset prostoru</a></li>' +
-        '          <li><a href="' + P + 'sluzby/prevent.html">Prevent program</a></li>' +
-        '          <li><a href="' + P + 'sluzby/clinic.html">Clinic Standard</a></li>' +
+        '          <li><a href="' + R + 'pronajem/dlouhodoby.html">Dlouhodobý pronájem</a></li>' +
+        '          <li><a href="' + R + 'pronajem/kratkodoba.html">Krátkodobý pronájem</a></li>' +
+        '          <li><a href="' + R + 'sluzby/reset.html">Reset prostoru</a></li>' +
+        '          <li><a href="' + R + 'sluzby/prevent.html">Prevent program</a></li>' +
+        '          <li><a href="' + R + 'sluzby/clinic.html">Clinic Standard</a></li>' +
         '        </ul>' +
         '      </div>' +
         '      <div>' +
