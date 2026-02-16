@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OZON CLEAN UP | Kompaktní ozonový generátor | VitalSpace</title>
+    <meta name="description" content="OZON CLEAN UP — kompaktní ozonový generátor pro menší prostory do 150 m³. Ideální pro ordinace, kanceláře a domácnosti. Certifikováno MZ ČR.">
+    <link rel="canonical" href="https://vitalspace.cz/zarizeni/ozon-clean-up.html">
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/new-design-system.css" id="themeStylesheet">
+    <script src="../js/theme-switcher.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        .product-hero-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 4rem; align-items: start;
+        }
+        .product-visual {
+            position: relative; display: flex; align-items: center;
+            justify-content: center; min-height: 380px;
+        }
+        .product-visual-inner {
+            width: 260px; height: 260px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(51,136,255,0.1) 0%, transparent 70%);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .product-visual-inner i { color: var(--blue-400); opacity: 0.5; }
+        .product-badge {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.375rem 0.875rem; border-radius: var(--radius-full);
+            background: var(--badge-green-bg); border: 1px solid var(--badge-green-border);
+            font-size: 0.75rem; font-weight: 600; color: var(--green-500);
+            margin-bottom: 1rem;
+        }
+        .product-badge i { width: 14px; height: 14px; }
+        .product-price {
+            font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 800;
+            color: var(--text-primary); margin: 1.5rem 0 0.25rem;
+        }
+        .product-price-note {
+            font-size: 0.8125rem; color: var(--text-tertiary); margin-bottom: 1.5rem;
+        }
+        .product-ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 2rem; }
+
+        .key-specs {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+            margin-top: 2rem;
+        }
+        .key-spec {
+            text-align: center; padding: 1.25rem;
+        }
+        .key-spec .spec-value {
+            font-size: 1.5rem; font-weight: 800; color: var(--text-primary); line-height: 1.2;
+        }
+        .key-spec .spec-label {
+            font-size: 0.75rem; color: var(--text-tertiary); margin-top: 0.25rem;
+        }
+
+        .benefits-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
+        }
+        .benefit-card { padding: 1.75rem; }
+        .benefit-card i { color: var(--blue-400); margin-bottom: 0.75rem; display: block; }
+        .benefit-card h3 { font-size: 1.125rem; margin-bottom: 0.5rem; }
+        .benefit-card p { font-size: 0.9375rem; }
+
+        .included-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem;
+        }
+        .included-item {
+            display: flex; align-items: center; gap: 0.75rem;
+            padding: 0.75rem 1rem; border-radius: var(--radius-md);
+            background: var(--card-bg-soft); border: 1px solid var(--border-subtle);
+            font-size: 0.9375rem; color: var(--text-secondary);
+        }
+        .included-item i { color: var(--green-500); flex-shrink: 0; width: 18px; height: 18px; }
+
+        @media (max-width: 1024px) {
+            .product-hero-grid { grid-template-columns: 1fr; }
+            .product-visual { min-height: 250px; }
+            .benefits-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .key-specs { grid-template-columns: 1fr; }
+            .included-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ═══════════════ NAVIGATION ═══════════════ -->
+    <nav class="nav" id="mainNav">
+        <div class="nav-inner">
+            <a href="../" class="nav-logo">
+                <i data-lucide="shield-check" style="width:28px;height:28px;"></i>
+                VitalSpace
+            </a>
+            <ul class="nav-links">
+                <li class="nav-dropdown">
+                    <a href="../zarizeni/" class="active">Zařízení</a>
+                    <div class="dropdown-menu">
+                        <a href="ozon-cleaner-pro.html">OZON CLEANER PRO I PLUS</a>
+                        <a href="ozon-clean-up.html">OZON CLEAN UP</a>
+                        <a href="ozon-clean-box.html">OZON CLEAN BOX – DRY</a>
+                        <a href="srovnani.html">Srovnání zařízení</a>
+                    </div>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="../pronajem/">Pronájem</a>
+                    <div class="dropdown-menu">
+                        <a href="../pronajem/dlouhodoby.html">Dlouhodobý pronájem</a>
+                        <a href="../pronajem/kratkodoba.html">Krátkodobý pronájem</a>
+                    </div>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="../sluzby/">Služby</a>
+                    <div class="dropdown-menu">
+                        <a href="../sluzby/reset.html">Reset prostoru</a>
+                        <a href="../sluzby/prevent.html">Prevent program</a>
+                        <a href="../sluzby/clinic.html">Clinic Standard</a>
+                    </div>
+                </li>
+                <li><a href="../o-nas.html">O nás</a></li>
+            </ul>
+            <div class="nav-cta">
+                <button id="themeToggle" style="background:none;border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:0.45rem;cursor:pointer;color:var(--text-secondary);display:flex;align-items:center;justify-content:center;transition:all 0.2s;" aria-label="Přepnout téma">
+                    <i data-lucide="sun" style="width:20px;height:20px;"></i>
+                </button>
+                <a href="#kontakt" class="btn-primary" style="padding:0.6rem 1.25rem; font-size:0.875rem;">Získat nabídku</a>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+                <i data-lucide="menu" style="width:24px;height:24px;"></i>
+            </button>
+        </div>
+    </nav>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close" id="mobileClose" aria-label="Zavřít"><i data-lucide="x" style="width:24px;height:24px;"></i></button>
+        <div class="mobile-section-title">Zařízení</div>
+        <a href="ozon-cleaner-pro.html">OZON CLEANER PRO I PLUS</a>
+        <a href="ozon-clean-up.html">OZON CLEAN UP</a>
+        <a href="ozon-clean-box.html">OZON CLEAN BOX – DRY</a>
+        <a href="srovnani.html">Srovnání zařízení</a>
+        <div class="mobile-section-title">Pronájem</div>
+        <a href="../pronajem/dlouhodoby.html">Dlouhodobý pronájem</a>
+        <a href="../pronajem/kratkodoba.html">Krátkodobý pronájem</a>
+        <div class="mobile-section-title">Služby</div>
+        <a href="../sluzby/reset.html">Reset prostoru</a>
+        <a href="../sluzby/prevent.html">Prevent program</a>
+        <a href="../sluzby/clinic.html">Clinic Standard</a>
+        <div style="margin-top:1.5rem;"><a href="../o-nas.html">O nás</a></div>
+        <div style="margin-top:1.5rem;"><a href="#kontakt" class="btn-primary" style="display:block;text-align:center;">Získat nabídku</a></div>
+    </div>
+
+    <!-- ═══════════════ PAGE HERO ═══════════════ -->
+    <section class="page-hero">
+        <div class="orb orb-blue" style="width:400px;height:400px;top:-20%;right:-10%;"></div>
+        <div class="container">
+            <div class="breadcrumb reveal">
+                <a href="../">Domů</a> <span>/</span> <a href="../zarizeni/">Zařízení</a> <span>/</span> <span style="color:var(--text-secondary);">CLEAN UP</span>
+            </div>
+
+            <div class="product-hero-grid">
+                <div class="reveal">
+                    <div class="product-badge">
+                        <i data-lucide="check-circle"></i>
+                        Registrováno u MZ ČR
+                    </div>
+                    <h1>OZON<br>CLEAN UP</h1>
+                    <p style="font-size:1.0625rem; max-width:520px; margin-top:1rem;">
+                        Kompaktní ozonový generátor pro menší a střední prostory.
+                        Ideální pro ordinace, kanceláře, školní třídy a domácnosti do 150 m³.
+                    </p>
+
+                    <div class="product-price">Na vyžádání</div>
+                    <div class="product-price-note">Kontaktujte nás pro individuální cenovou nabídku.</div>
+
+                    <div class="product-ctas">
+                        <a href="#kontakt" class="btn-primary">
+                            <i data-lucide="send" style="width:18px;height:18px;"></i>
+                            Získat cenovou nabídku
+                        </a>
+                        <a href="../pronajem/dlouhodoby.html" class="btn-secondary">
+                            <i data-lucide="calendar-days" style="width:18px;height:18px;"></i>
+                            Možnost pronájmu
+                        </a>
+                    </div>
+                </div>
+
+                <div class="product-visual reveal" style="transition-delay:150ms;">
+                    <div class="orb orb-blue" style="width:200px;height:200px;top:20%;left:20%;"></div>
+                    <div class="product-visual-inner">
+                        <i data-lucide="wind" style="width:64px;height:64px;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ═══════════════ KEY SPECS ═══════════════ -->
+    <section class="section">
+        <div class="container">
+            <div class="key-specs reveal">
+                <div class="glass-card key-spec">
+                    <div class="spec-value">150 m³</div>
+                    <div class="spec-label">Maximální objem prostoru</div>
+                </div>
+                <div class="glass-card key-spec">
+                    <div class="spec-value">5 g/h</div>
+                    <div class="spec-label">Výkon generátoru ozonu</div>
+                </div>
+                <div class="glass-card key-spec">
+                    <div class="spec-value">99,9 %</div>
+                    <div class="spec-label">Účinnost dezinfekce</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ═══════════════ BENEFITS ═══════════════ -->
+    <section class="section">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:3rem;" class="reveal">
+                <span class="section-label">Proč CLEAN UP</span>
+                <h2>Kompaktní, ale profesionální</h2>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="glass-card benefit-card reveal">
+                    <i data-lucide="minimize-2" style="width:28px;height:28px;"></i>
+                    <h3>Kompaktní rozměry</h3>
+                    <p>Snadno přenosný a skladný. Ideální pro prostory, kde není potřeba výkon velkého PRO I PLUS.</p>
+                </div>
+                <div class="glass-card benefit-card reveal" style="transition-delay:100ms;">
+                    <i data-lucide="cpu" style="width:28px;height:28px;"></i>
+                    <h3>Řízený cyklus</h3>
+                    <p>Stejná technologie mikropočítačem řízeného cyklu jako u PRO I PLUS. Automatický výpočet doby sanitace.</p>
+                </div>
+                <div class="glass-card benefit-card reveal" style="transition-delay:200ms;">
+                    <i data-lucide="shield-check" style="width:28px;height:28px;"></i>
+                    <h3>Plná certifikace</h3>
+                    <p>Registrováno u MZ ČR jako dezinfekční prostředek. CE označení a prohlášení o shodě.</p>
+                </div>
+                <div class="glass-card benefit-card reveal" style="transition-delay:300ms;">
+                    <i data-lucide="repeat" style="width:28px;height:28px;"></i>
+                    <h3>Snadná obsluha</h3>
+                    <p>Intuitivní ovládání. Stačí nastavit objem prostoru a spustit. Zařízení vše řídí automaticky.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ═══════════════ TECHNICAL SPECS ═══════════════ -->
+    <section class="section">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:3rem;" class="reveal">
+                <span class="section-label">Technické parametry</span>
+                <h2>Detailní specifikace</h2>
+            </div>
+
+            <div class="glass-card reveal" style="padding:2rem; max-width:720px; margin:0 auto;">
+                <table class="spec-table">
+                    <tr><td>Výkon generátoru</td><td>5 g O₃/h</td></tr>
+                    <tr><td>Doporučený objem prostoru</td><td>do 150 m³</td></tr>
+                    <tr><td>Řízení cyklu</td><td>Mikropočítač s automatickým výpočtem</td></tr>
+                    <tr><td>Bezpečnostní systém</td><td>Automatický rozpad, bezpečnostní pojistky</td></tr>
+                    <tr><td>Napájení</td><td>230 V / 50 Hz</td></tr>
+                    <tr><td>Příkon</td><td>max. 80 W</td></tr>
+                    <tr><td>Hmotnost</td><td>cca 6 kg</td></tr>
+                    <tr><td>Certifikace</td><td>MZ ČR, CE, prohlášení o shodě</td></tr>
+                    <tr><td>Výrobce</td><td>Health-City</td></tr>
+                    <tr><td>Záruka</td><td>24 měsíců</td></tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ═══════════════ WHAT'S INCLUDED ═══════════════ -->
+    <section class="section">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:2.5rem;" class="reveal">
+                <span class="section-label">V ceně</span>
+                <h2>Co je součástí dodávky</h2>
+            </div>
+            <div class="included-grid reveal" style="max-width:720px; margin:0 auto;">
+                <div class="included-item"><i data-lucide="check"></i> Zařízení OZON CLEAN UP</div>
+                <div class="included-item"><i data-lucide="check"></i> Zaškolení obsluhy</div>
+                <div class="included-item"><i data-lucide="check"></i> Uživatelský manuál CZ</div>
+                <div class="included-item"><i data-lucide="check"></i> Certifikát a prohlášení o shodě</div>
+                <div class="included-item"><i data-lucide="check"></i> Záruční servis 24 měsíců</div>
+                <div class="included-item"><i data-lucide="check"></i> Doprava po celé ČR</div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ═══════════════ CROSS-SELL ═══════════════ -->
+    <section class="section">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:2.5rem;" class="reveal">
+                <span class="section-label">Další možnosti</span>
+                <h2>Zvažte i tyto varianty</h2>
+            </div>
+            <div class="cross-sell-grid reveal">
+                <div class="glass-card cross-sell-card">
+                    <i data-lucide="zap" style="width:28px;height:28px;"></i>
+                    <h4>PRO I PLUS</h4>
+                    <p>Potřebujete pokrýt větší prostory? PRO I PLUS zvládne až 800 m³.</p>
+                    <a href="ozon-cleaner-pro.html" class="btn-ghost">Zjistit více <i data-lucide="arrow-right"></i></a>
+                </div>
+                <div class="glass-card cross-sell-card">
+                    <i data-lucide="box" style="width:28px;height:28px;"></i>
+                    <h4>CLEAN BOX – DRY</h4>
+                    <p>Pro sanitaci předmětů a menších uzavřených prostor.</p>
+                    <a href="ozon-clean-box.html" class="btn-ghost">Zjistit více <i data-lucide="arrow-right"></i></a>
+                </div>
+                <div class="glass-card cross-sell-card">
+                    <i data-lucide="git-compare" style="width:28px;height:28px;"></i>
+                    <h4>Srovnání zařízení</h4>
+                    <p>Porovnejte všechny modely a vyberte ten správný.</p>
+                    <a href="srovnani.html" class="btn-ghost">Porovnat <i data-lucide="arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ═══════════════ CTA ═══════════════ -->
+    <section class="section" id="kontakt">
+        <div class="orb orb-blue" style="width:400px;height:400px;top:-10%;left:-10%;"></div>
+        <div class="container">
+            <div class="glass-hero cta-banner reveal">
+                <span class="section-label">Máte zájem?</span>
+                <h2>Získejte nabídku na CLEAN UP</h2>
+                <p>Kontaktujte nás pro individuální cenovou nabídku včetně možnosti pronájmu.</p>
+                <div style="display:flex; flex-wrap:wrap; gap:0.75rem; justify-content:center;">
+                    <a href="mailto:info@vitalspace.cz?subject=Poptávka OZON CLEAN UP" class="btn-primary">
+                        <i data-lucide="mail" style="width:18px;height:18px;"></i> info@vitalspace.cz
+                    </a>
+                    <a href="tel:+420603834921" class="btn-secondary">
+                        <i data-lucide="phone" style="width:18px;height:18px;"></i> +420 603 834 921
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../" class="nav-logo" style="margin-bottom:0.5rem;"><i data-lucide="shield-check" style="width:24px;height:24px;"></i> VitalSpace</a>
+                    <p>Autorizovaný dealer certifikovaných zařízení OZON CLEANER od Health-City pro celou Českou republiku.</p>
+                </div>
+                <div>
+                    <h4>Zařízení</h4>
+                    <ul class="footer-links">
+                        <li><a href="ozon-cleaner-pro.html">OZON CLEANER PRO I PLUS</a></li>
+                        <li><a href="ozon-clean-up.html">OZON CLEAN UP</a></li>
+                        <li><a href="ozon-clean-box.html">OZON CLEAN BOX – DRY</a></li>
+                        <li><a href="srovnani.html">Srovnání zařízení</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Pronájem a služby</h4>
+                    <ul class="footer-links">
+                        <li><a href="../pronajem/dlouhodoby.html">Dlouhodobý pronájem</a></li>
+                        <li><a href="../pronajem/kratkodoba.html">Krátkodobý pronájem</a></li>
+                        <li><a href="../sluzby/reset.html">Reset prostoru</a></li>
+                        <li><a href="../sluzby/prevent.html">Prevent program</a></li>
+                        <li><a href="../sluzby/clinic.html">Clinic Standard</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Kontakt</h4>
+                    <ul class="footer-contact">
+                        <li><i data-lucide="phone"></i> +420 603 834 921</li>
+                        <li><i data-lucide="mail"></i> info@vitalspace.cz</li>
+                        <li><i data-lucide="map-pin"></i> Plzeň &amp; Praha | Celá ČR</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2025 VitalSpace. Všechna práva vyhrazena.</span>
+                <div class="footer-legal"><a href="#">VOP</a><a href="#">Ochrana osobních údajů</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/site.js"></script>
+</body>
+</html>

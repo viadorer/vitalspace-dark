@@ -1,0 +1,921 @@
+/* =============================================================================
+   VITALSPACE B2B COMPONENTS
+   Doplňkové styly pro public-sector.html
+   ============================================================================= */
+
+/* =============================================================================
+   HERO B2B - Authority Focus
+   ============================================================================= */
+.hero-b2b {
+    background: linear-gradient(135deg, var(--deep-navy-50) 0%, var(--white) 100%);
+    min-height: 75vh;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-6);
+    font-size: var(--text-sm);
+    color: var(--gray-600);
+}
+
+.breadcrumb a {
+    color: var(--oxygen-blue-700);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.breadcrumb a:hover {
+    color: var(--oxygen-blue-900);
+}
+
+.breadcrumb i {
+    width: 16px;
+    height: 16px;
+}
+
+/* Compliance Badges */
+.compliance-badges {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+    margin-bottom: var(--space-10);
+}
+
+.badge-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-6);
+    background: var(--white);
+    border: 2px solid var(--oxygen-blue-200);
+    border-radius: var(--radius-xl);
+    transition: all var(--transition-base);
+}
+
+.badge-item:hover {
+    border-color: var(--oxygen-blue-400);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+}
+
+.badge-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--oxygen-blue-100), var(--oxygen-blue-50));
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.badge-icon i {
+    width: 24px;
+    height: 24px;
+    color: var(--oxygen-blue-700);
+}
+
+.badge-text strong {
+    display: block;
+    font-size: var(--text-base);
+    color: var(--deep-navy-900);
+    margin-bottom: var(--space-1);
+}
+
+.badge-text span {
+    font-size: var(--text-sm);
+    color: var(--gray-600);
+}
+
+@media (max-width: 1024px) {
+    .compliance-badges {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =============================================================================
+   COMPLIANCE SECTION
+   ============================================================================= */
+.compliance-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-10);
+    margin-bottom: var(--space-12);
+}
+
+.compliance-card {
+    padding: 0;
+    overflow: hidden;
+}
+
+.compliance-card.featured {
+    border: 2px solid var(--oxygen-blue-400);
+}
+
+.compliance-header {
+    padding: var(--space-8);
+    background: linear-gradient(135deg, var(--deep-navy-900), var(--deep-navy-700));
+    color: var(--white);
+    text-align: center;
+}
+
+.compliance-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto var(--space-4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.compliance-icon i {
+    width: 32px;
+    height: 32px;
+    color: var(--oxygen-blue-400);
+}
+
+.compliance-header h3 {
+    color: var(--white);
+    margin-bottom: var(--space-2);
+}
+
+.compliance-ref {
+    display: inline-block;
+    padding: var(--space-2) var(--space-4);
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--oxygen-blue-200);
+}
+
+.compliance-content {
+    padding: var(--space-8);
+}
+
+.compliance-content h4 {
+    font-size: var(--text-lg);
+    margin-top: var(--space-6);
+    margin-bottom: var(--space-4);
+    color: var(--deep-navy-900);
+}
+
+.compliance-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-4) 0;
+}
+
+.compliance-list li {
+    display: flex;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+    padding: var(--space-4);
+    background: var(--gray-50);
+    border-radius: var(--radius-lg);
+}
+
+.compliance-list i {
+    width: 20px;
+    height: 20px;
+    color: var(--safety-green-500);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.compliance-note,
+.compliance-status {
+    display: flex;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    background: var(--oxygen-blue-50);
+    border-left: 3px solid var(--oxygen-blue-600);
+    border-radius: var(--radius-md);
+    margin-top: var(--space-6);
+}
+
+.compliance-note i,
+.compliance-status i {
+    width: 20px;
+    height: 20px;
+    color: var(--oxygen-blue-600);
+    flex-shrink: 0;
+}
+
+.compliance-note p,
+.compliance-status p {
+    margin: 0;
+    font-size: var(--text-sm);
+    color: var(--gray-800);
+}
+
+/* Specs Table */
+.specs-table {
+    margin: var(--space-6) 0;
+}
+
+.spec-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-4);
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.spec-row:last-child {
+    border-bottom: none;
+}
+
+.spec-label {
+    font-size: var(--text-base);
+    color: var(--gray-700);
+}
+
+.spec-value {
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    color: var(--deep-navy-900);
+}
+
+/* Legal Warning */
+.legal-warning {
+    background: rgba(255, 152, 0, 0.1);
+    border: 2px solid var(--warning);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    display: flex;
+    gap: var(--space-4);
+}
+
+.legal-warning i {
+    width: 32px;
+    height: 32px;
+    color: var(--warning);
+    flex-shrink: 0;
+}
+
+.legal-warning h4 {
+    color: var(--gray-900);
+    margin-bottom: var(--space-3);
+}
+
+.legal-warning p {
+    margin: 0;
+    color: var(--gray-800);
+    line-height: var(--leading-relaxed);
+}
+
+@media (max-width: 1024px) {
+    .compliance-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =============================================================================
+   EQUIPMENT SECTION
+   ============================================================================= */
+.equipment-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-8);
+    margin-bottom: var(--space-16);
+}
+
+.equipment-card {
+    position: relative;
+}
+
+.equipment-card.featured {
+    border: 2px solid var(--oxygen-blue-400);
+}
+
+.equipment-header {
+    text-align: center;
+    margin-bottom: var(--space-6);
+}
+
+.equipment-subtitle {
+    color: var(--gray-600);
+    font-size: var(--text-base);
+    margin-top: var(--space-2);
+}
+
+.equipment-specs {
+    padding: var(--space-6);
+}
+
+.spec-group {
+    margin-bottom: var(--space-8);
+}
+
+.spec-group:last-child {
+    margin-bottom: 0;
+}
+
+.spec-group h4 {
+    font-size: var(--text-lg);
+    color: var(--deep-navy-900);
+    margin-bottom: var(--space-4);
+    padding-bottom: var(--space-3);
+    border-bottom: 2px solid var(--oxygen-blue-200);
+}
+
+.use-case-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.use-case-list li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-3);
+    font-size: var(--text-sm);
+    color: var(--gray-700);
+}
+
+.use-case-list i {
+    width: 16px;
+    height: 16px;
+    color: var(--safety-green-500);
+}
+
+.spec-note {
+    font-size: var(--text-sm);
+    color: var(--gray-700);
+    line-height: var(--leading-relaxed);
+    padding: var(--space-4);
+    background: var(--gray-50);
+    border-radius: var(--radius-md);
+}
+
+.equipment-badge {
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+}
+
+@media (max-width: 1024px) {
+    .equipment-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Download Section */
+.download-section {
+    margin-top: var(--space-16);
+    padding: var(--space-12);
+    background: var(--gray-50);
+    border-radius: var(--radius-2xl);
+}
+
+.download-section h3 {
+    text-align: center;
+    margin-bottom: var(--space-10);
+}
+
+.download-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+}
+
+.download-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-6);
+    background: var(--white);
+    border: 2px solid var(--gray-200);
+    border-radius: var(--radius-xl);
+    text-decoration: none;
+    transition: all var(--transition-base);
+}
+
+.download-card:hover:not(.disabled) {
+    border-color: var(--oxygen-blue-400);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+}
+
+.download-card.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.download-card > i:first-child {
+    width: 40px;
+    height: 40px;
+    color: var(--oxygen-blue-600);
+    flex-shrink: 0;
+}
+
+.download-card > div {
+    flex: 1;
+}
+
+.download-card strong {
+    display: block;
+    color: var(--deep-navy-900);
+    margin-bottom: var(--space-1);
+}
+
+.download-card span {
+    font-size: var(--text-sm);
+    color: var(--gray-600);
+}
+
+.download-card > i:last-child {
+    width: 24px;
+    height: 24px;
+    color: var(--gray-400);
+}
+
+@media (max-width: 768px) {
+    .download-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =============================================================================
+   CASE STUDIES
+   ============================================================================= */
+.case-studies-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-8);
+    margin-bottom: var(--space-12);
+}
+
+.case-study-card {
+    overflow: hidden;
+}
+
+.case-study-image {
+    position: relative;
+    margin-bottom: var(--space-6);
+}
+
+.case-study-badge {
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+}
+
+.case-study-content {
+    padding: var(--space-6);
+}
+
+.case-study-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    font-size: var(--text-sm);
+    color: var(--gray-600);
+    margin-bottom: var(--space-6);
+}
+
+.case-study-meta i {
+    width: 16px;
+    height: 16px;
+}
+
+.case-study-problem,
+.case-study-solution,
+.case-study-results {
+    margin-bottom: var(--space-6);
+}
+
+.case-study-problem h4,
+.case-study-solution h4,
+.case-study-results h4 {
+    font-size: var(--text-base);
+    color: var(--deep-navy-900);
+    margin-bottom: var(--space-3);
+}
+
+.case-study-problem p,
+.case-study-solution p {
+    font-size: var(--text-sm);
+    color: var(--gray-700);
+    line-height: var(--leading-relaxed);
+}
+
+.results-placeholder {
+    padding: var(--space-6);
+    background: var(--gray-50);
+    border-radius: var(--radius-lg);
+    text-align: center;
+}
+
+.results-placeholder i {
+    width: 32px;
+    height: 32px;
+    margin: 0 auto var(--space-3);
+    color: var(--gray-400);
+}
+
+.results-placeholder p {
+    margin: 0;
+    font-size: var(--text-sm);
+    color: var(--gray-600);
+}
+
+.case-study-disclaimer {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3);
+    background: var(--oxygen-blue-50);
+    border-radius: var(--radius-md);
+    margin-top: var(--space-6);
+}
+
+.case-study-disclaimer i {
+    width: 16px;
+    height: 16px;
+    color: var(--oxygen-blue-600);
+    flex-shrink: 0;
+}
+
+.case-study-disclaimer p {
+    margin: 0;
+}
+
+.case-studies-cta {
+    text-align: center;
+    padding: var(--space-10);
+    background: linear-gradient(135deg, var(--deep-navy-900), var(--deep-navy-700));
+    border-radius: var(--radius-2xl);
+    color: var(--white);
+}
+
+.case-studies-cta p {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-6);
+    color: var(--white);
+}
+
+@media (max-width: 1024px) {
+    .case-studies-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =============================================================================
+   SAAS SECTION
+   ============================================================================= */
+.saas-benefits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-8);
+    margin-bottom: var(--space-16);
+}
+
+.saas-benefit-card {
+    text-align: center;
+    padding: var(--space-8);
+    background: var(--white);
+    border: 2px solid var(--oxygen-blue-200);
+    border-radius: var(--radius-2xl);
+}
+
+.saas-benefit-card i {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto var(--space-6);
+    padding: var(--space-4);
+    background: linear-gradient(135deg, var(--oxygen-blue-100), var(--oxygen-blue-50));
+    border-radius: 50%;
+    color: var(--oxygen-blue-700);
+}
+
+.saas-benefit-card h3 {
+    color: var(--deep-navy-900);
+    margin-bottom: var(--space-4);
+}
+
+.saas-benefit-card p {
+    color: var(--gray-700);
+    line-height: var(--leading-relaxed);
+}
+
+/* Pricing Section */
+.pricing-section {
+    margin-top: var(--space-16);
+}
+
+.pricing-section > h3 {
+    text-align: center;
+    margin-bottom: var(--space-12);
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-8);
+    margin-bottom: var(--space-8);
+}
+
+.pricing-card {
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+}
+
+.pricing-card.featured {
+    border: 2px solid var(--oxygen-blue-400);
+    box-shadow: 0 8px 30px rgba(3, 169, 244, 0.2);
+}
+
+.pricing-badge {
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    z-index: 10;
+}
+
+.pricing-header {
+    padding: var(--space-8);
+    background: linear-gradient(135deg, var(--oxygen-blue-100), var(--oxygen-blue-50));
+    text-align: center;
+}
+
+.pricing-header h4 {
+    color: var(--deep-navy-900);
+    margin-bottom: var(--space-2);
+}
+
+.pricing-subtitle {
+    font-size: var(--text-base);
+    color: var(--gray-700);
+}
+
+.pricing-content {
+    padding: var(--space-8);
+}
+
+.pricing-interval {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-4);
+    background: var(--gray-50);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-6);
+}
+
+.interval-label {
+    font-size: var(--text-sm);
+    color: var(--gray-700);
+}
+
+.interval-value {
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    color: var(--oxygen-blue-700);
+}
+
+.pricing-use-cases {
+    margin-bottom: var(--space-8);
+}
+
+.pricing-use-cases h5 {
+    font-size: var(--text-base);
+    color: var(--deep-navy-900);
+    margin-bottom: var(--space-4);
+}
+
+.pricing-use-cases ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pricing-use-cases li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-3);
+    font-size: var(--text-sm);
+    color: var(--gray-700);
+}
+
+.pricing-use-cases i {
+    width: 16px;
+    height: 16px;
+    color: var(--safety-green-500);
+}
+
+.pricing-price {
+    text-align: center;
+    padding: var(--space-6);
+    background: var(--oxygen-blue-50);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-6);
+}
+
+.price-label {
+    display: block;
+    font-size: var(--text-sm);
+    color: var(--gray-600);
+    margin-bottom: var(--space-2);
+}
+
+.price-value {
+    display: block;
+    font-size: var(--text-4xl);
+    font-weight: var(--font-bold);
+    color: var(--deep-navy-900);
+}
+
+.price-period {
+    font-size: var(--text-base);
+    color: var(--gray-600);
+}
+
+.pricing-note {
+    display: flex;
+    gap: var(--space-3);
+    padding: var(--space-6);
+    background: var(--oxygen-blue-50);
+    border-left: 3px solid var(--oxygen-blue-600);
+    border-radius: var(--radius-lg);
+}
+
+.pricing-note i {
+    width: 20px;
+    height: 20px;
+    color: var(--oxygen-blue-600);
+    flex-shrink: 0;
+}
+
+.pricing-note p {
+    margin: 0;
+    font-size: var(--text-sm);
+    color: var(--gray-800);
+}
+
+@media (max-width: 1024px) {
+    .saas-benefits,
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =============================================================================
+   B2B CONTACT SECTION
+   ============================================================================= */
+.contact-b2b-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-12);
+}
+
+.form-section {
+    margin-bottom: var(--space-10);
+    padding-bottom: var(--space-10);
+    border-bottom: 2px solid var(--gray-200);
+}
+
+.form-section:last-of-type {
+    border-bottom: none;
+    margin-bottom: var(--space-6);
+}
+
+.form-section h3 {
+    font-size: var(--text-xl);
+    color: var(--deep-navy-900);
+    margin-bottom: var(--space-6);
+}
+
+.contact-b2b-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.info-box {
+    padding: var(--space-8);
+    background: var(--white);
+    border: 2px solid var(--oxygen-blue-200);
+    border-radius: var(--radius-xl);
+}
+
+.info-box h3 {
+    font-size: var(--text-lg);
+    color: var(--deep-navy-900);
+    margin-bottom: var(--space-6);
+}
+
+.benefit-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.benefit-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+}
+
+.benefit-list i {
+    width: 20px;
+    height: 20px;
+    color: var(--safety-green-500);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.benefit-list span {
+    font-size: var(--text-base);
+    color: var(--gray-700);
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.contact-item {
+    display: flex;
+    gap: var(--space-4);
+}
+
+.contact-item i {
+    width: 24px;
+    height: 24px;
+    color: var(--oxygen-blue-600);
+    flex-shrink: 0;
+}
+
+.contact-item strong {
+    display: block;
+    color: var(--deep-navy-900);
+    margin-bottom: var(--space-1);
+}
+
+.contact-item a {
+    color: var(--oxygen-blue-700);
+    text-decoration: none;
+    font-weight: var(--font-medium);
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+.contact-item p {
+    margin: 0;
+    color: var(--gray-700);
+}
+
+.partner-box {
+    background: linear-gradient(135deg, var(--deep-navy-900), var(--deep-navy-700));
+    color: var(--white);
+    text-align: center;
+}
+
+.partner-box h3 {
+    color: var(--white);
+}
+
+.partner-box p {
+    color: var(--oxygen-blue-200);
+}
+
+@media (max-width: 1024px) {
+    .contact-b2b-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =============================================================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================================================= */
+@media (max-width: 640px) {
+    .compliance-badges {
+        grid-template-columns: 1fr;
+    }
+    
+    .badge-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-cta-group {
+        flex-direction: column;
+    }
+    
+    .btn-lg {
+        width: 100%;
+    }
+}

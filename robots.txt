@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vitalspace.cz/sitemap.xml
+
+# Block old/legacy pages
+Disallow: /index-saas.html
+Disallow: /index-v3.html
+Disallow: /index-new.html
+Disallow: /vitalspace-landing.html
+Disallow: /vitalspace-landing-2.html
+Disallow: /vitalspace-new.html
+Disallow: /public-sector.html
+Disallow: /program-clinic.html
+Disallow: /program-prevent.html
+Disallow: /program-pronajem.html
+Disallow: /program-reset.html
+Disallow: /pages/

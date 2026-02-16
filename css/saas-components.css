@@ -1,0 +1,650 @@
+/* =============================================================================
+   VITALSPACE SAAS COMPONENTS
+   Styly pro index-saas.html - Sanitace jako služba
+   ============================================================================= */
+
+/* =============================================================================
+   HERO SECTION - Dual Narrative (B2B/B2C)
+   ============================================================================= */
+.hero-narrative {
+    margin-bottom: var(--space-12);
+    padding: var(--space-8);
+    background: var(--white);
+    border-radius: var(--radius-2xl);
+    border: 2px solid var(--oxygen-blue-200);
+}
+
+.narrative-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    background: var(--oxygen-blue-100);
+    color: var(--deep-navy-700);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-4);
+}
+
+.narrative-tag i {
+    width: 16px;
+    height: 16px;
+}
+
+.hero-title-alt {
+    font-size: var(--text-4xl);
+    line-height: var(--leading-tight);
+    color: var(--deep-navy-900);
+    margin-bottom: var(--space-4);
+}
+
+.highlight-text {
+    color: var(--oxygen-blue-700);
+    position: relative;
+}
+
+.highlight-text::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--oxygen-blue-400), var(--oxygen-blue-600));
+    border-radius: 2px;
+}
+
+.hero-value-prop {
+    margin-bottom: var(--space-10);
+}
+
+.trust-badges-hero {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+    margin-top: var(--space-8);
+}
+
+.trust-badge {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    background: var(--white);
+    border: 2px solid var(--oxygen-blue-200);
+    border-radius: var(--radius-lg);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--gray-700);
+}
+
+.trust-badge i {
+    width: 20px;
+    height: 20px;
+    color: var(--oxygen-blue-600);
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .trust-badges-hero {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-title-alt {
+        font-size: var(--text-3xl);
+    }
+}
+
+/* =============================================================================
+   SAAS MODEL SECTION
+   ============================================================================= */
+.saas-model-section {
+    background: linear-gradient(135deg, var(--oxygen-blue-50) 0%, var(--white) 100%);
+    padding: var(--space-20) 0;
+}
+
+.saas-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-8);
+    margin-bottom: var(--space-16);
+}
+
+.saas-benefit-card {
+    background: var(--white);
+    padding: var(--space-8);
+    border-radius: var(--radius-2xl);
+    border: 2px solid var(--oxygen-blue-200);
+    transition: all var(--transition-base);
+}
+
+.saas-benefit-card:hover {
+    border-color: var(--oxygen-blue-400);
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-4px);
+}
+
+.benefit-icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--oxygen-blue-100), var(--oxygen-blue-50));
+    border-radius: 50%;
+    margin-bottom: var(--space-6);
+}
+
+.benefit-icon i {
+    width: 32px;
+    height: 32px;
+    color: var(--oxygen-blue-700);
+}
+
+.saas-benefit-card h3 {
+    font-size: var(--text-2xl);
+    color: var(--deep-navy-900);
+    margin-bottom: var(--space-4);
+}
+
+.saas-benefit-card p {
+    color: var(--gray-700);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-4);
+}
+
+.benefit-source {
+    display: block;
+    font-size: var(--text-xs);
+    color: var(--gray-500);
+    font-style: italic;
+}
+
+@media (max-width: 1024px) {
+    .saas-benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .saas-benefits-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* SAAS CTA Banner */
+.saas-cta-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-10);
+    background: linear-gradient(135deg, var(--deep-navy-900), var(--deep-navy-700));
+    border-radius: var(--radius-2xl);
+    color: var(--white);
+}
+
+.saas-cta-content h3 {
+    color: var(--white);
+    margin-bottom: var(--space-2);
+}
+
+.saas-cta-content p {
+    color: var(--oxygen-blue-200);
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .saas-cta-banner {
+        flex-direction: column;
+        gap: var(--space-6);
+        text-align: center;
+    }
+}
+
+/* =============================================================================
+   PROBLEM SECTION - Lucide Icons
+   ============================================================================= */
+.problem-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--oxygen-blue-100), var(--oxygen-blue-50));
+    border-radius: 50%;
+    margin: 0 auto var(--space-6);
+}
+
+.problem-icon {
+    width: 40px;
+    height: 40px;
+    color: var(--oxygen-blue-700);
+}
+
+/* =============================================================================
+   SOLUTION SECTION - Enhanced
+   ============================================================================= */
+.solution-benefits {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-8) 0;
+}
+
+.solution-benefits li {
+    display: flex;
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+    padding: var(--space-4);
+    background: var(--gray-50);
+    border-radius: var(--radius-lg);
+}
+
+.solution-benefits i {
+    width: 24px;
+    height: 24px;
+    color: var(--safety-green-500);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.solution-cta {
+    margin-top: var(--space-8);
+}
+
+.stat-icon {
+    width: 32px;
+    height: 32px;
+    color: var(--oxygen-blue-600);
+}
+
+/* =============================================================================
+   PROGRAMS SECTION - Enhanced Cards
+   ============================================================================= */
+.program-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: var(--space-6);
+}
+
+.program-icon {
+    width: 48px;
+    height: 48px;
+    padding: var(--space-3);
+    background: linear-gradient(135deg, var(--oxygen-blue-100), var(--oxygen-blue-50));
+    border-radius: 50%;
+    color: var(--oxygen-blue-700);
+    margin-bottom: var(--space-4);
+}
+
+.program-description {
+    text-align: center;
+    color: var(--gray-600);
+    font-size: var(--text-base);
+    margin-bottom: var(--space-6);
+}
+
+.program-features {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-6) 0;
+}
+
+.program-features li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-3);
+    font-size: var(--text-sm);
+    color: var(--gray-700);
+}
+
+.program-features i {
+    width: 16px;
+    height: 16px;
+    color: var(--safety-green-500);
+    flex-shrink: 0;
+}
+
+.program-use-case {
+    padding: var(--space-4);
+    background: var(--gray-50);
+    border-radius: var(--radius-lg);
+    margin: var(--space-6) 0;
+}
+
+.program-use-case strong {
+    display: block;
+    margin-bottom: var(--space-2);
+    color: var(--deep-navy-900);
+    font-size: var(--text-sm);
+}
+
+.program-use-case p {
+    margin: 0;
+    font-size: var(--text-sm);
+    color: var(--gray-600);
+}
+
+.program-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-4) var(--space-6);
+    background: transparent;
+    border: 2px solid var(--oxygen-blue-300);
+    border-radius: var(--radius-full);
+    color: var(--oxygen-blue-700);
+    font-weight: var(--font-semibold);
+    text-decoration: none;
+    transition: all var(--transition-base);
+}
+
+.program-cta:hover {
+    background: var(--oxygen-blue-50);
+    border-color: var(--oxygen-blue-500);
+}
+
+.program-cta.primary {
+    background: linear-gradient(135deg, var(--oxygen-blue-600), var(--oxygen-blue-400));
+    border-color: transparent;
+    color: var(--white);
+}
+
+.program-cta.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(3, 169, 244, 0.4);
+}
+
+.program-cta i {
+    width: 16px;
+    height: 16px;
+}
+
+/* Programs B2B CTA */
+.programs-b2b-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-10);
+    background: var(--gray-50);
+    border-radius: var(--radius-2xl);
+    margin-top: var(--space-16);
+}
+
+.b2b-cta-content h3 {
+    color: var(--deep-navy-900);
+    margin-bottom: var(--space-2);
+}
+
+.b2b-cta-content p {
+    color: var(--gray-700);
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .programs-b2b-cta {
+        flex-direction: column;
+        gap: var(--space-6);
+        text-align: center;
+    }
+}
+
+/* =============================================================================
+   TECHNOLOGY SECTION
+   ============================================================================= */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-8);
+    margin-bottom: var(--space-16);
+}
+
+.tech-card {
+    background: var(--white);
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    border: 2px solid var(--gray-200);
+    transition: all var(--transition-base);
+}
+
+.tech-card:hover {
+    border-color: var(--oxygen-blue-400);
+    box-shadow: var(--shadow-xl);
+}
+
+.tech-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-placeholder.dark {
+    background: linear-gradient(135deg, var(--deep-navy-900), var(--deep-navy-700));
+    color: var(--white);
+    padding: var(--space-16);
+    text-align: center;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-placeholder.dark i {
+    color: var(--oxygen-blue-400);
+    margin-bottom: var(--space-4);
+}
+
+.image-placeholder.dark p {
+    margin: var(--space-2) 0;
+    color: var(--oxygen-blue-200);
+}
+
+.image-placeholder.dark small {
+    font-size: var(--text-xs);
+    color: var(--gray-500);
+}
+
+.tech-content {
+    padding: var(--space-6);
+}
+
+.tech-content h3 {
+    font-size: var(--text-xl);
+    color: var(--deep-navy-900);
+    margin-bottom: var(--space-3);
+}
+
+.tech-content p {
+    color: var(--gray-600);
+    margin-bottom: var(--space-6);
+}
+
+.tech-specs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tech-specs li {
+    padding: var(--space-3);
+    border-bottom: 1px solid var(--gray-200);
+    font-size: var(--text-sm);
+    color: var(--gray-700);
+}
+
+.tech-specs li:last-child {
+    border-bottom: none;
+}
+
+.tech-specs strong {
+    color: var(--deep-navy-900);
+}
+
+@media (max-width: 1024px) {
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Safety Section */
+.safety-section {
+    margin-top: var(--space-16);
+    padding: var(--space-10);
+    background: linear-gradient(135deg, var(--safety-green-50), var(--white));
+    border-radius: var(--radius-2xl);
+    border: 2px solid var(--safety-green-200);
+}
+
+.safety-section h3 {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-size: var(--text-2xl);
+    color: var(--deep-navy-900);
+    margin-bottom: var(--space-8);
+}
+
+.safety-section h3 i {
+    width: 32px;
+    height: 32px;
+    color: var(--safety-green-700);
+}
+
+.safety-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-8);
+}
+
+.safety-feature {
+    text-align: center;
+}
+
+.safety-feature i {
+    width: 48px;
+    height: 48px;
+    padding: var(--space-3);
+    background: var(--white);
+    border-radius: 50%;
+    color: var(--safety-green-700);
+    margin: 0 auto var(--space-4);
+}
+
+.safety-feature strong {
+    display: block;
+    font-size: var(--text-lg);
+    color: var(--deep-navy-900);
+    margin-bottom: var(--space-2);
+}
+
+.safety-feature p {
+    margin: 0;
+    font-size: var(--text-sm);
+    color: var(--gray-700);
+}
+
+@media (max-width: 768px) {
+    .safety-features {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =============================================================================
+   FORM SECTION
+   ============================================================================= */
+.form-section {
+    background: var(--gray-50);
+    padding: var(--space-20) 0;
+}
+
+#realvisor-form {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* =============================================================================
+   FOOTER ENHANCEMENTS
+   ============================================================================= */
+.footer-disclaimers {
+    margin-bottom: var(--space-12);
+}
+
+.disclaimer-box {
+    padding: var(--space-8);
+    border-radius: var(--radius-xl);
+    margin-bottom: var(--space-6);
+}
+
+.legal-disclaimer {
+    background: rgba(255, 152, 0, 0.15);
+    border: 2px solid var(--warning);
+}
+
+.legal-disclaimer h5 {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    color: var(--white);
+    margin-bottom: var(--space-4);
+    font-size: var(--text-lg);
+}
+
+.legal-disclaimer h5 i {
+    width: 24px;
+    height: 24px;
+}
+
+.legal-disclaimer p {
+    color: var(--oxygen-blue-100);
+    line-height: var(--leading-relaxed);
+    margin: 0;
+}
+
+.biocide-disclaimer {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.biocide-disclaimer p {
+    color: var(--oxygen-blue-100);
+    margin: 0;
+}
+
+/* =============================================================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================================================= */
+@media (max-width: 640px) {
+    .hero-cta-group {
+        flex-direction: column;
+    }
+    
+    .btn-lg {
+        width: 100%;
+    }
+    
+    .section-spacing {
+        padding: var(--space-12) var(--space-4);
+    }
+}
+
+/* =============================================================================
+   UTILITY CLASSES
+   ============================================================================= */
+.mt-3 { margin-top: var(--space-12); }
+.mb-3 { margin-bottom: var(--space-12); }
+.text-center { text-align: center; }
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Focus States for Accessibility */
+a:focus,
+button:focus {
+    outline: 2px solid var(--oxygen-blue-600);
+    outline-offset: 2px;
+}

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinic Standard | Ozonová sanitace pro zdravotnictví | VitalSpace</title>
+    <meta name="description" content="Clinic Standard — specializovaný program ozonové sanitace pro zdravotnická zařízení. Validováno dle EN 17272:2020. Protokoly pro hygienu a kontroly.">
+    <link rel="canonical" href="https://vitalspace.cz/sluzby/clinic.html">
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/new-design-system.css" id="themeStylesheet">
+    <script src="../js/theme-switcher.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        .service-hero-grid {
+            display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: start;
+        }
+        .service-visual {
+            position: relative; display: flex; align-items: center;
+            justify-content: center; min-height: 350px;
+        }
+        .service-visual-inner {
+            width: 240px; height: 240px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(51,136,255,0.08) 0%, transparent 70%);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .service-visual-inner i { color: var(--blue-400); opacity: 0.5; }
+
+        .standards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        .standard-card { padding: 1.75rem; text-align: center; }
+        .standard-card i { color: var(--blue-400); margin-bottom: 0.75rem; display: block; }
+        .standard-card h3 { font-size: 1.125rem; margin-bottom: 0.5rem; }
+        .standard-card p { font-size: 0.875rem; }
+
+        .benefits-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+        .benefit-card { padding: 1.75rem; }
+        .benefit-card i { color: var(--blue-400); margin-bottom: 0.75rem; display: block; }
+        .benefit-card h3 { font-size: 1.125rem; margin-bottom: 0.5rem; }
+        .benefit-card p { font-size: 0.9375rem; }
+
+        .for-who-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+        .for-who-card {
+            text-align: center; padding: 1.5rem 1rem; border-radius: var(--radius-md);
+            background: var(--card-bg); border: 1px solid var(--border-subtle);
+            transition: all var(--dur-norm) var(--ease);
+        }
+        .for-who-card:hover { border-color: rgba(51,136,255,0.2); transform: translateY(-2px); }
+        .for-who-card i { color: var(--blue-400); margin-bottom: 0.75rem; display: block; }
+        .for-who-card h4 { font-size: 0.9375rem; margin-bottom: 0.375rem; }
+        .for-who-card p { font-size: 0.8125rem; color: var(--text-tertiary); }
+
+        .included-list { max-width: 720px; margin: 0 auto; }
+        .included-item {
+            display: flex; align-items: center; gap: 0.75rem;
+            padding: 0.75rem 1rem; margin-bottom: 0.5rem; border-radius: var(--radius-md);
+            background: var(--card-bg-soft); border: 1px solid var(--border-subtle);
+            font-size: 0.9375rem; color: var(--text-secondary);
+        }
+        .included-item i { color: var(--green-500); flex-shrink: 0; width: 18px; height: 18px; }
+
+        .process-list { max-width: 720px; margin: 0 auto; }
+        .process-step {
+            display: flex; gap: 1.5rem; padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(51,136,255,0.06);
+        }
+        .process-step:last-child { border-bottom: none; }
+        .step-num {
+            width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
+            display: flex; align-items: center; justify-content: center;
+            background: rgba(51,136,255,0.1); color: var(--blue-400);
+            font-weight: 800; font-size: 1rem;
+        }
+        .step-content h3 { font-size: 1.0625rem; margin-bottom: 0.375rem; }
+        .step-content p { font-size: 0.9375rem; }
+
+        .faq-list { max-width: 720px; margin: 0 auto; }
+        .faq-item { border-bottom: 1px solid rgba(51,136,255,0.08); }
+        .faq-question {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 1.25rem 0; cursor: pointer; gap: 1rem;
+            font-size: 1rem; font-weight: 600; color: var(--text-primary);
+            transition: color var(--dur-fast);
+        }
+        .faq-question:hover { color: var(--blue-400); }
+        .faq-question i { flex-shrink: 0; color: var(--blue-400); transition: transform var(--dur-norm) var(--ease); }
+        .faq-question[aria-expanded="true"] i { transform: rotate(45deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height var(--dur-slow) var(--ease); }
+        .faq-answer-inner { padding-bottom: 1.25rem; font-size: 0.9375rem; color: var(--text-secondary); line-height: 1.7; }
+
+        @media (max-width: 1024px) {
+            .service-hero-grid { grid-template-columns: 1fr; }
+            .service-visual { display: none; }
+            .standards-grid { grid-template-columns: 1fr; }
+            .benefits-grid { grid-template-columns: 1fr; }
+            .for-who-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ═══════════════ NAVIGATION ═══════════════ -->
+    <nav class="nav" id="mainNav">
+        <div class="nav-inner">
+            <a href="../" class="nav-logo"><i data-lucide="shield-check" style="width:28px;height:28px;"></i> VitalSpace</a>
+            <ul class="nav-links">
+                <li class="nav-dropdown">
+                    <a href="../zarizeni/">Zařízení</a>
+                    <div class="dropdown-menu">
+                        <a href="../zarizeni/ozon-cleaner-pro.html">OZON CLEANER PRO I PLUS</a>
+                        <a href="../zarizeni/ozon-clean-up.html">OZON CLEAN UP</a>
+                        <a href="../zarizeni/ozon-clean-box.html">OZON CLEAN BOX – DRY</a>
+                        <a href="../zarizeni/srovnani.html">Srovnání zařízení</a>
+                    </div>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="../pronajem/">Pronájem</a>
+                    <div class="dropdown-menu">
+                        <a href="../pronajem/dlouhodoby.html">Dlouhodobý pronájem</a>
+                        <a href="../pronajem/kratkodoba.html">Krátkodobý pronájem</a>
+                    </div>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="../sluzby/" class="active">Služby</a>
+                    <div class="dropdown-menu">
+                        <a href="reset.html">Reset prostoru</a>
+                        <a href="prevent.html">Prevent program</a>
+                        <a href="clinic.html">Clinic Standard</a>
+                    </div>
+                </li>
+                <li><a href="../o-nas.html">O nás</a></li>
+            </ul>
+            <div class="nav-cta"><button id="themeToggle" style="background:none;border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:0.45rem;cursor:pointer;color:var(--text-secondary);display:flex;align-items:center;justify-content:center;transition:all 0.2s;" aria-label="Přepnout téma"><i data-lucide="sun" style="width:20px;height:20px;"></i></button><a href="#kontakt" class="btn-primary" style="padding:0.6rem 1.25rem; font-size:0.875rem;">Získat nabídku</a></div>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Menu"><i data-lucide="menu" style="width:24px;height:24px;"></i></button>
+        </div>
+    </nav>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close" id="mobileClose" aria-label="Zavřít"><i data-lucide="x" style="width:24px;height:24px;"></i></button>
+        <div class="mobile-section-title">Zařízení</div>
+        <a href="../zarizeni/ozon-cleaner-pro.html">OZON CLEANER PRO I PLUS</a>
+        <a href="../zarizeni/ozon-clean-up.html">OZON CLEAN UP</a>
+        <a href="../zarizeni/ozon-clean-box.html">OZON CLEAN BOX – DRY</a>
+        <a href="../zarizeni/srovnani.html">Srovnání zařízení</a>
+        <div class="mobile-section-title">Pronájem</div>
+        <a href="../pronajem/dlouhodoby.html">Dlouhodobý pronájem</a>
+        <a href="../pronajem/kratkodoba.html">Krátkodobý pronájem</a>
+        <div class="mobile-section-title">Služby</div>
+        <a href="reset.html">Reset prostoru</a>
+        <a href="prevent.html">Prevent program</a>
+        <a href="clinic.html">Clinic Standard</a>
+        <div style="margin-top:1.5rem;"><a href="../o-nas.html">O nás</a></div>
+        <div style="margin-top:1.5rem;"><a href="#kontakt" class="btn-primary" style="display:block;text-align:center;">Získat nabídku</a></div>
+    </div>
+
+    <!-- ═══════════════ PAGE HERO ═══════════════ -->
+    <section class="page-hero">
+        <div class="orb orb-blue" style="width:450px;height:450px;top:-20%;right:-10%;"></div>
+        <div class="container">
+            <div class="breadcrumb reveal">
+                <a href="../">Domů</a> <span>/</span> <a href="../sluzby/">Služby</a> <span>/</span> <span style="color:var(--text-secondary);">Clinic Standard</span>
+            </div>
+
+            <div class="service-hero-grid">
+                <div class="reveal">
+                    <span class="section-label">Pro zdravotnictví</span>
+                    <h1>Clinic Standard</h1>
+                    <p style="font-size:1.0625rem; max-width:540px; margin-top:1rem;">
+                        Specializovaný program ozonové sanitace pro zdravotnická zařízení.
+                        Validováno dle EN 17272:2020. Kompletní dokumentace pro hygienu
+                        a kontrolní orgány. Pravidelná sanitace s protokoly.
+                    </p>
+                    <div style="display:flex; flex-wrap:wrap; gap:0.75rem; margin-top:2rem;">
+                        <a href="#kontakt" class="btn-primary">
+                            <i data-lucide="send" style="width:18px;height:18px;"></i>
+                            Získat nabídku
+                        </a>
+                        <a href="prevent.html" class="btn-secondary">
+                            <i data-lucide="repeat" style="width:18px;height:18px;"></i>
+                            Prevent program (nezdravotnictví)
+                        </a>
+                    </div>
+                </div>
+
+                <div class="service-visual reveal" style="transition-delay:150ms;">
+                    <div class="orb orb-blue" style="width:200px;height:200px;top:20%;left:15%;"></div>
+                    <div class="service-visual-inner">
+                        <i data-lucide="activity" style="width:64px;height:64px;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ═══════════════ STANDARDS ═══════════════ -->
+    <section class="section">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:3rem;" class="reveal">
+                <span class="section-label">Certifikace a normy</span>
+                <h2>Splňujeme nejvyšší standardy</h2>
+            </div>
+
+            <div class="standards-grid">
+                <div class="glass-card standard-card reveal">
+                    <i data-lucide="shield-check" style="width:32px;height:32px;"></i>
+                    <h3>MZ ČR</h3>
+                    <p>Zařízení registrováno u Ministerstva zdravotnictví ČR jako biocidní prostředek</p>
+                </div>
+                <div class="glass-card standard-card reveal" style="transition-delay:100ms;">
+                    <i data-lucide="file-check" style="width:32px;height:32px;"></i>
+                    <h3>EN 17272:2020</h3>
+                    <p>Validace účinnosti dle evropské normy pro automatizovanou dezinfekci povrchů</p>
+                </div>
+                <div class="glass-card standard-card reveal" style="transition-delay:200ms;">
+                    <i data-lucide="award" style="width:32px;height:32px;"></i>
+                    <h3>ČVUT spolupráce</h3>
+                    <p>Technologie vyvinuta ve spolupráci s Českým vysokým učením technickým</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ═══════════════ BENEFITS ═══════════════ -->
+    <section class="section">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:3rem;" class="reveal">
+                <span class="section-label">Proč Clinic Standard</span>
+                <h2>Výhody pro zdravotnická zařízení</h2>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="glass-card benefit-card reveal">
+                    <i data-lucide="file-text" style="width:28px;height:28px;"></i>
+                    <h3>Kompletní dokumentace</h3>
+                    <p>Protokoly o každé sanitaci, validační zprávy, certifikáty. Vše připraveno pro kontroly KHS a dalších orgánů.</p>
+                </div>
+                <div class="glass-card benefit-card reveal" style="transition-delay:100ms;">
+                    <i data-lucide="scan" style="width:28px;height:28px;"></i>
+                    <h3>Validovaný proces</h3>
+                    <p>Dezinfekce validována dle EN 17272:2020. Měřitelná a prokazatelná účinnost 99,9 % proti bakteriím, virům a plísním.</p>
+                </div>
+                <div class="glass-card benefit-card reveal" style="transition-delay:200ms;">
+                    <i data-lucide="leaf" style="width:28px;height:28px;"></i>
+                    <h3>Bez chemických reziduí</h3>
+                    <p>Ozon se rozloží na kyslík. Žádné chemické zbytky na površích, přístrojích ani v ovzduší. Bezpečné pro pacienty.</p>
+                </div>
+                <div class="glass-card benefit-card reveal" style="transition-delay:300ms;">
+                    <i data-lucide="clock" style="width:28px;height:28px;"></i>
+                    <h3>Mimo provozní dobu</h3>
+                    <p>Sanitaci provádíme večer, v noci nebo o víkendu. Žádné narušení provozu ordinace nebo oddělení.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ═══════════════ FOR WHO ═══════════════ -->
+    <section class="section grid-bg">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:2.5rem;" class="reveal">
+                <span class="section-label">Pro koho</span>
+                <h2>Zdravotnická zařízení, která obsluhujeme</h2>
+            </div>
+
+            <div class="for-who-grid reveal">
+                <div class="for-who-card">
+                    <i data-lucide="stethoscope" style="width:28px;height:28px;"></i>
+                    <h4>Ordinace a ambulance</h4>
+                    <p>Praktičtí lékaři, specialisté, zubní ordinace</p>
+                </div>
+                <div class="for-who-card">
+                    <i data-lucide="building" style="width:28px;height:28px;"></i>
+                    <h4>Nemocnice a kliniky</h4>
+                    <p>Pokoje, čekárny, operační sály, JIP</p>
+                </div>
+                <div class="for-who-card">
+                    <i data-lucide="heart" style="width:28px;height:28px;"></i>
+                    <h4>Domovy seniorů</h4>
+                    <p>Pokoje, společné prostory, jídelny</p>
+                </div>
+                <div class="for-who-card">
+                    <i data-lucide="flask-conical" style="width:28px;height:28px;"></i>
+                    <h4>Laboratoře</h4>
+                    <p>Čisté prostory, přípravny, sklady</p>
+                </div>
+                <div class="for-who-card">
+                    <i data-lucide="pill" style="width:28px;height:28px;"></i>
+                    <h4>Lékárny</h4>
+                    <p>Přípravny, sklady, výdejní prostory</p>
+                </div>
+                <div class="for-who-card">
+                    <i data-lucide="smile" style="width:28px;height:28px;"></i>
+                    <h4>Rehabilitace a wellness</h4>
+                    <p>Masážní místnosti, bazény, sauny</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ═══════════════ WHAT'S INCLUDED ═══════════════ -->
+    <section class="section">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:2.5rem;" class="reveal">
+                <span class="section-label">V programu</span>
+                <h2>Co Clinic Standard zahrnuje</h2>
+            </div>
+
+            <div class="included-list reveal">
+                <div class="included-item"><i data-lucide="check"></i> Vstupní audit prostor a návrh sanitačního plánu</div>
+                <div class="included-item"><i data-lucide="check"></i> Pravidelná ozonová sanitace dle dohodnuté frekvence</div>
+                <div class="included-item"><i data-lucide="check"></i> Protokol o sanitaci po každém zásahu</div>
+                <div class="included-item"><i data-lucide="check"></i> Validační zpráva dle EN 17272:2020</div>
+                <div class="included-item"><i data-lucide="check"></i> Certifikát o provedení dezinfekce</div>
+                <div class="included-item"><i data-lucide="check"></i> Dokumentace pro KHS a kontrolní orgány</div>
+                <div class="included-item"><i data-lucide="check"></i> Prioritní technická podpora</div>
+                <div class="included-item"><i data-lucide="check"></i> Mimořádný zásah do 24 hodin</div>
+                <div class="included-item"><i data-lucide="check"></i> Čtvrtletní vyhodnocení a report</div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ═══════════════ PROCESS ═══════════════ -->
+    <section class="section">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:3rem;" class="reveal">
+                <span class="section-label">Jak to funguje</span>
+                <h2>Implementace Clinic Standard</h2>
+            </div>
+
+            <div class="process-list reveal">
+                <div class="process-step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h3>Vstupní audit</h3>
+                        <p>Provedeme audit prostor, zmapujeme rizikové oblasti a navrhneme sanitační plán na míru.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h3>Návrh programu</h3>
+                        <p>Připravíme nabídku s frekvencí, rozsahem a cenou. Dohodneme harmonogram mimo provozní dobu.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h3>Pilotní sanitace</h3>
+                        <p>Provedeme první sanitaci s kompletní dokumentací. Ověříme účinnost a nastavíme parametry.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">4</div>
+                    <div class="step-content">
+                        <h3>Pravidelný provoz</h3>
+                        <p>Sanitujeme dle harmonogramu. Po každém zásahu obdržíte protokol. Čtvrtletně vyhodnocujeme.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ═══════════════ FAQ ═══════════════ -->
+    <section class="section">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:3rem;" class="reveal">
+                <span class="section-label">Časté dotazy</span>
+                <h2>Otázky ke Clinic Standard</h2>
+            </div>
+
+            <div class="faq-list reveal">
+                <div class="faq-item">
+                    <div class="faq-question" role="button" aria-expanded="false" tabindex="0">
+                        Je ozonová sanitace bezpečná pro zdravotnické přístroje?
+                        <i data-lucide="plus" style="width:20px;height:20px;"></i>
+                    </div>
+                    <div class="faq-answer"><div class="faq-answer-inner">Ano, při správné koncentraci a době expozice. Citlivou elektroniku a specifické přístroje zakryjeme nebo vyloučíme z prostoru. Součástí vstupního auditu je identifikace citlivých zařízení.</div></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" role="button" aria-expanded="false" tabindex="0">
+                        Jak často je potřeba sanitovat?
+                        <i data-lucide="plus" style="width:20px;height:20px;"></i>
+                    </div>
+                    <div class="faq-answer"><div class="faq-answer-inner">Závisí na typu zařízení a provozu. Ordinace typicky 1–2× týdně, nemocniční pokoje dle potřeby. Optimální frekvenci navrhneme na základě vstupního auditu.</div></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" role="button" aria-expanded="false" tabindex="0">
+                        Obstojí dokumentace při kontrole KHS?
+                        <i data-lucide="plus" style="width:20px;height:20px;"></i>
+                    </div>
+                    <div class="faq-answer"><div class="faq-answer-inner">Ano. Poskytujeme kompletní dokumentaci včetně protokolů o sanitaci, validačních zpráv dle EN 17272:2020 a certifikátů. Dokumentace je připravena tak, aby splňovala požadavky kontrolních orgánů.</div></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" role="button" aria-expanded="false" tabindex="0">
+                        Jaký je rozdíl oproti Prevent programu?
+                        <i data-lucide="plus" style="width:20px;height:20px;"></i>
+                    </div>
+                    <div class="faq-answer"><div class="faq-answer-inner">Clinic Standard je specializovaný pro zdravotnictví. Zahrnuje vstupní audit, validaci dle EN 17272:2020, rozšířenou dokumentaci pro kontrolní orgány, mimořádné zásahy a čtvrtletní reporting. Prevent program je určen pro běžné komerční prostory.</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ═══════════════ CROSS-SELL ═══════════════ -->
+    <section class="section">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:2.5rem;" class="reveal">
+                <span class="section-label">Kompletní řešení</span>
+                <h2>Doplňte sanitaci o vlastní zařízení</h2>
+            </div>
+            <div class="cross-sell-grid reveal">
+                <div class="glass-card cross-sell-card">
+                    <i data-lucide="zap" style="width:28px;height:28px;"></i>
+                    <h4>PRO I PLUS</h4>
+                    <p>Vlastní profesionální generátor pro sanitaci mezi našimi návštěvami.</p>
+                    <a href="../zarizeni/ozon-cleaner-pro.html" class="btn-ghost">Zjistit více <i data-lucide="arrow-right"></i></a>
+                </div>
+                <div class="glass-card cross-sell-card">
+                    <i data-lucide="box" style="width:28px;height:28px;"></i>
+                    <h4>CLEAN BOX – DRY</h4>
+                    <p>Sanitační komora pro dezinfekci pomůcek, přístrojů a oděvů.</p>
+                    <a href="../zarizeni/ozon-clean-box.html" class="btn-ghost">Zjistit více <i data-lucide="arrow-right"></i></a>
+                </div>
+                <div class="glass-card cross-sell-card">
+                    <i data-lucide="calendar-days" style="width:28px;height:28px;"></i>
+                    <h4>Pronájem zařízení</h4>
+                    <p>Nechcete investovat? Pronajměte si zařízení s měsíční platbou.</p>
+                    <a href="../pronajem/dlouhodoby.html" class="btn-ghost">Zjistit více <i data-lucide="arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ═══════════════ CTA ═══════════════ -->
+    <section class="section" id="kontakt">
+        <div class="orb orb-blue" style="width:400px;height:400px;top:-10%;left:-10%;"></div>
+        <div class="container">
+            <div class="glass-hero cta-banner reveal">
+                <span class="section-label">Pro zdravotnická zařízení</span>
+                <h2>Získejte nabídku Clinic Standard</h2>
+                <p>Kontaktujte nás a připravíme nabídku na míru vašemu zařízení včetně vstupního auditu.</p>
+                <div style="display:flex; flex-wrap:wrap; gap:0.75rem; justify-content:center;">
+                    <a href="mailto:info@vitalspace.cz?subject=Poptávka Clinic Standard" class="btn-primary">
+                        <i data-lucide="mail" style="width:18px;height:18px;"></i> info@vitalspace.cz
+                    </a>
+                    <a href="tel:+420603834921" class="btn-secondary">
+                        <i data-lucide="phone" style="width:18px;height:18px;"></i> +420 603 834 921
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../" class="nav-logo" style="margin-bottom:0.5rem;"><i data-lucide="shield-check" style="width:24px;height:24px;"></i> VitalSpace</a>
+                    <p>Autorizovaný dealer certifikovaných zařízení OZON CLEANER od Health-City pro celou Českou republiku.</p>
+                </div>
+                <div><h4>Zařízení</h4><ul class="footer-links"><li><a href="../zarizeni/ozon-cleaner-pro.html">OZON CLEANER PRO I PLUS</a></li><li><a href="../zarizeni/ozon-clean-up.html">OZON CLEAN UP</a></li><li><a href="../zarizeni/ozon-clean-box.html">OZON CLEAN BOX – DRY</a></li><li><a href="../zarizeni/srovnani.html">Srovnání zařízení</a></li></ul></div>
+                <div><h4>Pronájem a služby</h4><ul class="footer-links"><li><a href="../pronajem/dlouhodoby.html">Dlouhodobý pronájem</a></li><li><a href="../pronajem/kratkodoba.html">Krátkodobý pronájem</a></li><li><a href="reset.html">Reset prostoru</a></li><li><a href="prevent.html">Prevent program</a></li><li><a href="clinic.html">Clinic Standard</a></li></ul></div>
+                <div><h4>Kontakt</h4><ul class="footer-contact"><li><i data-lucide="phone"></i> +420 603 834 921</li><li><i data-lucide="mail"></i> info@vitalspace.cz</li><li><i data-lucide="map-pin"></i> Plzeň &amp; Praha | Celá ČR</li></ul></div>
+            </div>
+            <div class="footer-bottom"><span>&copy; 2025 VitalSpace. Všechna práva vyhrazena.</span><div class="footer-legal"><a href="#">VOP</a><a href="#">Ochrana osobních údajů</a></div></div>
+        </div>
+    </footer>
+
+    <script src="../js/site.js"></script>
+</body>
+</html>

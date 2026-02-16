@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O nás | VitalSpace — Autorizovaný dealer OZON CLEANER</title>
+    <meta name="description" content="VitalSpace — autorizovaný dealer certifikovaných zařízení OZON CLEANER od Health-City pro celou Českou republiku. Prodej, pronájem a servis ozonových generátorů.">
+    <link rel="canonical" href="https://vitalspace.cz/o-nas.html">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/new-design-system.css" id="themeStylesheet">
+    <script src="js/theme-switcher.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        .about-hero-grid {
+            display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: start;
+        }
+        .about-visual {
+            position: relative; display: flex; align-items: center;
+            justify-content: center; min-height: 350px;
+        }
+        .about-visual-inner {
+            width: 240px; height: 240px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(51,136,255,0.1) 0%, transparent 70%);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .about-visual-inner i { color: var(--blue-400); opacity: 0.5; }
+
+        .mission-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        .mission-card { padding: 1.75rem; text-align: center; }
+        .mission-card i { color: var(--blue-400); margin-bottom: 0.75rem; display: block; }
+        .mission-card h3 { font-size: 1.125rem; margin-bottom: 0.5rem; }
+        .mission-card p { font-size: 0.9375rem; }
+
+        .values-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+        .value-card { padding: 1.75rem; display: flex; gap: 1.25rem; align-items: flex-start; }
+        .value-card .value-icon {
+            width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;
+            display: flex; align-items: center; justify-content: center;
+            background: rgba(51,136,255,0.1);
+        }
+        .value-card .value-icon i { color: var(--blue-400); }
+        .value-card h3 { font-size: 1.125rem; margin-bottom: 0.375rem; }
+        .value-card p { font-size: 0.9375rem; }
+
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+        .stat-card { text-align: center; padding: 1.5rem; }
+        .stat-value { font-size: 2rem; font-weight: 800; color: var(--text-primary); line-height: 1.2; }
+        .stat-label { font-size: 0.8125rem; color: var(--text-tertiary); margin-top: 0.25rem; }
+
+        .timeline { max-width: 720px; margin: 0 auto; position: relative; }
+        .timeline::before {
+            content: ''; position: absolute; left: 19px; top: 0; bottom: 0;
+            width: 2px; background: rgba(51,136,255,0.1);
+        }
+        .timeline-item { display: flex; gap: 1.5rem; padding: 1.5rem 0; position: relative; }
+        .timeline-dot {
+            width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
+            display: flex; align-items: center; justify-content: center;
+            background: var(--bg-primary); border: 2px solid rgba(51,136,255,0.3);
+            color: var(--blue-400); font-weight: 800; font-size: 0.75rem;
+            z-index: 1;
+        }
+        .timeline-content h3 { font-size: 1.0625rem; margin-bottom: 0.375rem; }
+        .timeline-content p { font-size: 0.9375rem; }
+
+        .partner-section { text-align: center; }
+        .partner-badge {
+            display: inline-flex; align-items: center; gap: 1rem;
+            padding: 1.5rem 2.5rem; border-radius: var(--radius-lg);
+            background: rgba(51,136,255,0.05); border: 1px solid rgba(51,136,255,0.15);
+        }
+        .partner-badge i { color: var(--blue-400); }
+        .partner-badge .partner-text { text-align: left; }
+        .partner-badge .partner-text h3 { font-size: 1.125rem; margin-bottom: 0.25rem; }
+        .partner-badge .partner-text p { font-size: 0.875rem; color: var(--text-tertiary); }
+
+        .coverage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+        .coverage-card {
+            text-align: center; padding: 1.25rem; border-radius: var(--radius-md);
+            background: var(--card-bg); border: 1px solid var(--border-subtle);
+        }
+        .coverage-card i { color: var(--blue-400); margin-bottom: 0.5rem; display: block; }
+        .coverage-card h4 { font-size: 0.9375rem; margin-bottom: 0.25rem; }
+        .coverage-card p { font-size: 0.8125rem; color: var(--text-tertiary); }
+
+        @media (max-width: 1024px) {
+            .about-hero-grid { grid-template-columns: 1fr; }
+            .about-visual { display: none; }
+            .mission-grid { grid-template-columns: 1fr; }
+            .values-grid { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .coverage-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ═══════════════ NAVIGATION ═══════════════ -->
+    <nav class="nav" id="mainNav">
+        <div class="nav-inner">
+            <a href="./" class="nav-logo"><i data-lucide="shield-check" style="width:28px;height:28px;"></i> VitalSpace</a>
+            <ul class="nav-links">
+                <li class="nav-dropdown">
+                    <a href="zarizeni/">Zařízení</a>
+                    <div class="dropdown-menu">
+                        <a href="zarizeni/ozon-cleaner-pro.html">OZON CLEANER PRO I PLUS</a>
+                        <a href="zarizeni/ozon-clean-up.html">OZON CLEAN UP</a>
+                        <a href="zarizeni/ozon-clean-box.html">OZON CLEAN BOX – DRY</a>
+                        <a href="zarizeni/srovnani.html">Srovnání zařízení</a>
+                    </div>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="pronajem/">Pronájem</a>
+                    <div class="dropdown-menu">
+                        <a href="pronajem/dlouhodoby.html">Dlouhodobý pronájem</a>
+                        <a href="pronajem/kratkodoba.html">Krátkodobý pronájem</a>
+                    </div>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="sluzby/">Služby</a>
+                    <div class="dropdown-menu">
+                        <a href="sluzby/reset.html">Reset prostoru</a>
+                        <a href="sluzby/prevent.html">Prevent program</a>
+                        <a href="sluzby/clinic.html">Clinic Standard</a>
+                    </div>
+                </li>
+                <li><a href="o-nas.html" class="active">O nás</a></li>
+            </ul>
+            <div class="nav-cta"><button id="themeToggle" style="background:none;border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:0.45rem;cursor:pointer;color:var(--text-secondary);display:flex;align-items:center;justify-content:center;transition:all 0.2s;" aria-label="Přepnout téma"><i data-lucide="sun" style="width:20px;height:20px;"></i></button><a href="#kontakt" class="btn-primary" style="padding:0.6rem 1.25rem; font-size:0.875rem;">Získat nabídku</a></div>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Menu"><i data-lucide="menu" style="width:24px;height:24px;"></i></button>
+        </div>
+    </nav>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close" id="mobileClose" aria-label="Zavřít"><i data-lucide="x" style="width:24px;height:24px;"></i></button>
+        <div class="mobile-section-title">Zařízení</div>
+        <a href="zarizeni/ozon-cleaner-pro.html">OZON CLEANER PRO I PLUS</a>
+        <a href="zarizeni/ozon-clean-up.html">OZON CLEAN UP</a>
+        <a href="zarizeni/ozon-clean-box.html">OZON CLEAN BOX – DRY</a>
+        <a href="zarizeni/srovnani.html">Srovnání zařízení</a>
+        <div class="mobile-section-title">Pronájem</div>
+        <a href="pronajem/dlouhodoby.html">Dlouhodobý pronájem</a>
+        <a href="pronajem/kratkodoba.html">Krátkodobý pronájem</a>
+        <div class="mobile-section-title">Služby</div>
+        <a href="sluzby/reset.html">Reset prostoru</a>
+        <a href="sluzby/prevent.html">Prevent program</a>
+        <a href="sluzby/clinic.html">Clinic Standard</a>
+        <div style="margin-top:1.5rem;"><a href="o-nas.html">O nás</a></div>
+        <div style="margin-top:1.5rem;"><a href="#kontakt" class="btn-primary" style="display:block;text-align:center;">Získat nabídku</a></div>
+    </div>
+
+    <!-- ═══════════════ PAGE HERO ═══════════════ -->
+    <section class="page-hero">
+        <div class="orb orb-blue" style="width:450px;height:450px;top:-20%;right:-10%;"></div>
+        <div class="container">
+            <div class="breadcrumb reveal">
+                <a href="./">Domů</a> <span>/</span> <span style="color:var(--text-secondary);">O nás</span>
+            </div>
+
+            <div class="about-hero-grid">
+                <div class="reveal">
+                    <span class="section-label">O společnosti</span>
+                    <h1>VitalSpace</h1>
+                    <p style="font-size:1.0625rem; max-width:540px; margin-top:1rem;">
+                        Jsme autorizovaný dealer certifikovaných zařízení OZON CLEANER
+                        od Health-City pro celou Českou republiku. Nabízíme prodej, pronájem
+                        a profesionální servis ozonových generátorů pro sanitaci prostorů.
+                    </p>
+                    <p style="font-size:0.9375rem; max-width:540px; margin-top:1rem; color:var(--text-tertiary);">
+                        Naším posláním je zpřístupnit profesionální ozonovou sanitaci
+                        firmám, institucím i domácnostem. Věříme, že čistý a zdravý prostor
+                        je základ pro kvalitní život a práci.
+                    </p>
+                </div>
+
+                <div class="about-visual reveal" style="transition-delay:150ms;">
+                    <div class="orb orb-blue" style="width:200px;height:200px;top:20%;left:15%;"></div>
+                    <div class="about-visual-inner">
+                        <i data-lucide="shield-check" style="width:64px;height:64px;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ═══════════════ STATS ═══════════════ -->
+    <section class="section">
+        <div class="container">
+            <div class="stats-grid reveal">
+                <div class="glass-card stat-card">
+                    <div class="stat-value" data-count="500">500+</div>
+                    <div class="stat-label">Sanitovaných prostor</div>
+                </div>
+                <div class="glass-card stat-card">
+                    <div class="stat-value">99,9 %</div>
+                    <div class="stat-label">Účinnost dezinfekce</div>
+                </div>
+                <div class="glass-card stat-card">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">Chemických reziduí</div>
+                </div>
+                <div class="glass-card stat-card">
+                    <div class="stat-value">Celá ČR</div>
+                    <div class="stat-label">Pokrytí služeb</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ═══════════════ MISSION ═══════════════ -->
+    <section class="section">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:3rem;" class="reveal">
+                <span class="section-label">Co děláme</span>
+                <h2>Tři pilíře naší činnosti</h2>
+            </div>
+
+            <div class="mission-grid">
+                <div class="glass-card mission-card reveal">
+                    <i data-lucide="shopping-bag" style="width:28px;height:28px;"></i>
+                    <h3>Prodej zařízení</h3>
+                    <p>Prodáváme certifikované ozonové generátory OZON CLEANER od Health-City. Tři modely pro různé potřeby — od kompaktních po profesionální.</p>
+                </div>
+                <div class="glass-card mission-card reveal" style="transition-delay:100ms;">
+                    <i data-lucide="calendar-days" style="width:28px;height:28px;"></i>
+                    <h3>Pronájem</h3>
+                    <p>Dlouhodobý i krátkodobý pronájem zařízení. Bez počáteční investice, servis v ceně. Ideální pro firmy a instituce.</p>
+                </div>
+                <div class="glass-card mission-card reveal" style="transition-delay:200ms;">
+                    <i data-lucide="sparkles" style="width:28px;height:28px;"></i>
+                    <h3>Sanitační služby</h3>
+                    <p>Profesionální ozonová sanitace na klíč. Jednorázově nebo pravidelně. Přijedeme, sanitujeme a předáme čistý prostor.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ═══════════════ PARTNER ═══════════════ -->
+    <section class="section grid-bg">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:2.5rem;" class="reveal">
+                <span class="section-label">Partnerství</span>
+                <h2>Autorizovaný dealer Health-City</h2>
+            </div>
+
+            <div class="partner-section reveal">
+                <div class="partner-badge">
+                    <i data-lucide="award" style="width:40px;height:40px;"></i>
+                    <div class="partner-text">
+                        <h3>Health-City — Autorizovaný dealer</h3>
+                        <p>Výhradní distribuce certifikovaných zařízení OZON CLEANER pro ČR</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="max-width:720px; margin:2.5rem auto 0; text-align:center;" class="reveal">
+                <p style="font-size:0.9375rem; line-height:1.8;">
+                    Health-City je výrobce profesionálních ozonových generátorů vyvinutých
+                    ve spolupráci s ČVUT. Zařízení OZON CLEANER jsou registrována u Ministerstva
+                    zdravotnictví ČR jako biocidní prostředek a splňují normu EN 17272:2020
+                    pro automatizovanou dezinfekci povrchů. Jako autorizovaný dealer zajišťujeme
+                    prodej, servis, zaškolení a technickou podporu pro celou Českou republiku.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ═══════════════ VALUES ═══════════════ -->
+    <section class="section">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:3rem;" class="reveal">
+                <span class="section-label">Naše hodnoty</span>
+                <h2>Na čem stavíme</h2>
+            </div>
+
+            <div class="values-grid">
+                <div class="glass-card value-card reveal">
+                    <div class="value-icon"><i data-lucide="shield-check" style="width:22px;height:22px;"></i></div>
+                    <div>
+                        <h3>Certifikace a bezpečnost</h3>
+                        <p>Pracujeme výhradně s certifikovanými zařízeními registrovanými u MZ ČR. Bezpečnost je na prvním místě.</p>
+                    </div>
+                </div>
+                <div class="glass-card value-card reveal" style="transition-delay:100ms;">
+                    <div class="value-icon"><i data-lucide="users" style="width:22px;height:22px;"></i></div>
+                    <div>
+                        <h3>Individuální přístup</h3>
+                        <p>Každý prostor je jiný. Navrhneme řešení na míru vašim potřebám, rozpočtu a provozu.</p>
+                    </div>
+                </div>
+                <div class="glass-card value-card reveal" style="transition-delay:200ms;">
+                    <div class="value-icon"><i data-lucide="book-open" style="width:22px;height:22px;"></i></div>
+                    <div>
+                        <h3>Transparentnost</h3>
+                        <p>Jasné ceny, srozumitelné podmínky, kompletní dokumentace. Žádné skryté poplatky.</p>
+                    </div>
+                </div>
+                <div class="glass-card value-card reveal" style="transition-delay:300ms;">
+                    <div class="value-icon"><i data-lucide="headphones" style="width:22px;height:22px;"></i></div>
+                    <div>
+                        <h3>Podpora a servis</h3>
+                        <p>Jsme tu pro vás i po prodeji. Technická podpora, servis a zaškolení jsou samozřejmostí.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ═══════════════ COVERAGE ═══════════════ -->
+    <section class="section">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:2.5rem;" class="reveal">
+                <span class="section-label">Pokrytí</span>
+                <h2>Kde působíme</h2>
+            </div>
+
+            <div class="coverage-grid reveal" style="max-width:720px; margin:0 auto;">
+                <div class="coverage-card">
+                    <i data-lucide="map-pin" style="width:28px;height:28px;"></i>
+                    <h4>Plzeň a okolí</h4>
+                    <p>Sídlo společnosti, doprava zdarma</p>
+                </div>
+                <div class="coverage-card">
+                    <i data-lucide="map-pin" style="width:28px;height:28px;"></i>
+                    <h4>Praha a okolí</h4>
+                    <p>Pravidelné služby, doprava zdarma</p>
+                </div>
+                <div class="coverage-card">
+                    <i data-lucide="truck" style="width:28px;height:28px;"></i>
+                    <h4>Celá Česká republika</h4>
+                    <p>Prodej a pronájem, doprava dle vzdálenosti</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ═══════════════ CTA ═══════════════ -->
+    <section class="section" id="kontakt">
+        <div class="orb orb-blue" style="width:400px;height:400px;top:-10%;left:-10%;"></div>
+        <div class="container">
+            <div class="glass-hero cta-banner reveal">
+                <span class="section-label">Kontaktujte nás</span>
+                <h2>Rádi vám poradíme</h2>
+                <p>Ať už hledáte zařízení, pronájem nebo službu — ozvěte se a najdeme řešení pro vás.</p>
+                <div style="display:flex; flex-wrap:wrap; gap:0.75rem; justify-content:center;">
+                    <a href="mailto:info@vitalspace.cz" class="btn-primary">
+                        <i data-lucide="mail" style="width:18px;height:18px;"></i> info@vitalspace.cz
+                    </a>
+                    <a href="tel:+420603834921" class="btn-secondary">
+                        <i data-lucide="phone" style="width:18px;height:18px;"></i> +420 603 834 921
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="./" class="nav-logo" style="margin-bottom:0.5rem;"><i data-lucide="shield-check" style="width:24px;height:24px;"></i> VitalSpace</a>
+                    <p>Autorizovaný dealer certifikovaných zařízení OZON CLEANER od Health-City pro celou Českou republiku.</p>
+                </div>
+                <div><h4>Zařízení</h4><ul class="footer-links"><li><a href="zarizeni/ozon-cleaner-pro.html">OZON CLEANER PRO I PLUS</a></li><li><a href="zarizeni/ozon-clean-up.html">OZON CLEAN UP</a></li><li><a href="zarizeni/ozon-clean-box.html">OZON CLEAN BOX – DRY</a></li><li><a href="zarizeni/srovnani.html">Srovnání zařízení</a></li></ul></div>
+                <div><h4>Pronájem a služby</h4><ul class="footer-links"><li><a href="pronajem/dlouhodoby.html">Dlouhodobý pronájem</a></li><li><a href="pronajem/kratkodoba.html">Krátkodobý pronájem</a></li><li><a href="sluzby/reset.html">Reset prostoru</a></li><li><a href="sluzby/prevent.html">Prevent program</a></li><li><a href="sluzby/clinic.html">Clinic Standard</a></li></ul></div>
+                <div><h4>Kontakt</h4><ul class="footer-contact"><li><i data-lucide="phone"></i> +420 603 834 921</li><li><i data-lucide="mail"></i> info@vitalspace.cz</li><li><i data-lucide="map-pin"></i> Plzeň &amp; Praha | Celá ČR</li></ul></div>
+            </div>
+            <div class="footer-bottom"><span>&copy; 2025 VitalSpace. Všechna práva vyhrazena.</span><div class="footer-legal"><a href="#">VOP</a><a href="#">Ochrana osobních údajů</a></div></div>
+        </div>
+    </footer>
+
+    <script src="js/site.js"></script>
+</body>
+</html>

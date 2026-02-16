@@ -1,0 +1,693 @@
+/* =============================================================================
+   VITALSPACE - MAIN CSS
+   Čitelný, moderní design system pro SaaS sanitační služby
+   ============================================================================= */
+
+/* =============================================================================
+   CSS RESET & BASE
+   ============================================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.7;
+    color: #1a1a1a;
+    background: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* =============================================================================
+   DESIGN TOKENS
+   ============================================================================= */
+:root {
+    /* Colors - Navy Blue & Oxygen Blue */
+    --navy-900: #0A1628;
+    --navy-800: #1A237E;
+    --navy-700: #283593;
+    --navy-600: #3949AB;
+    
+    --oxygen-900: #01579B;
+    --oxygen-700: #0277BD;
+    --oxygen-500: #03A9F4;
+    --oxygen-300: #4FC3F7;
+    --oxygen-100: #B3E5FC;
+    --oxygen-50: #E1F5FE;
+    
+    --green-700: #2E7D32;
+    --green-500: #4CAF50;
+    --green-100: #C8E6C9;
+    
+    /* Neutrals */
+    --white: #FFFFFF;
+    --gray-50: #F8F9FA;
+    --gray-100: #F1F3F5;
+    --gray-200: #E9ECEF;
+    --gray-300: #DEE2E6;
+    --gray-600: #6C757D;
+    --gray-700: #495057;
+    --gray-900: #212529;
+    
+    /* Typography */
+    --font-base: 'Inter', sans-serif;
+    --font-display: 'Inter', sans-serif;
+    
+    /* Spacing Scale */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+    --space-24: 6rem;
+    
+    /* Border Radius */
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    --radius-2xl: 1.5rem;
+    --radius-full: 9999px;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    
+    /* Transitions */
+    --transition: all 0.3s ease;
+}
+
+/* =============================================================================
+   TYPOGRAPHY
+   ============================================================================= */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--navy-900);
+    margin-bottom: var(--space-4);
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--gray-700);
+    margin-bottom: var(--space-4);
+}
+
+strong {
+    font-weight: 600;
+    color: var(--navy-800);
+}
+
+/* =============================================================================
+   LAYOUT
+   ============================================================================= */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+}
+
+.section {
+    padding: var(--space-20) 0;
+}
+
+.section-alt {
+    background: var(--gray-50);
+}
+
+/* =============================================================================
+   HEADER
+   ============================================================================= */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--gray-200);
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+.header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: var(--space-4) var(--space-6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--navy-900);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.logo-icon {
+    width: 32px;
+    height: 32px;
+    color: var(--oxygen-500);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+}
+
+.nav-links {
+    display: flex;
+    gap: var(--space-6);
+    list-style: none;
+}
+
+.nav-link {
+    color: var(--gray-700);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.nav-link:hover {
+    color: var(--oxygen-700);
+}
+
+.header-cta {
+    padding: var(--space-3) var(--space-6);
+    background: var(--oxygen-500);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.header-cta:hover {
+    background: var(--oxygen-700);
+    transform: translateY(-1px);
+}
+
+/* =============================================================================
+   HERO SECTION
+   ============================================================================= */
+.hero {
+    padding: calc(var(--space-24) + 60px) 0 var(--space-24);
+    background: linear-gradient(135deg, var(--navy-900) 0%, var(--navy-700) 50%, var(--oxygen-900) 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(3, 169, 244, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    line-height: 1.15;
+    margin-bottom: var(--space-6);
+    color: var(--white);
+}
+
+.hero-subtitle {
+    font-size: 1.375rem;
+    line-height: 1.8;
+    color: var(--oxygen-100);
+    margin-bottom: var(--space-10);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-subtitle strong {
+    color: var(--white);
+    font-weight: 600;
+}
+
+.hero-cta-group {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* =============================================================================
+   BUTTONS
+   ============================================================================= */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-4) var(--space-8);
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: var(--radius-full);
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background: var(--oxygen-500);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: var(--oxygen-700);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(3, 169, 244, 0.3);
+}
+
+.btn-secondary {
+    background: var(--white);
+    color: var(--navy-800);
+    border: 2px solid var(--gray-300);
+}
+
+.btn-secondary:hover {
+    border-color: var(--oxygen-500);
+    color: var(--oxygen-700);
+}
+
+.btn i {
+    width: 20px;
+    height: 20px;
+}
+
+/* =============================================================================
+   SECTION HEADERS
+   ============================================================================= */
+.section-header {
+    text-align: center;
+    margin-bottom: var(--space-16);
+}
+
+.section-tag {
+    display: inline-block;
+    padding: var(--space-2) var(--space-5);
+    background: var(--oxygen-100);
+    color: var(--oxygen-900);
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-4);
+}
+
+.section-header h2 {
+    font-size: 3rem;
+    margin-bottom: var(--space-4);
+}
+
+.section-header p {
+    font-size: 1.25rem;
+    color: var(--gray-600);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* =============================================================================
+   CARDS
+   ============================================================================= */
+.card {
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    border: 2px solid var(--gray-200);
+    transition: var(--transition);
+}
+
+.card:hover {
+    border-color: var(--oxygen-300);
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-4px);
+}
+
+.card-icon {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--oxygen-50);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-5);
+}
+
+.card-icon i {
+    width: 32px;
+    height: 32px;
+    color: var(--oxygen-700);
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-3);
+}
+
+.card p {
+    font-size: 1.0625rem;
+    color: var(--gray-600);
+    line-height: 1.7;
+}
+
+/* =============================================================================
+   GRID LAYOUTS
+   ============================================================================= */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-8);
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-6);
+}
+
+/* =============================================================================
+   PROGRAM CARDS
+   ============================================================================= */
+.program-card {
+    background: var(--white);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-10);
+    border: 2px solid var(--gray-200);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.program-card:hover {
+    border-color: var(--oxygen-500);
+    box-shadow: var(--shadow-xl);
+}
+
+.program-card.featured {
+    border-color: var(--oxygen-500);
+    background: linear-gradient(135deg, var(--oxygen-50) 0%, var(--white) 100%);
+    position: relative;
+}
+
+.program-badge {
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    padding: var(--space-2) var(--space-4);
+    background: var(--oxygen-500);
+    color: var(--white);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: var(--radius-full);
+}
+
+.program-icon {
+    width: 48px;
+    height: 48px;
+    color: var(--oxygen-700);
+    margin-bottom: var(--space-4);
+}
+
+.program-name {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--navy-900);
+    margin-bottom: var(--space-2);
+}
+
+.program-description {
+    font-size: 1rem;
+    color: var(--gray-600);
+    margin-bottom: var(--space-6);
+}
+
+.program-price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--navy-900);
+    margin-bottom: var(--space-2);
+}
+
+.program-price-note {
+    font-size: 0.875rem;
+    color: var(--gray-600);
+    margin-bottom: var(--space-6);
+}
+
+.program-features {
+    list-style: none;
+    margin-bottom: var(--space-8);
+    flex-grow: 1;
+}
+
+.program-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    margin-bottom: var(--space-3);
+    font-size: 1rem;
+    color: var(--gray-700);
+}
+
+.program-features i {
+    width: 20px;
+    height: 20px;
+    color: var(--green-500);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.program-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-4) var(--space-6);
+    background: var(--oxygen-500);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.program-cta:hover {
+    background: var(--oxygen-700);
+    transform: translateY(-2px);
+}
+
+/* =============================================================================
+   STATS
+   ============================================================================= */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-8);
+    margin: var(--space-12) 0;
+}
+
+.stat-card {
+    text-align: center;
+    padding: var(--space-6);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--oxygen-700);
+    margin-bottom: var(--space-2);
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: var(--gray-600);
+}
+
+/* =============================================================================
+   FOOTER
+   ============================================================================= */
+.footer {
+    background: var(--navy-900);
+    color: var(--gray-300);
+    padding: var(--space-16) 0 var(--space-8);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: var(--space-12);
+    margin-bottom: var(--space-12);
+}
+
+.footer h4 {
+    color: var(--white);
+    font-size: 1.125rem;
+    margin-bottom: var(--space-4);
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: var(--space-3);
+}
+
+.footer-links a {
+    color: var(--gray-300);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--oxygen-300);
+}
+
+.footer-bottom {
+    padding-top: var(--space-8);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--gray-600);
+}
+
+.disclaimer {
+    background: rgba(255, 152, 0, 0.1);
+    border: 1px solid rgba(255, 152, 0, 0.3);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    margin-bottom: var(--space-8);
+}
+
+.disclaimer h5 {
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-3);
+}
+
+.disclaimer p {
+    color: var(--gray-300);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+}
+
+/* =============================================================================
+   RESPONSIVE
+   ============================================================================= */
+@media (max-width: 1024px) {
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.25rem; }
+    
+    .hero h1 { font-size: 3rem; }
+    .section-header h2 { font-size: 2.5rem; }
+    
+    .grid-3 { grid-template-columns: repeat(2, 1fr); }
+    .grid-4 { grid-template-columns: repeat(2, 1fr); }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    
+    .hero { padding: calc(var(--space-20) + 60px) 0 var(--space-16); }
+    .hero h1 { font-size: 2.5rem; }
+    .hero-subtitle { font-size: 1.125rem; }
+    
+    .section { padding: var(--space-16) 0; }
+    .section-header h2 { font-size: 2rem; }
+    
+    .grid-2,
+    .grid-3,
+    .grid-4 { grid-template-columns: 1fr; }
+    
+    .stats-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    
+    .nav-links { display: none; }
+    
+    .hero-cta-group { flex-direction: column; }
+    .btn { width: 100%; justify-content: center; }
+}
+
+/* =============================================================================
+   UTILITIES
+   ============================================================================= */
+.text-center { text-align: center; }
+.mt-8 { margin-top: var(--space-8); }
+.mb-8 { margin-bottom: var(--space-8); }
+.mb-12 { margin-bottom: var(--space-12); }

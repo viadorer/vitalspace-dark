@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krátkodobý pronájem ozonového generátoru | VitalSpace</title>
+    <meta name="description" content="Krátkodobý pronájem ozonového generátoru OZON CLEANER od 1 490 Kč/den. Ideální pro jednorázovou sanitaci po malování, stěhování nebo při zápachu.">
+    <link rel="canonical" href="https://vitalspace.cz/pronajem/kratkodoba.html">
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/new-design-system.css" id="themeStylesheet">
+    <script src="../js/theme-switcher.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        .rental-hero-grid {
+            display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: start;
+        }
+        .rental-visual {
+            position: relative; display: flex; align-items: center;
+            justify-content: center; min-height: 350px;
+        }
+        .rental-visual-inner {
+            width: 240px; height: 240px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(51,136,255,0.1) 0%, transparent 70%);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .rental-visual-inner i { color: var(--blue-400); opacity: 0.5; }
+
+        .pricing-options {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+        }
+        .pricing-option { padding: 2rem; text-align: center; position: relative; }
+        .pricing-option.popular { border-color: rgba(51,136,255,0.3); }
+        .pricing-option.popular::before {
+            content: ''; position: absolute; top: -30%; right: -20%;
+            width: 200px; height: 200px;
+            background: radial-gradient(circle, rgba(51,136,255,0.1), transparent 70%);
+            pointer-events: none;
+        }
+        .pricing-option .option-badge {
+            display: inline-block; padding: 0.25rem 0.75rem; border-radius: var(--radius-full);
+            font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+        .pricing-option.popular .option-badge { background: rgba(51,136,255,0.15); color: var(--blue-400); }
+        .pricing-option:not(.popular) .option-badge { background: rgba(51,136,255,0.06); color: var(--text-tertiary); }
+        .pricing-option h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+        .pricing-option .price {
+            font-size: 2rem; font-weight: 800; color: var(--text-primary); margin: 1rem 0 0.25rem;
+        }
+        .pricing-option .price-unit { font-size: 0.875rem; color: var(--text-tertiary); margin-bottom: 1.5rem; }
+        .pricing-option .option-features { list-style: none; text-align: left; margin-bottom: 1.5rem; }
+        .pricing-option .option-features li {
+            display: flex; align-items: center; gap: 0.5rem;
+            padding: 0.375rem 0; font-size: 0.875rem; color: var(--text-secondary);
+        }
+        .pricing-option .option-features li i { color: var(--green-500); width: 16px; height: 16px; flex-shrink: 0; }
+
+        .scenarios-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+        .scenario-card { padding: 1.75rem; }
+        .scenario-card i { color: var(--blue-400); margin-bottom: 0.75rem; display: block; }
+        .scenario-card h3 { font-size: 1.125rem; margin-bottom: 0.5rem; }
+        .scenario-card p { font-size: 0.9375rem; }
+
+        .how-it-works-list { max-width: 720px; margin: 0 auto; }
+        .how-step {
+            display: flex; gap: 1.5rem; padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(51,136,255,0.06);
+        }
+        .how-step:last-child { border-bottom: none; }
+        .step-num {
+            width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
+            display: flex; align-items: center; justify-content: center;
+            background: rgba(51,136,255,0.1); color: var(--blue-400);
+            font-weight: 800; font-size: 1rem;
+        }
+        .step-content h3 { font-size: 1.0625rem; margin-bottom: 0.375rem; }
+        .step-content p { font-size: 0.9375rem; }
+
+        .faq-list { max-width: 720px; margin: 0 auto; }
+        .faq-item { border-bottom: 1px solid rgba(51,136,255,0.08); }
+        .faq-question {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 1.25rem 0; cursor: pointer; gap: 1rem;
+            font-size: 1rem; font-weight: 600; color: var(--text-primary);
+            transition: color var(--dur-fast);
+        }
+        .faq-question:hover { color: var(--blue-400); }
+        .faq-question i { flex-shrink: 0; color: var(--blue-400); transition: transform var(--dur-norm) var(--ease); }
+        .faq-question[aria-expanded="true"] i { transform: rotate(45deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height var(--dur-slow) var(--ease); }
+        .faq-answer-inner { padding-bottom: 1.25rem; font-size: 0.9375rem; color: var(--text-secondary); line-height: 1.7; }
+
+        @media (max-width: 1024px) {
+            .rental-hero-grid { grid-template-columns: 1fr; }
+            .rental-visual { display: none; }
+            .pricing-options { grid-template-columns: 1fr; }
+            .scenarios-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ═══════════════ NAVIGATION ═══════════════ -->
+    <nav class="nav" id="mainNav">
+        <div class="nav-inner">
+            <a href="../" class="nav-logo"><i data-lucide="shield-check" style="width:28px;height:28px;"></i> VitalSpace</a>
+            <ul class="nav-links">
+                <li class="nav-dropdown">
+                    <a href="../zarizeni/">Zařízení</a>
+                    <div class="dropdown-menu">
+                        <a href="../zarizeni/ozon-cleaner-pro.html">OZON CLEANER PRO I PLUS</a>
+                        <a href="../zarizeni/ozon-clean-up.html">OZON CLEAN UP</a>
+                        <a href="../zarizeni/ozon-clean-box.html">OZON CLEAN BOX – DRY</a>
+                        <a href="../zarizeni/srovnani.html">Srovnání zařízení</a>
+                    </div>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="../pronajem/" class="active">Pronájem</a>
+                    <div class="dropdown-menu">
+                        <a href="dlouhodoby.html">Dlouhodobý pronájem</a>
+                        <a href="kratkodoba.html">Krátkodobý pronájem</a>
+                    </div>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="../sluzby/">Služby</a>
+                    <div class="dropdown-menu">
+                        <a href="../sluzby/reset.html">Reset prostoru</a>
+                        <a href="../sluzby/prevent.html">Prevent program</a>
+                        <a href="../sluzby/clinic.html">Clinic Standard</a>
+                    </div>
+                </li>
+                <li><a href="../o-nas.html">O nás</a></li>
+            </ul>
+            <div class="nav-cta"><button id="themeToggle" style="background:none;border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:0.45rem;cursor:pointer;color:var(--text-secondary);display:flex;align-items:center;justify-content:center;transition:all 0.2s;" aria-label="Přepnout téma"><i data-lucide="sun" style="width:20px;height:20px;"></i></button><a href="#kontakt" class="btn-primary" style="padding:0.6rem 1.25rem; font-size:0.875rem;">Získat nabídku</a></div>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Menu"><i data-lucide="menu" style="width:24px;height:24px;"></i></button>
+        </div>
+    </nav>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close" id="mobileClose" aria-label="Zavřít"><i data-lucide="x" style="width:24px;height:24px;"></i></button>
+        <div class="mobile-section-title">Zařízení</div>
+        <a href="../zarizeni/ozon-cleaner-pro.html">OZON CLEANER PRO I PLUS</a>
+        <a href="../zarizeni/ozon-clean-up.html">OZON CLEAN UP</a>
+        <a href="../zarizeni/ozon-clean-box.html">OZON CLEAN BOX – DRY</a>
+        <a href="../zarizeni/srovnani.html">Srovnání zařízení</a>
+        <div class="mobile-section-title">Pronájem</div>
+        <a href="dlouhodoby.html">Dlouhodobý pronájem</a>
+        <a href="kratkodoba.html">Krátkodobý pronájem</a>
+        <div class="mobile-section-title">Služby</div>
+        <a href="../sluzby/reset.html">Reset prostoru</a>
+        <a href="../sluzby/prevent.html">Prevent program</a>
+        <a href="../sluzby/clinic.html">Clinic Standard</a>
+        <div style="margin-top:1.5rem;"><a href="../o-nas.html">O nás</a></div>
+        <div style="margin-top:1.5rem;"><a href="#kontakt" class="btn-primary" style="display:block;text-align:center;">Získat nabídku</a></div>
+    </div>
+
+    <!-- ═══════════════ PAGE HERO ═══════════════ -->
+    <section class="page-hero">
+        <div class="orb orb-green" style="width:400px;height:400px;top:-20%;right:-10%;"></div>
+        <div class="container">
+            <div class="breadcrumb reveal">
+                <a href="../">Domů</a> <span>/</span> <a href="../pronajem/">Pronájem</a> <span>/</span> <span style="color:var(--text-secondary);">Krátkodobý</span>
+            </div>
+
+            <div class="rental-hero-grid">
+                <div class="reveal">
+                    <span class="section-label">Krátkodobý pronájem</span>
+                    <h1>Ozonový generátor<br>na den nebo víkend</h1>
+                    <p style="font-size:1.0625rem; max-width:540px; margin-top:1rem;">
+                        Profesionální zařízení OZON CLEANER na krátkodobý pronájem.
+                        Ideální pro jednorázovou sanitaci po malování, stěhování,
+                        při zápachu nebo jako prevenci před nastěhováním.
+                    </p>
+                    <div style="margin-top:1.5rem;">
+                        <span style="font-size:1.75rem; font-weight:800; color:var(--text-primary);">od 1 490 Kč</span>
+                        <span style="font-size:0.875rem; color:var(--text-tertiary); margin-left:0.5rem;">/ den</span>
+                    </div>
+                    <div style="display:flex; flex-wrap:wrap; gap:0.75rem; margin-top:1.5rem;">
+                        <a href="#kontakt" class="btn-primary">
+                            <i data-lucide="send" style="width:18px;height:18px;"></i>
+                            Rezervovat termín
+                        </a>
+                        <a href="dlouhodoby.html" class="btn-secondary">
+                            <i data-lucide="calendar-days" style="width:18px;height:18px;"></i>
+                            Dlouhodobý pronájem
+                        </a>
+                    </div>
+                </div>
+
+                <div class="rental-visual reveal" style="transition-delay:150ms;">
+                    <div class="orb orb-green" style="width:200px;height:200px;top:20%;left:15%;"></div>
+                    <div class="rental-visual-inner">
+                        <i data-lucide="calendar" style="width:64px;height:64px;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ═══════════════ PRICING ═══════════════ -->
+    <section class="section">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:3rem;" class="reveal">
+                <span class="section-label">Ceník</span>
+                <h2>Varianty krátkodobého pronájmu</h2>
+            </div>
+
+            <div class="pricing-options">
+                <div class="glass-card pricing-option reveal">
+                    <span class="option-badge">Jednoduchý</span>
+                    <h3>1 den</h3>
+                    <div class="price">1 490 Kč</div>
+                    <div class="price-unit">jednorázově</div>
+                    <ul class="option-features">
+                        <li><i data-lucide="check"></i> Zařízení OZON CLEAN UP</li>
+                        <li><i data-lucide="check"></i> Osobní předání a zaškolení</li>
+                        <li><i data-lucide="check"></i> Telefonická podpora</li>
+                        <li><i data-lucide="check"></i> Doprava v rámci Plzně/Prahy</li>
+                    </ul>
+                    <a href="#kontakt" class="btn-secondary" style="width:100%;justify-content:center;">Rezervovat</a>
+                </div>
+
+                <div class="glass-hero pricing-option popular reveal" style="transition-delay:100ms;">
+                    <span class="option-badge">Nejoblíbenější</span>
+                    <h3>Víkend (pá–ne)</h3>
+                    <div class="price">2 990 Kč</div>
+                    <div class="price-unit">3 dny</div>
+                    <ul class="option-features">
+                        <li><i data-lucide="check"></i> Zařízení OZON CLEAN UP</li>
+                        <li><i data-lucide="check"></i> Osobní předání a zaškolení</li>
+                        <li><i data-lucide="check"></i> Telefonická podpora</li>
+                        <li><i data-lucide="check"></i> Doprava v rámci Plzně/Prahy</li>
+                        <li><i data-lucide="check"></i> Možnost více sanitačních cyklů</li>
+                    </ul>
+                    <a href="#kontakt" class="btn-primary" style="width:100%;justify-content:center;">Rezervovat</a>
+                </div>
+
+                <div class="glass-card pricing-option reveal" style="transition-delay:200ms;">
+                    <span class="option-badge">Důkladný</span>
+                    <h3>Týden</h3>
+                    <div class="price">4 990 Kč</div>
+                    <div class="price-unit">7 dní</div>
+                    <ul class="option-features">
+                        <li><i data-lucide="check"></i> Zařízení OZON CLEAN UP</li>
+                        <li><i data-lucide="check"></i> Osobní předání a zaškolení</li>
+                        <li><i data-lucide="check"></i> Telefonická podpora</li>
+                        <li><i data-lucide="check"></i> Doprava v rámci Plzně/Prahy</li>
+                        <li><i data-lucide="check"></i> Neomezený počet cyklů</li>
+                        <li><i data-lucide="check"></i> Ideální pro více místností</li>
+                    </ul>
+                    <a href="#kontakt" class="btn-secondary" style="width:100%;justify-content:center;">Rezervovat</a>
+                </div>
+            </div>
+
+            <p style="text-align:center; font-size:0.8125rem; color:var(--text-tertiary); margin-top:2rem;">
+                * Ceny jsou orientační. Doprava mimo Plzeň a Prahu za příplatek dle vzdálenosti.
+                Pro PRO I PLUS kontaktujte nás pro individuální nabídku.
+            </p>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ═══════════════ SCENARIOS ═══════════════ -->
+    <section class="section grid-bg">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:3rem;" class="reveal">
+                <span class="section-label">Kdy se hodí</span>
+                <h2>Typické scénáře krátkodobého pronájmu</h2>
+            </div>
+
+            <div class="scenarios-grid">
+                <div class="glass-card scenario-card reveal">
+                    <i data-lucide="paint-bucket" style="width:28px;height:28px;"></i>
+                    <h3>Po malování a rekonstrukci</h3>
+                    <p>Odstranění zápachu barev, lepidel a stavebních materiálů. Bezpečné nastěhování bez čekání na vyprchání VOC látek.</p>
+                </div>
+                <div class="glass-card scenario-card reveal" style="transition-delay:100ms;">
+                    <i data-lucide="truck" style="width:28px;height:28px;"></i>
+                    <h3>Před nastěhováním</h3>
+                    <p>Sanitace bytu nebo domu před nastěhováním. Odstranění bakterií, alergenů a pachů po předchozích nájemnících.</p>
+                </div>
+                <div class="glass-card scenario-card reveal" style="transition-delay:200ms;">
+                    <i data-lucide="wind" style="width:28px;height:28px;"></i>
+                    <h3>Odstranění zápachu</h3>
+                    <p>Cigaretový kouř, zvířecí pachy, zatuchlina, organické zápachy. Ozon proniká do všech koutů a rozkládá zdroj zápachu.</p>
+                </div>
+                <div class="glass-card scenario-card reveal" style="transition-delay:300ms;">
+                    <i data-lucide="home" style="width:28px;height:28px;"></i>
+                    <h3>Pronajímatelé bytů</h3>
+                    <p>Sanitace mezi nájemníky. Profesionální příprava bytu pro nového nájemníka bez nákladů na vlastní zařízení.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ═══════════════ HOW IT WORKS ═══════════════ -->
+    <section class="section">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:3rem;" class="reveal">
+                <span class="section-label">Jak to funguje</span>
+                <h2>Pronájem ve 4 krocích</h2>
+            </div>
+
+            <div class="how-it-works-list reveal">
+                <div class="how-step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h3>Rezervace termínu</h3>
+                        <p>Kontaktujte nás telefonicky nebo e-mailem. Domluvíme termín a délku pronájmu.</p>
+                    </div>
+                </div>
+                <div class="how-step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h3>Předání zařízení</h3>
+                        <p>Osobně vám předáme zařízení a zaškolíme vás na obsluhu. Trvá cca 15 minut.</p>
+                    </div>
+                </div>
+                <div class="how-step">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h3>Sanitace</h3>
+                        <p>Provedete sanitaci dle instrukcí. Zařízení má automatický řízený cyklus — stačí nastavit a spustit.</p>
+                    </div>
+                </div>
+                <div class="how-step">
+                    <div class="step-num">4</div>
+                    <div class="step-content">
+                        <h3>Vrácení</h3>
+                        <p>Po uplynutí doby pronájmu zařízení vrátíte. Osobní vyzvednutí nebo domluvené místo předání.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ═══════════════ FAQ ═══════════════ -->
+    <section class="section">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:3rem;" class="reveal">
+                <span class="section-label">Časté dotazy</span>
+                <h2>Otázky ke krátkodobému pronájmu</h2>
+            </div>
+
+            <div class="faq-list reveal">
+                <div class="faq-item">
+                    <div class="faq-question" role="button" aria-expanded="false" tabindex="0">
+                        Zvládnu obsluhu sám/sama?
+                        <i data-lucide="plus" style="width:20px;height:20px;"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Ano. Zařízení má automatický řízený cyklus — stačí nastavit objem prostoru a spustit. Při předání vás důkladně zaškolíme a poskytneme písemné instrukce. V případě dotazů jsme k dispozici na telefonu.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" role="button" aria-expanded="false" tabindex="0">
+                        Jak velký prostor mohu sanitovat?
+                        <i data-lucide="plus" style="width:20px;height:20px;"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Standardně půjčujeme OZON CLEAN UP, který pokryje prostory do 150 m³ (běžný byt). Pro větší prostory je možné domluvit pronájem PRO I PLUS (do 800 m³) za individuální cenu.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" role="button" aria-expanded="false" tabindex="0">
+                        Doručujete i mimo Plzeň a Prahu?
+                        <i data-lucide="plus" style="width:20px;height:20px;"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Ano, doručení je možné po celé ČR za příplatek dle vzdálenosti. V rámci Plzně a Prahy je doprava zahrnuta v ceně. Kontaktujte nás pro kalkulaci.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" role="button" aria-expanded="false" tabindex="0">
+                        Co když zařízení poškodím?
+                        <i data-lucide="plus" style="width:20px;height:20px;"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Při předání skládáte vratnou kauci. Běžné opotřebení je v ceně. V případě poškození zaviněného nesprávným použitím se kauce použije na opravu. Podrobnosti jsou ve smlouvě o pronájmu.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ═══════════════ CROSS-SELL ═══════════════ -->
+    <section class="section">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:2.5rem;" class="reveal">
+                <span class="section-label">Další možnosti</span>
+                <h2>Nechcete se o nic starat?</h2>
+            </div>
+            <div class="cross-sell-grid reveal">
+                <div class="glass-card cross-sell-card">
+                    <i data-lucide="sparkles" style="width:28px;height:28px;"></i>
+                    <h4>Služba na klíč</h4>
+                    <p>Přijedeme, sanitujeme a předáme čistý prostor. Vy se o nic nestaráte.</p>
+                    <a href="../sluzby/reset.html" class="btn-ghost">Reset prostoru <i data-lucide="arrow-right"></i></a>
+                </div>
+                <div class="glass-card cross-sell-card">
+                    <i data-lucide="calendar-days" style="width:28px;height:28px;"></i>
+                    <h4>Dlouhodobý pronájem</h4>
+                    <p>Potřebujete sanitovat pravidelně? Měsíční platba, servis v ceně.</p>
+                    <a href="dlouhodoby.html" class="btn-ghost">Zjistit více <i data-lucide="arrow-right"></i></a>
+                </div>
+                <div class="glass-card cross-sell-card">
+                    <i data-lucide="zap" style="width:28px;height:28px;"></i>
+                    <h4>Vlastní zařízení</h4>
+                    <p>Sanitujete často? Investice do vlastního zařízení se rychle vrátí.</p>
+                    <a href="../zarizeni/srovnani.html" class="btn-ghost">Porovnat zařízení <i data-lucide="arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ═══════════════ CTA ═══════════════ -->
+    <section class="section" id="kontakt">
+        <div class="orb orb-green" style="width:400px;height:400px;top:-10%;left:-10%;"></div>
+        <div class="container">
+            <div class="glass-hero cta-banner reveal">
+                <span class="section-label">Rezervace</span>
+                <h2>Zarezervujte si termín</h2>
+                <p>Zavolejte nebo napište a domluvíme termín předání zařízení.</p>
+                <div style="display:flex; flex-wrap:wrap; gap:0.75rem; justify-content:center;">
+                    <a href="mailto:info@vitalspace.cz?subject=Rezervace krátkodobý pronájem" class="btn-primary">
+                        <i data-lucide="mail" style="width:18px;height:18px;"></i> info@vitalspace.cz
+                    </a>
+                    <a href="tel:+420603834921" class="btn-secondary">
+                        <i data-lucide="phone" style="width:18px;height:18px;"></i> +420 603 834 921
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../" class="nav-logo" style="margin-bottom:0.5rem;"><i data-lucide="shield-check" style="width:24px;height:24px;"></i> VitalSpace</a>
+                    <p>Autorizovaný dealer certifikovaných zařízení OZON CLEANER od Health-City pro celou Českou republiku.</p>
+                </div>
+                <div>
+                    <h4>Zařízení</h4>
+                    <ul class="footer-links">
+                        <li><a href="../zarizeni/ozon-cleaner-pro.html">OZON CLEANER PRO I PLUS</a></li>
+                        <li><a href="../zarizeni/ozon-clean-up.html">OZON CLEAN UP</a></li>
+                        <li><a href="../zarizeni/ozon-clean-box.html">OZON CLEAN BOX – DRY</a></li>
+                        <li><a href="../zarizeni/srovnani.html">Srovnání zařízení</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Pronájem a služby</h4>
+                    <ul class="footer-links">
+                        <li><a href="dlouhodoby.html">Dlouhodobý pronájem</a></li>
+                        <li><a href="kratkodoba.html">Krátkodobý pronájem</a></li>
+                        <li><a href="../sluzby/reset.html">Reset prostoru</a></li>
+                        <li><a href="../sluzby/prevent.html">Prevent program</a></li>
+                        <li><a href="../sluzby/clinic.html">Clinic Standard</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Kontakt</h4>
+                    <ul class="footer-contact">
+                        <li><i data-lucide="phone"></i> +420 603 834 921</li>
+                        <li><i data-lucide="mail"></i> info@vitalspace.cz</li>
+                        <li><i data-lucide="map-pin"></i> Plzeň &amp; Praha | Celá ČR</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2025 VitalSpace. Všechna práva vyhrazena.</span>
+                <div class="footer-legal"><a href="#">VOP</a><a href="#">Ochrana osobních údajů</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/site.js"></script>
+</body>
+</html>

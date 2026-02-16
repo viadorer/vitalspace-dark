@@ -1,0 +1,382 @@
+/* =============================================================================
+   VITALSPACE MEDTECH DESIGN SYSTEM 2025
+   Professional Biosecurity Platform - Longevity & Wellness Focus
+   ============================================================================= */
+
+/* =============================================================================
+   COLOR PALETTE - Pure Oxygen Blue System
+   ============================================================================= */
+:root {
+    /* Primary - Pure Oxygen Blue */
+    --oxygen-blue-50: #E1F5FE;
+    --oxygen-blue-100: #B3E5FC;
+    --oxygen-blue-200: #81D4FA;
+    --oxygen-blue-300: #4FC3F7;
+    --oxygen-blue-400: #29B6F6;
+    --oxygen-blue-500: #03A9F4;
+    --oxygen-blue-600: #039BE5;
+    --oxygen-blue-700: #0288D1;
+    --oxygen-blue-800: #0277BD;
+    --oxygen-blue-900: #01579B;
+    
+    /* Secondary - Safety Green (Eco-friendly accent) */
+    --safety-green-50: #E8F5E9;
+    --safety-green-100: #C8E6C9;
+    --safety-green-500: #4CAF50;
+    --safety-green-700: #388E3C;
+    
+    /* Deep Navy - Authority & Trust */
+    --deep-navy-50: #E8EAF6;
+    --deep-navy-500: #3F51B5;
+    --deep-navy-700: #303F9F;
+    --deep-navy-900: #1A237E;
+    
+    /* Neutrals - Sterile Clean */
+    --white: #FFFFFF;
+    --gray-50: #FAFAFA;
+    --gray-100: #F5F5F5;
+    --gray-200: #EEEEEE;
+    --gray-300: #E0E0E0;
+    --gray-400: #BDBDBD;
+    --gray-500: #9E9E9E;
+    --gray-600: #757575;
+    --gray-700: #616161;
+    --gray-800: #424242;
+    --gray-900: #212121;
+    
+    /* Semantic Colors */
+    --success: #4CAF50;
+    --warning: #FF9800;
+    --error: #F44336;
+    --info: #2196F3;
+    
+    /* Legacy compatibility (mapování na nový systém) */
+    --primary-blue: var(--oxygen-blue-700);
+    --dark-blue: var(--deep-navy-900);
+    --cyan: var(--oxygen-blue-400);
+    --light-cyan: var(--oxygen-blue-200);
+    --light-gray: var(--gray-100);
+    --medium-gray: var(--gray-300);
+    --text-dark: var(--gray-900);
+    --text-gray: var(--gray-700);
+}
+
+/* =============================================================================
+   TYPOGRAPHY SYSTEM - Medical Grade Readability
+   ============================================================================= */
+:root {
+    /* Font Families */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-headings: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+    
+    /* Font Sizes - Fluid Typography */
+    --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+    --text-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+    --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+    --text-lg: clamp(1.125rem, 1.05rem + 0.375vw, 1.25rem);
+    --text-xl: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+    --text-2xl: clamp(1.5rem, 1.35rem + 0.75vw, 1.875rem);
+    --text-3xl: clamp(1.875rem, 1.65rem + 1.125vw, 2.25rem);
+    --text-4xl: clamp(2.25rem, 1.95rem + 1.5vw, 3rem);
+    --text-5xl: clamp(3rem, 2.5rem + 2.5vw, 3.75rem);
+    
+    /* Line Heights */
+    --leading-tight: 1.25;
+    --leading-snug: 1.375;
+    --leading-normal: 1.5;
+    --leading-relaxed: 1.625;
+    --leading-loose: 2;
+    
+    /* Font Weights */
+    --font-light: 300;
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+    --font-extrabold: 800;
+}
+
+/* =============================================================================
+   SPACING SYSTEM - 8pt Grid
+   ============================================================================= */
+:root {
+    --space-1: 0.25rem;   /* 4px */
+    --space-2: 0.5rem;    /* 8px */
+    --space-3: 0.75rem;   /* 12px */
+    --space-4: 1rem;      /* 16px */
+    --space-5: 1.25rem;   /* 20px */
+    --space-6: 1.5rem;    /* 24px */
+    --space-8: 2rem;      /* 32px */
+    --space-10: 2.5rem;   /* 40px */
+    --space-12: 3rem;     /* 48px */
+    --space-16: 4rem;     /* 64px */
+    --space-20: 5rem;     /* 80px */
+    --space-24: 6rem;     /* 96px */
+    --space-32: 8rem;     /* 128px */
+}
+
+/* =============================================================================
+   BORDER RADIUS - Soft Medical Aesthetic
+   ============================================================================= */
+:root {
+    --radius-sm: 0.375rem;   /* 6px */
+    --radius-md: 0.5rem;     /* 8px */
+    --radius-lg: 0.75rem;    /* 12px */
+    --radius-xl: 1rem;       /* 16px */
+    --radius-2xl: 1.5rem;    /* 24px */
+    --radius-full: 9999px;
+}
+
+/* =============================================================================
+   SHADOWS - Depth Hierarchy
+   ============================================================================= */
+:root {
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+}
+
+/* =============================================================================
+   TRANSITIONS - Smooth Interactions
+   ============================================================================= */
+:root {
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* =============================================================================
+   LAYOUT CONSTRAINTS
+   ============================================================================= */
+:root {
+    --container-sm: 640px;
+    --container-md: 768px;
+    --container-lg: 1024px;
+    --container-xl: 1280px;
+    --container-2xl: 1536px;
+}
+
+/* =============================================================================
+   BASE RESET & GLOBAL STYLES
+   ============================================================================= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-size: var(--text-base);
+    line-height: var(--leading-normal);
+    color: var(--text-dark);
+    background-color: var(--white);
+    overflow-x: hidden;
+}
+
+/* =============================================================================
+   TYPOGRAPHY COMPONENTS
+   ============================================================================= */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-headings);
+    font-weight: var(--font-bold);
+    line-height: var(--leading-tight);
+    color: var(--deep-navy-900);
+    margin-bottom: var(--space-4);
+}
+
+h1 { font-size: var(--text-5xl); }
+h2 { font-size: var(--text-4xl); }
+h3 { font-size: var(--text-3xl); }
+h4 { font-size: var(--text-2xl); }
+h5 { font-size: var(--text-xl); }
+h6 { font-size: var(--text-lg); }
+
+p {
+    margin-bottom: var(--space-4);
+    color: var(--gray-700);
+}
+
+a {
+    color: var(--oxygen-blue-700);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--oxygen-blue-900);
+}
+
+/* =============================================================================
+   UTILITY CLASSES
+   ============================================================================= */
+
+/* Whitespace - 40% minimum requirement */
+.section-spacing {
+    padding: var(--space-20) var(--space-6);
+}
+
+@media (min-width: 768px) {
+    .section-spacing {
+        padding: var(--space-32) var(--space-8);
+    }
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: var(--container-xl);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--space-6);
+    padding-right: var(--space-6);
+}
+
+/* Text Utilities */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.font-light { font-weight: var(--font-light); }
+.font-normal { font-weight: var(--font-normal); }
+.font-medium { font-weight: var(--font-medium); }
+.font-semibold { font-weight: var(--font-semibold); }
+.font-bold { font-weight: var(--font-bold); }
+
+/* Color Utilities */
+.text-primary { color: var(--oxygen-blue-700); }
+.text-secondary { color: var(--safety-green-700); }
+.text-navy { color: var(--deep-navy-900); }
+.text-muted { color: var(--gray-600); }
+
+.bg-white { background-color: var(--white); }
+.bg-gray-50 { background-color: var(--gray-50); }
+.bg-oxygen-50 { background-color: var(--oxygen-blue-50); }
+.bg-navy { background-color: var(--deep-navy-900); }
+
+/* =============================================================================
+   COMPONENT PATTERNS
+   ============================================================================= */
+
+/* Trust Badge */
+.trust-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    background: var(--oxygen-blue-50);
+    border: 1px solid var(--oxygen-blue-200);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--deep-navy-700);
+}
+
+/* Card - Medical Clean */
+.card {
+    background: var(--white);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-8);
+    box-shadow: var(--shadow-md);
+    transition: box-shadow var(--transition-base);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-xl);
+}
+
+/* Button System */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-4) var(--space-8);
+    font-family: var(--font-primary);
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    line-height: 1;
+    border: none;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--oxygen-blue-600), var(--oxygen-blue-400));
+    color: var(--white);
+    box-shadow: 0 4px 14px rgba(3, 169, 244, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(3, 169, 244, 0.5);
+}
+
+.btn-secondary {
+    background: var(--white);
+    color: var(--deep-navy-900);
+    border: 2px solid var(--oxygen-blue-200);
+}
+
+.btn-secondary:hover {
+    background: var(--oxygen-blue-50);
+    border-color: var(--oxygen-blue-400);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--deep-navy-900);
+    border: 2px solid var(--gray-300);
+}
+
+.btn-outline:hover {
+    background: var(--gray-50);
+    border-color: var(--gray-400);
+}
+
+/* Section Header */
+.section-header {
+    text-align: center;
+    margin-bottom: var(--space-16);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-tag {
+    display: inline-block;
+    padding: var(--space-2) var(--space-6);
+    background: linear-gradient(135deg, var(--oxygen-blue-100), var(--oxygen-blue-50));
+    color: var(--deep-navy-700);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-4);
+}
+
+/* =============================================================================
+   RESPONSIVE BREAKPOINTS
+   ============================================================================= */
+@media (max-width: 640px) {
+    :root {
+        --space-20: 3rem;
+        --space-32: 4rem;
+    }
+}

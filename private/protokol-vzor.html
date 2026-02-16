@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vzorový protokol sanitace | VitalSpace (INTERNÍ)</title>
+    <meta name="robots" content="noindex, nofollow">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1A2332;
+            background: #F5F9FF;
+            padding: 2rem;
+        }
+
+        .protocol-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-warning {
+            background: #FF3333;
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .header-warning h3 {
+            margin: 0;
+        }
+
+        .logo-section {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #E8F1FF;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #001F3F;
+        }
+
+        .logo span {
+            color: #00D4FF;
+        }
+
+        h1 {
+            color: #001F3F;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            color: #0066FF;
+            font-size: 1.3rem;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #E8F1FF;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .info-item {
+            background: #F5F9FF;
+            padding: 1rem;
+            border-radius: 10px;
+        }
+
+        .info-label {
+            font-size: 0.85rem;
+            color: #4A5568;
+            margin-bottom: 0.25rem;
+        }
+
+        .info-value {
+            font-weight: 600;
+            color: #001F3F;
+        }
+
+        .checklist {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .checklist li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #E8F1FF;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .checklist li:last-child {
+            border-bottom: none;
+        }
+
+        .checkbox {
+            width: 24px;
+            height: 24px;
+            border: 2px solid #0066FF;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, rgba(255, 51, 51, 0.1), rgba(255, 140, 0, 0.1));
+            border: 2px solid #FF3333;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .warning-box h3 {
+            color: #CC0000;
+            margin-bottom: 1rem;
+        }
+
+        .warning-box ul {
+            margin-left: 1.5rem;
+        }
+
+        .warning-box li {
+            margin: 0.5rem 0;
+            color: #4A5568;
+        }
+
+        .time-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        .time-table th,
+        .time-table td {
+            padding: 1rem;
+            text-align: left;
+            border: 1px solid #E8F1FF;
+        }
+
+        .time-table th {
+            background: #001F3F;
+            color: white;
+        }
+
+        .time-table tr:nth-child(even) {
+            background: #F5F9FF;
+        }
+
+        .signature-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #E8F1FF;
+        }
+
+        .signature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .signature-box {
+            text-align: center;
+        }
+
+        .signature-line {
+            border-bottom: 1px solid #001F3F;
+            height: 60px;
+            margin-bottom: 0.5rem;
+        }
+
+        .signature-label {
+            font-size: 0.9rem;
+            color: #4A5568;
+        }
+
+        .footer-note {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: #F5F9FF;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            color: #4A5568;
+            text-align: center;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .protocol-container {
+                box-shadow: none;
+                padding: 1rem;
+            }
+
+            .header-warning {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="protocol-container">
+        <div class="header-warning">
+            <h3>⚠️ INTERNÍ DOKUMENT – NENÍ URČEN K VEŘEJNÉMU SDÍLENÍ</h3>
+        </div>
+
+        <div class="logo-section">
+            <div class="logo">Vital<span>Space</span></div>
+            <p style="color: #4A5568; margin-top: 0.5rem;">Profesionální ozonová sanitace</p>
+        </div>
+
+        <h1>PROTOKOL OZONOVÉ SANITACE</h1>
+        <p style="color: #4A5568;">Vzorový dokument pro pronájem zařízení</p>
+
+        <h2>1. Identifikace zakázky</h2>
+        <div class="info-grid">
+            <div class="info-item">
+                <div class="info-label">Číslo protokolu</div>
+                <div class="info-value">VS-2025-XXXX</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Datum sanitace</div>
+                <div class="info-value">____ / ____ / 2025</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Zákazník</div>
+                <div class="info-value">_________________________</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Kontakt</div>
+                <div class="info-value">_________________________</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Adresa prostoru</div>
+                <div class="info-value">_________________________</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Velikost prostoru</div>
+                <div class="info-value">_______ m² / _______ m³</div>
+            </div>
+        </div>
+
+        <h2>2. Použité zařízení</h2>
+        <div class="info-grid">
+            <div class="info-item">
+                <div class="info-label">Typ zařízení</div>
+                <div class="info-value">☐ PRO I PLUS &nbsp; ☐ Standard &nbsp; ☐ BOX</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Sériové číslo</div>
+                <div class="info-value">_________________________</div>
+            </div>
+        </div>
+
+        <h2>3. Kontrolní seznam PŘED sanitací</h2>
+        <ul class="checklist">
+            <li><div class="checkbox"></div> Prostor je prázdný (žádné osoby, zvířata, rostliny)</li>
+            <li><div class="checkbox"></div> Okna a dveře jsou uzavřeny</li>
+            <li><div class="checkbox"></div> Ventilace/klimatizace je vypnuta</li>
+            <li><div class="checkbox"></div> Citlivé předměty jsou zakryty nebo odstraněny</li>
+            <li><div class="checkbox"></div> Prostor je označen výstražnou cedulí</li>
+            <li><div class="checkbox"></div> Timer je nastaven na správnou dobu</li>
+        </ul>
+
+        <div class="warning-box">
+            <h3>⚠️ KRITICKÁ BEZPEČNOSTNÍ PRAVIDLA</h3>
+            <ul>
+                <li><strong>NIKDY</strong> nevstupujte do prostoru během sanitace</li>
+                <li>Po vypnutí zařízení vyčkejte <strong>minimálně 100 minut</strong></li>
+                <li>Před vstupem prostor <strong>důkladně odvětrejte</strong> (min. 30 minut)</li>
+                <li>Při jakémkoli podezření na únik ozonu <strong>okamžitě opusťte prostor</strong></li>
+                <li>V případě nevolnosti vyhledejte <strong>čerstvý vzduch a lékařskou pomoc</strong></li>
+            </ul>
+        </div>
+
+        <h2>4. Časový průběh sanitace</h2>
+        <table class="time-table">
+            <thead>
+                <tr>
+                    <th>Fáze</th>
+                    <th>Čas zahájení</th>
+                    <th>Čas ukončení</th>
+                    <th>Poznámka</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Příprava prostoru</td>
+                    <td>____:____</td>
+                    <td>____:____</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Spuštění zařízení</td>
+                    <td>____:____</td>
+                    <td>–</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Sanitační cyklus</td>
+                    <td>____:____</td>
+                    <td>____:____</td>
+                    <td>Délka: _____ min</td>
+                </tr>
+                <tr>
+                    <td>Rozpad ozonu (min. 100 min)</td>
+                    <td>____:____</td>
+                    <td>____:____</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Odvětrání (min. 30 min)</td>
+                    <td>____:____</td>
+                    <td>____:____</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Prostor uvolněn k použití</td>
+                    <td>–</td>
+                    <td>____:____</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>5. Kontrolní seznam PO sanitaci</h2>
+        <ul class="checklist">
+            <li><div class="checkbox"></div> Uplynula minimální čekací doba (100 min)</li>
+            <li><div class="checkbox"></div> Prostor byl odvětrán (min. 30 min)</li>
+            <li><div class="checkbox"></div> Zařízení bylo vypnuto a odpojeno</li>
+            <li><div class="checkbox"></div> Výstražná cedule byla odstraněna</li>
+            <li><div class="checkbox"></div> Prostor je připraven k běžnému použití</li>
+        </ul>
+
+        <h2>6. Poznámky</h2>
+        <div style="border: 1px solid #E8F1FF; border-radius: 10px; padding: 1rem; min-height: 100px; background: #F5F9FF;">
+            <p style="color: #4A5568; font-style: italic;">Zde zapište případné poznámky, problémy nebo zvláštnosti...</p>
+        </div>
+
+        <div class="signature-section">
+            <h2>7. Podpisy</h2>
+            <div class="signature-grid">
+                <div class="signature-box">
+                    <div class="signature-line"></div>
+                    <div class="signature-label">Odpovědná osoba (nájemce)</div>
+                </div>
+                <div class="signature-box">
+                    <div class="signature-line"></div>
+                    <div class="signature-label">Datum a čas</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            <p><strong>VitalSpace</strong> | +420 603 834 921 | info@vitalspace.cz</p>
+            <p>Tento protokol slouží jako doklad o provedení sanitace a dodržení bezpečnostních postupů.</p>
+        </div>
+    </div>
+</body>
+</html>

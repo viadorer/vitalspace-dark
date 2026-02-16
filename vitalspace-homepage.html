@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VitalSpace | Ozonová sanitace – Prodej, pronájem a servis zařízení OZON CLEANER</title>
+    <meta name="description" content="Autorizovaný dealer certifikovaných zařízení OZON CLEANER od Health-City. Prodej, pronájem i servisní sanitace ozonem pro celou ČR. Bez chemie, s certifikací MZ ČR.">
+    <meta name="keywords" content="ozonová sanitace, OZON CLEANER, prodej ozonátoru, pronájem ozonátoru, dezinfekce ozonem, Health-City, VitalSpace">
+
+    <meta property="og:title" content="VitalSpace | Certifikovaná ozonová sanitace pro celou ČR">
+    <meta property="og:description" content="Prodej, pronájem a servis zařízení OZON CLEANER. Bez chemie, certifikováno MZ ČR.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vitalspace.cz">
+    <meta property="og:locale" content="cs_CZ">
+
+    <link rel="canonical" href="https://vitalspace.cz">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "VitalSpace",
+        "description": "Autorizovaný dealer certifikovaných zařízení OZON CLEANER od Health-City. Prodej, pronájem a servisní sanitace ozonem.",
+        "url": "https://vitalspace.cz",
+        "telephone": "+420603834921",
+        "email": "info@vitalspace.cz",
+        "areaServed": "CZ",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Plzeň",
+            "addressCountry": "CZ"
+        }
+    }
+    </script>
+
+    <link rel="stylesheet" href="css/new-design-system.css" id="themeStylesheet">
+    <script src="js/theme-switcher.js"></script>
+    <style>
+        /* ═══════════════════════════════════════════════════
+           HOMEPAGE-SPECIFIC STYLES
+           Design system loaded from css/new-design-system.css
+           ═══════════════════════════════════════════════════ */
+        /* ── HERO ── */
+        .hero { padding: 8rem 0 5rem; position: relative; overflow: hidden; }
+        .hero-grid {
+            display: grid; grid-template-columns: 1.15fr 0.85fr;
+            gap: 4rem; align-items: center;
+        }
+        .hero-visual {
+            position: relative; height: 420px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .hero-visual-inner {
+            position: relative; z-index: 1;
+            width: 280px; height: 280px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(51,136,255,0.12) 0%, transparent 70%);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .hero-visual-inner i { color: var(--blue-400); opacity: 0.6; }
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--blue-400) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-ctas { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
+
+        /* ── THREE PATHS ── */
+        .paths-grid {
+            display: grid; grid-template-columns: 1.2fr 1fr 1fr;
+            gap: 1.5rem; align-items: stretch;
+        }
+        .path-card { padding: 2rem; position: relative; overflow: hidden; }
+        .path-card .path-icon {
+            width: 48px; height: 48px; border-radius: var(--radius-md);
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 1.25rem;
+        }
+        .path-card h3 { margin-bottom: 0.75rem; }
+        .path-card p { font-size: 0.9375rem; margin-bottom: 1.5rem; line-height: 1.6; }
+        .path-card .path-cta {
+            display: inline-flex; align-items: center; gap: 0.375rem;
+            font-size: 0.875rem; font-weight: 600; color: var(--blue-400);
+            text-decoration: none; transition: all var(--dur-fast);
+        }
+        .path-card .path-cta:hover { color: var(--blue-300); gap: 0.625rem; }
+        .path-card .path-cta i { width: 16px; height: 16px; }
+
+        /* Primary path card glow */
+        .path-card-primary { position: relative; }
+        .path-card-primary::before {
+            content: ''; position: absolute; top: -40%; right: -20%;
+            width: 250px; height: 250px;
+            background: radial-gradient(circle, rgba(51,136,255,0.12), transparent 70%);
+            pointer-events: none;
+        }
+        .path-card-primary .path-icon { background: rgba(51,136,255,0.15); }
+        .path-card-primary .path-icon i { color: var(--blue-400); }
+        .path-card:not(.path-card-primary) .path-icon { background: rgba(51,136,255,0.08); }
+        .path-card:not(.path-card-primary) .path-icon i { color: var(--blue-400); }
+
+        /* ── WHY OZON ── */
+        .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        .why-card { padding: 1.75rem; }
+        .why-card i { color: var(--blue-400); margin-bottom: 1rem; display: block; }
+        .why-card h3 { font-size: 1.125rem; margin-bottom: 0.5rem; }
+        .why-card p { font-size: 0.9375rem; }
+
+        /* ── DEALER BADGE ── */
+        .dealer-section { text-align: center; }
+        .dealer-badge {
+            display: inline-flex; align-items: center; gap: 1rem;
+            padding: 1.25rem 2rem; border-radius: var(--radius-lg);
+        }
+        .dealer-badge i { color: var(--blue-400); }
+
+        /* ── SEGMENTS ── */
+        .segments-grid {
+            display: grid; grid-template-columns: repeat(6, 1fr); gap: 1rem;
+        }
+        .segment-item {
+            text-align: center; padding: 1.5rem 0.75rem;
+            border-radius: var(--radius-md);
+            background: var(--card-bg);
+            border: 1px solid var(--border-subtle);
+            transition: all var(--dur-norm) var(--ease);
+            text-decoration: none; display: block;
+        }
+        .segment-item:hover {
+            border-color: rgba(51,136,255,0.2);
+            background: rgba(51,136,255,0.06);
+            transform: translateY(-2px);
+        }
+        .segment-item i { color: var(--blue-400); margin-bottom: 0.75rem; display: block; }
+        .segment-item span { font-size: 0.8125rem; font-weight: 500; color: var(--text-secondary); }
+
+        /* ── SOCIAL PROOF ── */
+        .stats-row {
+            display: flex; justify-content: center; gap: 3rem;
+            flex-wrap: wrap; margin-bottom: 3rem;
+        }
+        .stat-item { text-align: center; }
+        .stat-number {
+            font-size: clamp(2rem, 4vw, 3rem); font-weight: 800;
+            background: linear-gradient(135deg, var(--text-primary), var(--blue-400));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text; line-height: 1.1;
+        }
+        .stat-label { font-size: 0.875rem; color: var(--text-tertiary); margin-top: 0.25rem; }
+        .stat-divider {
+            width: 1px; background: rgba(51,136,255,0.12); align-self: stretch;
+        }
+
+        .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        .testimonial { padding: 1.5rem; }
+        .testimonial-text {
+            font-size: 0.9375rem; font-style: italic; color: var(--text-secondary);
+            margin-bottom: 1rem; line-height: 1.6;
+        }
+        .testimonial-author { font-size: 0.8125rem; font-weight: 600; color: var(--text-primary); }
+        .testimonial-role { font-size: 0.75rem; color: var(--text-tertiary); }
+
+        /* ── FAQ ── */
+        .faq-list { max-width: 720px; margin: 0 auto; }
+        .faq-item {
+            border-bottom: 1px solid rgba(51,136,255,0.08);
+        }
+        .faq-question {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 1.25rem 0; cursor: pointer; gap: 1rem;
+            font-size: 1rem; font-weight: 600; color: var(--text-primary);
+            transition: color var(--dur-fast);
+        }
+        .faq-question:hover { color: var(--blue-400); }
+        .faq-question i { flex-shrink: 0; color: var(--blue-400); transition: transform var(--dur-norm) var(--ease); }
+        .faq-question[aria-expanded="true"] i { transform: rotate(45deg); }
+        .faq-answer {
+            max-height: 0; overflow: hidden;
+            transition: max-height var(--dur-slow) var(--ease);
+        }
+        .faq-answer-inner {
+            padding-bottom: 1.25rem; font-size: 0.9375rem;
+            color: var(--text-secondary); line-height: 1.7;
+        }
+
+        /* ── CONTACT FORM ── */
+        .form-section { position: relative; overflow: hidden; }
+        .form-wrapper {
+            max-width: 680px; margin: 0 auto; padding: 2.5rem;
+        }
+        .form-step-label {
+            font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em;
+            text-transform: uppercase; color: var(--blue-400);
+            margin-bottom: 1rem;
+        }
+        .intent-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+        .intent-option {
+            position: relative; cursor: pointer;
+        }
+        .intent-option input { position: absolute; opacity: 0; pointer-events: none; }
+        .intent-option label {
+            display: flex; align-items: center; gap: 0.75rem;
+            padding: 0.875rem 1rem; border-radius: var(--radius-md);
+            border: 1px solid var(--border-subtle);
+            background: var(--card-bg);
+            cursor: pointer; transition: all var(--dur-fast);
+            font-size: 0.875rem; font-weight: 500; color: var(--text-secondary);
+        }
+        .intent-option label i { color: var(--blue-400); flex-shrink: 0; }
+        .intent-option input:checked + label {
+            border-color: var(--blue-500);
+            background: rgba(51,136,255,0.1);
+            color: var(--text-primary);
+            box-shadow: 0 0 0 1px var(--blue-500);
+        }
+        .intent-option label:hover {
+            border-color: rgba(51,136,255,0.25);
+            background: rgba(51,136,255,0.05);
+        }
+
+        .form-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+        .form-consent {
+            display: flex; align-items: flex-start; gap: 0.75rem;
+            margin: 1.5rem 0; font-size: 0.8125rem; color: var(--text-tertiary);
+        }
+        .form-consent input[type="checkbox"] {
+            margin-top: 2px; accent-color: var(--blue-500);
+            width: 16px; height: 16px; flex-shrink: 0;
+        }
+        .form-consent a { color: var(--blue-400); }
+
+        .form-submit { margin-top: 1.5rem; text-align: center; }
+        .form-submit button { width: 100%; justify-content: center; font-size: 1rem; padding: 1rem; }
+
+        .form-success {
+            display: none; text-align: center; padding: 2rem;
+        }
+        .form-success.show { display: block; }
+        .form-success i { color: var(--green-500); margin-bottom: 1rem; }
+        .form-success h3 { margin-bottom: 0.5rem; }
+
+        /* Conditional fields */
+        .conditional-fields { display: none; margin-bottom: 1.5rem; }
+        .conditional-fields.active { display: block; }
+
+        /* ── RESPONSIVE (homepage-specific) ── */
+        @media (max-width: 1024px) {
+            .hero-grid { grid-template-columns: 1fr; }
+            .hero-visual { display: none; }
+            .paths-grid { grid-template-columns: 1fr; }
+            .why-grid { grid-template-columns: 1fr 1fr; }
+            .segments-grid { grid-template-columns: repeat(3, 1fr); }
+            .testimonials-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .hero { padding: 6.5rem 0 3rem; }
+            .why-grid { grid-template-columns: 1fr; }
+            .segments-grid { grid-template-columns: repeat(2, 1fr); }
+            .intent-grid { grid-template-columns: 1fr; }
+            .form-fields { grid-template-columns: 1fr; }
+            .form-wrapper { padding: 1.5rem; }
+            .stats-row { gap: 2rem; }
+            .stat-divider { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ═══════════════ NAVIGATION ═══════════════ -->
+    <nav class="nav" id="mainNav">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">
+                <i data-lucide="shield-check" style="width:28px;height:28px;"></i>
+                VitalSpace
+            </a>
+
+            <ul class="nav-links">
+                <li class="nav-dropdown">
+                    <a href="zarizeni/">Zařízení</a>
+                    <div class="dropdown-menu">
+                        <a href="zarizeni/ozon-cleaner-pro.html">OZON CLEANER PRO I PLUS</a>
+                        <a href="zarizeni/ozon-clean-up.html">OZON CLEAN UP</a>
+                        <a href="zarizeni/ozon-clean-box.html">OZON CLEAN BOX – DRY</a>
+                        <a href="zarizeni/srovnani.html">Srovnání zařízení</a>
+                    </div>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="pronajem/">Pronájem</a>
+                    <div class="dropdown-menu">
+                        <a href="pronajem/dlouhodoby.html">Dlouhodobý pronájem</a>
+                        <a href="pronajem/kratkodoba.html">Krátkodobý pronájem</a>
+                    </div>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="sluzby/">Služby</a>
+                    <div class="dropdown-menu">
+                        <a href="sluzby/reset.html">Reset prostoru</a>
+                        <a href="sluzby/prevent.html">Prevent program</a>
+                        <a href="sluzby/clinic.html">Clinic Standard</a>
+                    </div>
+                </li>
+                <li><a href="o-nas.html">O nás</a></li>
+            </ul>
+
+            <div class="nav-cta">
+                <button id="themeToggle" style="background:none;border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:0.45rem;cursor:pointer;color:var(--text-secondary);display:flex;align-items:center;justify-content:center;transition:all 0.2s;" aria-label="Přepnout téma">
+                    <i data-lucide="sun" style="width:20px;height:20px;"></i>
+                </button>
+                <a href="#kontakt" class="btn-primary" style="padding:0.6rem 1.25rem; font-size:0.875rem;">
+                    Získat nabídku
+                </a>
+            </div>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+                <i data-lucide="menu" style="width:24px;height:24px;"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close" id="mobileClose" aria-label="Zavřít">
+            <i data-lucide="x" style="width:24px;height:24px;"></i>
+        </button>
+        <div class="mobile-section-title">Zařízení</div>
+        <a href="zarizeni/ozon-cleaner-pro.html">OZON CLEANER PRO I PLUS</a>
+        <a href="zarizeni/ozon-clean-up.html">OZON CLEAN UP</a>
+        <a href="zarizeni/ozon-clean-box.html">OZON CLEAN BOX – DRY</a>
+        <a href="zarizeni/srovnani.html">Srovnání zařízení</a>
+        <div class="mobile-section-title">Pronájem</div>
+        <a href="pronajem/dlouhodoby.html">Dlouhodobý pronájem</a>
+        <a href="pronajem/kratkodoba.html">Krátkodobý pronájem</a>
+        <div class="mobile-section-title">Služby</div>
+        <a href="sluzby/reset.html">Reset prostoru</a>
+        <a href="sluzby/prevent.html">Prevent program</a>
+        <a href="sluzby/clinic.html">Clinic Standard</a>
+        <div style="margin-top:1.5rem;">
+            <a href="o-nas.html">O nás</a>
+        </div>
+        <div style="margin-top:1.5rem;">
+            <a href="#kontakt" class="btn-primary" style="display:block;text-align:center;" onclick="document.getElementById('mobileMenu').classList.remove('open');document.getElementById('mobileOverlay').classList.remove('open');">Získat nabídku</a>
+        </div>
+    </div>
+
+    <!-- ═══════════════ HERO ═══════════════ -->
+    <section class="hero" id="hero">
+        <div class="orb orb-blue" style="width:500px;height:500px;top:-15%;right:-10%;"></div>
+        <div class="orb orb-purple" style="width:350px;height:350px;bottom:0;left:-5%;"></div>
+
+        <div class="container">
+            <div class="hero-grid">
+                <div class="reveal">
+                    <span class="section-label">Autorizovaný dealer Health-City</span>
+                    <h1>
+                        Čistý prostor bez chemie —<br>
+                        <span>koupíte, pronajmete, nebo sanitujeme za vás</span>
+                    </h1>
+                    <p style="font-size:1.0625rem; max-width:560px; margin-top:1.25rem;">
+                        Certifikovaná zařízení OZON CLEANER registrovaná u Ministerstva zdravotnictví ČR.
+                        Plošná dezinfekce ozonem pro celou Českou republiku — bez chemických reziduí.
+                    </p>
+                    <div class="hero-ctas">
+                        <a href="zarizeni/srovnani.html" class="btn-primary">
+                            <i data-lucide="zap" style="width:18px;height:18px;"></i>
+                            Vybrat zařízení
+                        </a>
+                        <a href="#kontakt" class="btn-secondary">
+                            <i data-lucide="message-square" style="width:18px;height:18px;"></i>
+                            Získat nabídku
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-visual reveal" style="transition-delay:150ms;">
+                    <div class="orb orb-blue" style="width:300px;height:300px;top:20%;left:10%;"></div>
+                    <div class="hero-visual-inner">
+                        <i data-lucide="wind" style="width:80px;height:80px;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ═══════════════ THREE PATHS ═══════════════ -->
+    <section class="section grid-bg" id="cesty">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:3rem;" class="reveal">
+                <span class="section-label">Tři cesty k čistému prostředí</span>
+                <h2>Vyberte si model, který vám vyhovuje</h2>
+            </div>
+
+            <div class="paths-grid">
+                <!-- PRIMARY: Prodej -->
+                <div class="glass-hero path-card path-card-primary reveal">
+                    <div class="path-icon">
+                        <i data-lucide="zap" style="width:24px;height:24px;"></i>
+                    </div>
+                    <h3>Vlastní zařízení</h3>
+                    <p>
+                        Investice do certifikované technologie. Sanitujte kdykoliv potřebujete,
+                        bez závislosti na dodavateli. Zaškolení a servis v ceně.
+                    </p>
+                    <a href="zarizeni/srovnani.html" class="path-cta">
+                        Prohlédnout zařízení <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Pronájem -->
+                <div class="glass-card path-card reveal" style="transition-delay:100ms;">
+                    <div class="path-icon">
+                        <i data-lucide="calendar-days" style="width:24px;height:24px;"></i>
+                    </div>
+                    <h3>Pronájem</h3>
+                    <p>
+                        Profesionální zařízení bez počáteční investice.
+                        Dlouhodobě od dohodnuté měsíční sazby, krátkodobě od 1 490 Kč/den.
+                    </p>
+                    <a href="pronajem/dlouhodoby.html" class="path-cta">
+                        Varianty pronájmu <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Služba -->
+                <div class="glass-card path-card reveal" style="transition-delay:200ms;">
+                    <div class="path-icon">
+                        <i data-lucide="sparkles" style="width:24px;height:24px;"></i>
+                    </div>
+                    <h3>Služba na klíč</h3>
+                    <p>
+                        Přijedeme, sanitujeme, předáme čistý prostor.
+                        Jednorázově nebo pravidelně s měsíčním paušálem.
+                    </p>
+                    <a href="sluzby/reset.html" class="path-cta">
+                        Programy služeb <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ═══════════════ WHY OZON ═══════════════ -->
+    <section class="section" id="proc-ozon">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:3rem;" class="reveal">
+                <span class="section-label">Proč ozon</span>
+                <h2>Technologie bez kompromisů</h2>
+            </div>
+
+            <div class="why-grid">
+                <div class="glass-card why-card reveal">
+                    <i data-lucide="shield" style="width:28px;height:28px;"></i>
+                    <h3>99,9 % účinnost</h3>
+                    <p>Likviduje bakterie, viry, plísně a rozloží VOC látky. Validováno dle EN 17272:2020.</p>
+                </div>
+                <div class="glass-card why-card reveal" style="transition-delay:100ms;">
+                    <i data-lucide="leaf" style="width:28px;height:28px;"></i>
+                    <h3>Bez chemických reziduí</h3>
+                    <p>Ozon se po sanitaci přirozeně rozloží na čistý kyslík. Žádné toxické zbytky.</p>
+                </div>
+                <div class="glass-card why-card reveal" style="transition-delay:200ms;">
+                    <i data-lucide="stethoscope" style="width:28px;height:28px;"></i>
+                    <h3>Certifikace MZ ČR</h3>
+                    <p>Všechna zařízení OZON CLEANER jsou registrována jako dezinfekční a biocidní prostředky.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ═══════════════ AUTHORIZED DEALER ═══════════════ -->
+    <section class="section">
+        <div class="container">
+            <div class="dealer-section reveal">
+                <div class="glass-card dealer-badge">
+                    <i data-lucide="award" style="width:36px;height:36px;"></i>
+                    <div style="text-align:left;">
+                        <div style="font-size:0.75rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--blue-400); margin-bottom:0.25rem;">Autorizovaný dealer</div>
+                        <div style="font-size:1.125rem; font-weight:700; color:var(--text-primary);">Health-City pro celou Českou republiku</div>
+                        <p style="font-size:0.875rem; margin-top:0.5rem; margin-bottom:0;">
+                            Všechna zařízení OZON CLEANER jsou vyvinuta ve spolupráci s ČVUT v Praze
+                            a Zdravotním ústavem v Ostravě. Registrována u Ministerstva zdravotnictví ČR.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ═══════════════ SEGMENTS ═══════════════ -->
+    <section class="section" id="segmenty">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:2.5rem;" class="reveal">
+                <span class="section-label">Pro koho</span>
+                <h2>Řešení pro každý segment</h2>
+            </div>
+
+            <div class="segments-grid reveal">
+                <a href="sluzby/clinic.html" class="segment-item">
+                    <i data-lucide="stethoscope" style="width:28px;height:28px;"></i>
+                    <span>Zdravotnictví</span>
+                </a>
+                <a href="#kontakt" class="segment-item">
+                    <i data-lucide="school" style="width:28px;height:28px;"></i>
+                    <span>Školy</span>
+                </a>
+                <a href="#kontakt" class="segment-item">
+                    <i data-lucide="hotel" style="width:28px;height:28px;"></i>
+                    <span>Ubytování</span>
+                </a>
+                <a href="#kontakt" class="segment-item">
+                    <i data-lucide="building-2" style="width:28px;height:28px;"></i>
+                    <span>Kanceláře</span>
+                </a>
+                <a href="#kontakt" class="segment-item">
+                    <i data-lucide="home" style="width:28px;height:28px;"></i>
+                    <span>Domácnosti</span>
+                </a>
+                <a href="#kontakt" class="segment-item">
+                    <i data-lucide="landmark" style="width:28px;height:28px;"></i>
+                    <span>Instituce</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ═══════════════ SOCIAL PROOF ═══════════════ -->
+    <section class="section" id="reference">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:3rem;" class="reveal">
+                <span class="section-label">Důvěřují nám</span>
+                <h2>Výsledky mluví za nás</h2>
+            </div>
+
+            <div class="stats-row reveal">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="150">0</div>
+                    <div class="stat-label">provedených sanitací</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="98" data-suffix="%">0</div>
+                    <div class="stat-label">spokojených klientů</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="14" data-suffix=" krajů">0</div>
+                    <div class="stat-label">pokrytí po celé ČR</div>
+                </div>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="glass-card testimonial reveal">
+                    <div class="testimonial-text">
+                        „Placeholder: Zde bude reálná reference od klienta ze segmentu zdravotnictví.
+                        Doporučujeme doplnit autentický citát."
+                    </div>
+                    <div class="testimonial-author">Jméno Příjmení</div>
+                    <div class="testimonial-role">Pozice, Zdravotnické zařízení</div>
+                </div>
+                <div class="glass-card testimonial reveal" style="transition-delay:100ms;">
+                    <div class="testimonial-text">
+                        „Placeholder: Zde bude reálná reference od klienta ze segmentu školství
+                        nebo ubytování."
+                    </div>
+                    <div class="testimonial-author">Jméno Příjmení</div>
+                    <div class="testimonial-role">Pozice, Škola / Hotel</div>
+                </div>
+                <div class="glass-card testimonial reveal" style="transition-delay:200ms;">
+                    <div class="testimonial-text">
+                        „Placeholder: Zde bude reálná reference od klienta, který si zakoupil
+                        nebo pronajal zařízení."
+                    </div>
+                    <div class="testimonial-author">Jméno Příjmení</div>
+                    <div class="testimonial-role">Pozice, Firma</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ═══════════════ FAQ ═══════════════ -->
+    <section class="section" id="faq">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:3rem;" class="reveal">
+                <span class="section-label">Časté dotazy</span>
+                <h2>Máte otázky? Máme odpovědi</h2>
+            </div>
+
+            <div class="faq-list reveal">
+                <div class="faq-item">
+                    <div class="faq-question" role="button" aria-expanded="false" tabindex="0">
+                        Je ozonová sanitace bezpečná?
+                        <i data-lucide="plus" style="width:20px;height:20px;"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Ano. Sanitace probíhá v uzavřeném prostoru bez přítomnosti osob. Po ukončení cyklu se ozon přirozeně rozloží na kyslík. Všechna zařízení OZON CLEANER mají mikropočítačem řízený cyklus s bezpečnostními pojistkami a jsou registrována u Ministerstva zdravotnictví ČR.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" role="button" aria-expanded="false" tabindex="0">
+                        Jaký je rozdíl mezi koupí, pronájmem a službou?
+                        <i data-lucide="plus" style="width:20px;height:20px;"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <strong>Koupě:</strong> Jednorázová investice, zařízení je vaše. Ideální při časté potřebě sanitace (2× měsíčně a více).<br>
+                            <strong>Pronájem:</strong> Měsíční platba bez počáteční investice. Servis a podpora v ceně. Vhodné pro firmy a instituce.<br>
+                            <strong>Služba:</strong> Vše zajistíme my — přijedeme, sanitujeme, předáme. Jednorázově nebo pravidelně.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" role="button" aria-expanded="false" tabindex="0">
+                        Jak velký prostor lze sanitovat?
+                        <i data-lucide="plus" style="width:20px;height:20px;"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Zařízení OZON CLEANER PRO I PLUS pokryje prostory o objemu 200–800 m³. Pro menší prostory nebo sanitaci předmětů nabízíme modely CLEAN UP a CLEAN BOX – DRY. Při větších prostorech lze kombinovat více jednotek (modulární systém).
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" role="button" aria-expanded="false" tabindex="0">
+                        Působíte po celé ČR?
+                        <i data-lucide="plus" style="width:20px;height:20px;"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Ano. Naše základna je v Plzni a Praze, ale služby i doručení zařízení zajišťujeme po celé České republice.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" role="button" aria-expanded="false" tabindex="0">
+                        Čím se OZON CLEANER liší od levných generátorů z internetu?
+                        <i data-lucide="plus" style="width:20px;height:20px;"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Zařízení OZON CLEANER od Health-City jsou registrována u MZ ČR jako biocidní prostředky, mají mikropočítačem řízený cyklus, bezpečnostní protokol a prohlášení o shodě. Levné generátory tyto certifikace nemají, nemají řízený cyklus a nejsou vhodné pro profesionální ani zdravotnické použití.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ═══════════════ CONTACT FORM ═══════════════ -->
+    <section class="section form-section" id="kontakt">
+        <div class="orb orb-blue" style="width:400px;height:400px;top:-10%;left:-10%;"></div>
+
+        <div class="container">
+            <div style="text-align:center; margin-bottom:3rem;" class="reveal">
+                <span class="section-label">Kontakt</span>
+                <h2>Získejte nezávaznou nabídku</h2>
+                <p style="max-width:520px; margin:0.75rem auto 0;">Vyplňte formulář a ozveme se do 24 hodin s nabídkou na míru.</p>
+            </div>
+
+            <div class="glass-card form-wrapper reveal">
+                <form id="contactForm" novalidate>
+                    <!-- Step 1: Intent -->
+                    <div class="form-step-label">1 — Mám zájem o</div>
+                    <div class="intent-grid">
+                        <div class="intent-option">
+                            <input type="radio" name="intent" id="intent-buy" value="Koupě zařízení">
+                            <label for="intent-buy">
+                                <i data-lucide="zap" style="width:18px;height:18px;"></i>
+                                Koupi zařízení
+                            </label>
+                        </div>
+                        <div class="intent-option">
+                            <input type="radio" name="intent" id="intent-rent-long" value="Dlouhodobý pronájem">
+                            <label for="intent-rent-long">
+                                <i data-lucide="calendar-days" style="width:18px;height:18px;"></i>
+                                Dlouhodobý pronájem
+                            </label>
+                        </div>
+                        <div class="intent-option">
+                            <input type="radio" name="intent" id="intent-rent-short" value="Krátkodobý pronájem">
+                            <label for="intent-rent-short">
+                                <i data-lucide="calendar" style="width:18px;height:18px;"></i>
+                                Krátkodobý pronájem
+                            </label>
+                        </div>
+                        <div class="intent-option">
+                            <input type="radio" name="intent" id="intent-service" value="Služba sanitace">
+                            <label for="intent-service">
+                                <i data-lucide="sparkles" style="width:18px;height:18px;"></i>
+                                Službu sanitace
+                            </label>
+                        </div>
+                        <div class="intent-option" style="grid-column: 1 / -1;">
+                            <input type="radio" name="intent" id="intent-help" value="Potřebuji poradit">
+                            <label for="intent-help">
+                                <i data-lucide="help-circle" style="width:18px;height:18px;"></i>
+                                Nevím, potřebuji poradit
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Conditional: Buy / Long-term rent -->
+                    <div class="conditional-fields" id="fields-buy-rent">
+                        <div class="form-fields" style="margin-bottom:1rem;">
+                            <div class="form-field">
+                                <label for="space-type">Typ prostoru</label>
+                                <select id="space-type" name="space-type">
+                                    <option value="">Vyberte...</option>
+                                    <option value="kancelář">Kancelář</option>
+                                    <option value="ordinace">Ordinace</option>
+                                    <option value="škola">Škola / školka</option>
+                                    <option value="hotel">Hotel / penzion</option>
+                                    <option value="domácnost">Domácnost</option>
+                                    <option value="průmysl">Průmyslový prostor</option>
+                                    <option value="jiné">Jiné</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label for="space-size">Velikost prostoru (m²)</label>
+                                <input type="number" id="space-size" name="space-size" placeholder="např. 200">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Conditional: Short-term rent -->
+                    <div class="conditional-fields" id="fields-short-rent">
+                        <div class="form-fields" style="margin-bottom:1rem;">
+                            <div class="form-field">
+                                <label for="rent-date">Požadovaný termín</label>
+                                <input type="date" id="rent-date" name="rent-date">
+                            </div>
+                            <div class="form-field">
+                                <label for="rent-duration">Délka pronájmu</label>
+                                <select id="rent-duration" name="rent-duration">
+                                    <option value="">Vyberte...</option>
+                                    <option value="1 den">1 den</option>
+                                    <option value="víkend">Víkend (pá–ne)</option>
+                                    <option value="týden">Týden</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Conditional: Service -->
+                    <div class="conditional-fields" id="fields-service">
+                        <div class="form-fields" style="margin-bottom:1rem;">
+                            <div class="form-field">
+                                <label for="service-type">Typ prostoru</label>
+                                <select id="service-type" name="service-type">
+                                    <option value="">Vyberte...</option>
+                                    <option value="byt">Byt</option>
+                                    <option value="dům">Rodinný dům</option>
+                                    <option value="kancelář">Kancelář</option>
+                                    <option value="ordinace">Ordinace</option>
+                                    <option value="škola">Škola</option>
+                                    <option value="hotel">Hotel / penzion</option>
+                                    <option value="jiné">Jiné</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label for="service-freq">Frekvence</label>
+                                <select id="service-freq" name="service-freq">
+                                    <option value="">Vyberte...</option>
+                                    <option value="jednorázově">Jednorázově</option>
+                                    <option value="1×/měsíc">1× měsíčně</option>
+                                    <option value="2×/měsíc">2× měsíčně</option>
+                                    <option value="4×/měsíc">4× měsíčně</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Conditional: Help -->
+                    <div class="conditional-fields" id="fields-help">
+                        <div class="form-field full" style="margin-bottom:1rem;">
+                            <label for="help-text">Popište svou situaci</label>
+                            <textarea id="help-text" name="help-text" placeholder="Stručně popište, s čím potřebujete pomoci..."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Contact info -->
+                    <div class="form-step-label" style="margin-top:0.5rem;">2 — Kontaktní údaje</div>
+                    <div class="form-fields">
+                        <div class="form-field">
+                            <label for="name">Jméno a příjmení *</label>
+                            <input type="text" id="name" name="name" required placeholder="Jan Novák">
+                        </div>
+                        <div class="form-field">
+                            <label for="email">E-mail *</label>
+                            <input type="email" id="email" name="email" required placeholder="jan@firma.cz">
+                        </div>
+                        <div class="form-field">
+                            <label for="phone">Telefon *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+420 xxx xxx xxx">
+                        </div>
+                        <div class="form-field">
+                            <label for="city">Město / region</label>
+                            <input type="text" id="city" name="city" placeholder="Praha">
+                        </div>
+                        <div class="form-field full">
+                            <label for="note">Poznámka</label>
+                            <textarea id="note" name="note" rows="3" placeholder="Cokoliv dalšího..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-consent">
+                        <input type="checkbox" id="gdpr" name="gdpr" required>
+                        <label for="gdpr">
+                            Souhlasím se <a href="#">zpracováním osobních údajů</a> a
+                            <a href="#">obchodními podmínkami</a>. *
+                        </label>
+                    </div>
+
+                    <div class="form-submit">
+                        <button type="submit" class="btn-primary">
+                            <i data-lucide="send" style="width:18px;height:18px;"></i>
+                            Odeslat poptávku
+                        </button>
+                    </div>
+                </form>
+
+                <div class="form-success" id="formSuccess">
+                    <i data-lucide="check-circle" style="width:48px;height:48px;"></i>
+                    <h3>Děkujeme za vaši poptávku!</h3>
+                    <p>Ozveme se vám do 24 hodin s nabídkou na míru.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="nav-logo" style="margin-bottom:0.5rem;">
+                        <i data-lucide="shield-check" style="width:24px;height:24px;"></i>
+                        VitalSpace
+                    </a>
+                    <p>
+                        Autorizovaný dealer certifikovaných zařízení OZON CLEANER
+                        od Health-City pro celou Českou republiku.
+                    </p>
+                </div>
+
+                <div>
+                    <h4>Zařízení</h4>
+                    <ul class="footer-links">
+                        <li><a href="zarizeni/ozon-cleaner-pro.html">OZON CLEANER PRO I PLUS</a></li>
+                        <li><a href="zarizeni/ozon-clean-up.html">OZON CLEAN UP</a></li>
+                        <li><a href="zarizeni/ozon-clean-box.html">OZON CLEAN BOX – DRY</a></li>
+                        <li><a href="zarizeni/srovnani.html">Srovnání zařízení</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Pronájem a služby</h4>
+                    <ul class="footer-links">
+                        <li><a href="pronajem/dlouhodoby.html">Dlouhodobý pronájem</a></li>
+                        <li><a href="pronajem/kratkodoba.html">Krátkodobý pronájem</a></li>
+                        <li><a href="sluzby/reset.html">Reset prostoru</a></li>
+                        <li><a href="sluzby/prevent.html">Prevent program</a></li>
+                        <li><a href="sluzby/clinic.html">Clinic Standard</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Kontakt</h4>
+                    <ul class="footer-contact">
+                        <li><i data-lucide="phone"></i> +420 603 834 921</li>
+                        <li><i data-lucide="mail"></i> info@vitalspace.cz</li>
+                        <li><i data-lucide="map-pin"></i> Plzeň &amp; Praha | Celá ČR</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>&copy; 2025 VitalSpace. Všechna práva vyhrazena. Zařízení OZON CLEANER jsou registrována u MZ ČR.</span>
+                <div class="footer-legal">
+                    <a href="#">VOP</a>
+                    <a href="#">Ochrana osobních údajů</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ═══════════════ JAVASCRIPT ═══════════════ -->
+    <script>
+    (function() {
+        'use strict';
+
+        // Initialize Lucide icons
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+
+        // ── Nav scroll effect ──
+        const nav = document.getElementById('mainNav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // ── Mobile menu ──
+        const mobileToggle = document.getElementById('mobileToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+        const mobileClose = document.getElementById('mobileClose');
+
+        function openMobile() { mobileMenu.classList.add('open'); mobileOverlay.classList.add('open'); mobileMenu.style.display = 'block'; }
+        function closeMobile() { mobileMenu.classList.remove('open'); mobileOverlay.classList.remove('open'); setTimeout(() => { if (!mobileMenu.classList.contains('open')) mobileMenu.style.display = 'none'; }, 400); }
+
+        mobileToggle.addEventListener('click', openMobile);
+        mobileClose.addEventListener('click', closeMobile);
+        mobileOverlay.addEventListener('click', closeMobile);
+        mobileMenu.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', closeMobile));
+
+        // ── Scroll reveal ──
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // ── FAQ accordion ──
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const expanded = q.getAttribute('aria-expanded') === 'true';
+                const answer = q.nextElementSibling;
+
+                // Close all
+                document.querySelectorAll('.faq-question').forEach(oq => {
+                    oq.setAttribute('aria-expanded', 'false');
+                    oq.nextElementSibling.style.maxHeight = '0';
+                });
+
+                if (!expanded) {
+                    q.setAttribute('aria-expanded', 'true');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                }
+            });
+
+            q.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); q.click(); }
+            });
+        });
+
+        // ── Counter animation ──
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = parseInt(el.dataset.target);
+                    const suffix = el.dataset.suffix || '';
+                    const duration = 1500;
+                    const start = performance.now();
+
+                    function animate(now) {
+                        const progress = Math.min((now - start) / duration, 1);
+                        const eased = 1 - Math.pow(1 - progress, 3);
+                        el.textContent = Math.round(target * eased) + suffix;
+                        if (progress < 1) requestAnimationFrame(animate);
+                    }
+                    requestAnimationFrame(animate);
+                    counterObserver.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-number[data-target]').forEach(el => counterObserver.observe(el));
+
+        // ── Form: conditional fields ──
+        const intentRadios = document.querySelectorAll('input[name="intent"]');
+        const conditionalMap = {
+            'intent-buy': 'fields-buy-rent',
+            'intent-rent-long': 'fields-buy-rent',
+            'intent-rent-short': 'fields-short-rent',
+            'intent-service': 'fields-service',
+            'intent-help': 'fields-help'
+        };
+
+        intentRadios.forEach(radio => {
+            radio.addEventListener('change', () => {
+                document.querySelectorAll('.conditional-fields').forEach(f => f.classList.remove('active'));
+                const target = conditionalMap[radio.id];
+                if (target) document.getElementById(target).classList.add('active');
+            });
+        });
+
+        // ── Form submission ──
+        const form = document.getElementById('contactForm');
+        const formSuccess = document.getElementById('formSuccess');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Basic validation
+            const name = form.querySelector('#name').value.trim();
+            const email = form.querySelector('#email').value.trim();
+            const phone = form.querySelector('#phone').value.trim();
+            const gdpr = form.querySelector('#gdpr').checked;
+
+            if (!name || !email || !phone) {
+                alert('Vyplňte prosím všechna povinná pole (jméno, e-mail, telefon).');
+                return;
+            }
+            if (!gdpr) {
+                alert('Prosím potvrďte souhlas se zpracováním osobních údajů.');
+                return;
+            }
+
+            // Collect data
+            const formData = new FormData(form);
+            const data = {};
+            formData.forEach((v, k) => { data[k] = v; });
+
+            // Mailto fallback
+            const subject = encodeURIComponent('Poptávka VitalSpace – ' + (data.intent || 'Obecná'));
+            const body = encodeURIComponent(
+                `Typ zájmu: ${data.intent || 'Neuvedeno'}\n` +
+                `Jméno: ${data.name}\n` +
+                `E-mail: ${data.email}\n` +
+                `Telefon: ${data.phone}\n` +
+                `Město: ${data.city || 'Neuvedeno'}\n` +
+                `Poznámka: ${data.note || 'Žádná'}\n`
+            );
+            window.location.href = `mailto:info@vitalspace.cz?subject=${subject}&body=${body}`;
+
+            // Show success
+            form.style.display = 'none';
+            formSuccess.classList.add('show');
+        });
+
+        // ── Smooth scroll for anchor links ──
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    const offset = nav.offsetHeight + 20;
+                    window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
+                }
+            });
+        });
+
+    })();
+    </script>
+
+</body>
+</html>
