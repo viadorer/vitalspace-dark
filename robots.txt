@@ -11,8 +11,10 @@ Disallow: /vitalspace-landing.html
 Disallow: /vitalspace-landing-2.html
 Disallow: /vitalspace-new.html
 Disallow: /public-sector.html
+Disallow: /protokol-sanitace.html
 Disallow: /program-clinic.html
 Disallow: /program-prevent.html
 Disallow: /program-pronajem.html
 Disallow: /program-reset.html
 Disallow: /pages/
+Disallow: /private/
