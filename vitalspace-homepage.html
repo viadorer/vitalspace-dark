@@ -867,20 +867,40 @@
             });
         });
 
-        // ── Form submission ──
+        // ── Form submission (Realvisor API) ──
+        const REALVISOR_URL = 'https://api-production-88cf.up.railway.app/api/v1/public/api-leads/submit';
+        const REALVISOR_KEY = 'rv_live_62dc00262fbe285311b37d67426084504bcca592703f38d6';
+
+        const FIELD_MAP = {
+            'name':          { apiField: 'name',          root: true },
+            'email':         { apiField: 'email',         root: true },
+            'phone':         { apiField: 'phone',         root: true },
+            'intent':        { apiField: 'intent' },
+            'space-type':    { apiField: 'space-type' },
+            'space-size':    { apiField: 'space-size' },
+            'rent-date':     { apiField: 'rent-date' },
+            'rent-duration': { apiField: 'rent-duration' },
+            'service-type':  { apiField: 'service-type' },
+            'service-freq':  { apiField: 'service-freq' },
+            'help-text':     { apiField: 'help-text' },
+            'city':          { apiField: 'city' },
+            'note':          { apiField: 'note' },
+            'gdpr':          { apiField: 'gdpr' }
+        };
+
         const form = document.getElementById('contactForm');
         const formSuccess = document.getElementById('formSuccess');
 
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
 
             // Basic validation
-            const name = form.querySelector('#name').value.trim();
+            const nameVal = form.querySelector('#name').value.trim();
             const email = form.querySelector('#email').value.trim();
             const phone = form.querySelector('#phone').value.trim();
             const gdpr = form.querySelector('#gdpr').checked;
 
-            if (!name || !email || !phone) {
+            if (!nameVal || !email || !phone) {
                 alert('Vyplňte prosím všechna povinná pole (jméno, e-mail, telefon).');
                 return;
             }
@@ -889,26 +909,60 @@
                 return;
             }
 
-            // Collect data
-            const formData = new FormData(form);
-            const data = {};
-            formData.forEach((v, k) => { data[k] = v; });
+            const btn = form.querySelector('button[type="submit"]');
+            const origHTML = btn ? btn.innerHTML : '';
+            if (btn) { btn.disabled = true; btn.innerHTML = '<i data-lucide="loader" style="width:18px;height:18px;"></i> Odesílám...'; }
 
-            // Mailto fallback
-            const subject = encodeURIComponent('Poptávka VitalSpace – ' + (data.intent || 'Obecná'));
-            const body = encodeURIComponent(
-                `Typ zájmu: ${data.intent || 'Neuvedeno'}\n` +
-                `Jméno: ${data.name}\n` +
-                `E-mail: ${data.email}\n` +
-                `Telefon: ${data.phone}\n` +
-                `Město: ${data.city || 'Neuvedeno'}\n` +
-                `Poznámka: ${data.note || 'Žádná'}\n`
-            );
-            window.location.href = `mailto:info@vitalspace.cz?subject=${subject}&body=${body}`;
+            // Collect fields via FIELD_MAP
+            var rootFields = {};
+            var dataFields = {};
 
-            // Show success
-            form.style.display = 'none';
-            formSuccess.classList.add('show');
+            Object.keys(FIELD_MAP).forEach(function(htmlName) {
+                var el = form.querySelector('[name="' + htmlName + '"]');
+                if (!el) return;
+                var val = el.type === 'checkbox' ? el.checked : el.value.trim();
+                if (!val && val !== false) return;
+                var mapping = FIELD_MAP[htmlName];
+                if (mapping.root) { rootFields[mapping.apiField] = val; }
+                else { dataFields[mapping.apiField] = val; }
+            });
+
+            // Split name into firstName + lastName
+            if (rootFields.name) {
+                var parts = rootFields.name.trim().split(/\s+/);
+                rootFields.firstName = parts[0];
+                rootFields.lastName = parts.slice(1).join(' ') || undefined;
+                delete rootFields.name;
+            }
+
+            var payload = Object.assign({}, rootFields, { data: dataFields });
+
+            try {
+                var res = await fetch(REALVISOR_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-API-Key': REALVISOR_KEY
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                var json = await res.json();
+
+                if (res.ok && json.success) {
+                    console.log('Realvisor lead vytvořen:', json.leadId);
+                    form.style.display = 'none';
+                    formSuccess.classList.add('show');
+                } else {
+                    console.error('Realvisor API chyba:', json);
+                    alert(json.message || 'Nepodařilo se odeslat formulář. Zkuste to prosím znovu.');
+                    if (btn) { btn.disabled = false; btn.innerHTML = origHTML; }
+                }
+            } catch (err) {
+                console.error('Síťová chyba:', err);
+                alert('Chyba připojení. Zkontrolujte internet a zkuste znovu.');
+                if (btn) { btn.disabled = false; btn.innerHTML = origHTML; }
+            }
         });
 
         // ── Smooth scroll for anchor links ──
