@@ -1,6 +1,6 @@
 {
   "@context": "https://schema.org",
-  "generatedAt": "2026-02-23T07:05:03.675Z",
+  "generatedAt": "2026-02-23T08:05:05.587Z",
   "generatedBy": "Hugo Orchestrator AIO Engine",
   "projectType": "html",
   "schemas": {
@@ -20,23 +20,31 @@
           "name": "Co je VitalSpace?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "VitalSpace je certifikovaná služba ozonové sanitace."
+            "text": "VitalSpace je certifikovaná služba ozonové sanitace, která se specializuje na profesionální dezinfekci a sanitaci prostor ozonem."
           }
         },
         {
           "@type": "Question",
-          "name": "Na co se specializuje VitalSpace?",
+          "name": "Na co se VitalSpace specializuje?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "VitalSpace se specializuje na ozonovou sanitaci."
+            "text": "VitalSpace se specializuje na ozonovou sanitaci, která slouží pro longevity a wellness."
           }
         },
         {
           "@type": "Question",
-          "name": "Jaká je domovská stránka VitalSpace?",
+          "name": "Co je ozonová sanitace?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Domovská stránka VitalSpace je vitalspace-homepage.html."
+            "text": "Ozonová sanitace je proces dezinfekce a sanitace prostor pomocí ozonu."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Pro koho je VitalSpace určen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "VitalSpace je určen pro ty, kteří hledají profesionální dezinfekci a sanitaci prostor ozonem pro longevity a wellness."
           }
         }
       ]
