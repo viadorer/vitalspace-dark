@@ -1,0 +1,45 @@
+{
+  "@context": "https://schema.org",
+  "generatedAt": "2026-02-23T07:05:03.675Z",
+  "generatedBy": "Hugo Orchestrator AIO Engine",
+  "projectType": "html",
+  "schemas": {
+    "organization": {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "VitalSpace",
+      "description": "Ozonová sanitace pro longevity a wellness. Profesionální dezinfekce a sanitace prostor ozonem.",
+      "keywords": "ozonová sanitace, dezinfekce ozonem, wellness, longevity, kvalita vzduchu, profesionální sanitace"
+    },
+    "faq": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Co je VitalSpace?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "VitalSpace je certifikovaná služba ozonové sanitace."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Na co se specializuje VitalSpace?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "VitalSpace se specializuje na ozonovou sanitaci."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Jaká je domovská stránka VitalSpace?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Domovská stránka VitalSpace je vitalspace-homepage.html."
+          }
+        }
+      ]
+    }
+  }
+}
