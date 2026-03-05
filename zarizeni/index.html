@@ -38,12 +38,13 @@
         .device-card.featured .card-badge { background: rgba(51,136,255,0.15); color: var(--blue-400); }
         .device-card:not(.featured) .card-badge { background: rgba(51,136,255,0.06); color: var(--text-tertiary); }
         .device-card .card-icon {
-            width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 1.5rem;
+            width: 100px; height: 100px; border-radius: var(--radius-xl); margin: 0 auto 1.5rem;
             display: flex; align-items: center; justify-content: center;
+            overflow: hidden;
         }
-        .device-card.featured .card-icon { background: rgba(51,136,255,0.12); }
-        .device-card:not(.featured) .card-icon { background: rgba(51,136,255,0.06); }
-        .device-card .card-icon i { color: var(--blue-400); }
+        .device-card.featured .card-icon { background: rgba(51,136,255,0.08); }
+        .device-card:not(.featured) .card-icon { background: rgba(51,136,255,0.04); }
+        .device-card .card-icon img { width: 100%; height: 100%; object-fit: contain; }
         .device-card h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
         .device-card .card-desc { font-size: 0.9375rem; margin-bottom: 1.5rem; color: var(--text-secondary); line-height: 1.6; }
         .device-card .card-specs { text-align: left; margin-bottom: 1.5rem; }
@@ -99,7 +100,7 @@
                 <!-- PRO I PLUS -->
                 <div class="glass-card device-card featured reveal">
                     <span class="card-badge">Nejprodávanější</span>
-                    <div class="card-icon"><i data-lucide="zap" style="width:36px;height:36px;"></i></div>
+                    <div class="card-icon"><img src="../pictures/vitalspace_proI.png" alt="OZON CLEANER PRO I PLUS"></div>
                     <h3>OZON CLEANER PRO I PLUS</h3>
                     <p class="card-desc">Profesionální generátor pro střední a velké prostory. Mikropočítačem řízený cyklus s bezpečnostním senzorem.</p>
                     <div class="card-specs">
@@ -116,7 +117,7 @@
                 <!-- CLEAN UP -->
                 <div class="glass-card device-card reveal">
                     <span class="card-badge">Kompaktní</span>
-                    <div class="card-icon"><i data-lucide="wind" style="width:36px;height:36px;"></i></div>
+                    <div class="card-icon"><img src="../pictures/vitalplus_cleanup.png" alt="OZON CLEAN UP"></div>
                     <h3>OZON CLEAN UP</h3>
                     <p class="card-desc">Kompaktní generátor pro menší prostory. Ideální pro ordinace, kanceláře a domácnosti.</p>
                     <div class="card-specs">
@@ -133,7 +134,7 @@
                 <!-- CLEAN BOX -->
                 <div class="glass-card device-card reveal">
                     <span class="card-badge">Speciální</span>
-                    <div class="card-icon"><i data-lucide="box" style="width:36px;height:36px;"></i></div>
+                    <div class="card-icon"><img src="../pictures/vitalspacecleanbox.png" alt="OZON CLEAN BOX – DRY"></div>
                     <h3>OZON CLEAN BOX – DRY</h3>
                     <p class="card-desc">Uzavřená sanitační komora pro dezinfekci předmětů. Pro zdravotnictví, laboratoře a provozy.</p>
                     <div class="card-specs">
