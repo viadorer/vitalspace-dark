@@ -57,12 +57,16 @@
         }
         .hero-visual-inner {
             position: relative; z-index: 1;
-            width: 280px; height: 280px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(51,136,255,0.12) 0%, transparent 70%);
+            width: 320px; height: 320px;
+            border-radius: var(--radius-xl);
+            background: radial-gradient(circle, rgba(51,136,255,0.08) 0%, transparent 70%);
             display: flex; align-items: center; justify-content: center;
+            overflow: hidden;
         }
-        .hero-visual-inner i { color: var(--blue-400); opacity: 0.6; }
+        .hero-visual-inner img {
+            width: 100%; height: 100%; object-fit: contain;
+            filter: drop-shadow(0 12px 32px rgba(0,0,0,0.2));
+        }
         .hero h1 span {
             background: linear-gradient(135deg, var(--text-primary) 0%, var(--blue-400) 100%);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
@@ -310,7 +314,7 @@
                 <div class="hero-visual reveal" style="transition-delay:150ms;">
                     <div class="orb orb-blue" style="width:300px;height:300px;top:20%;left:10%;"></div>
                     <div class="hero-visual-inner">
-                        <i data-lucide="wind" style="width:80px;height:80px;"></i>
+                        <img src="pictures/vitalspace_proI.png" alt="OZON CLEANER PRO I PLUS">
                     </div>
                 </div>
             </div>
