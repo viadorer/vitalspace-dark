@@ -31,7 +31,7 @@
         return '' +
         '<nav class="nav" id="mainNav">' +
         '  <div class="nav-inner">' +
-        '    <a href="' + HOME + '" class="nav-logo"><i data-lucide="shield-check" style="width:28px;height:28px;"></i> VitalSpace</a>' +
+        '    <a href="' + HOME + '" class="nav-logo"><img src="' + R + 'logo-vitalspace.png" alt="VitalSpace" style="width:42px;height:42px;object-fit:contain;"> VitalSpace</a>' +
         '    <ul class="nav-links">' +
         '      <li class="nav-dropdown">' +
         '        <a href="' + R + 'zarizeni/"' + ac('zarizeni') + '>Zařízení</a>' +
@@ -102,7 +102,7 @@
         '  <div class="container">' +
         '    <div class="footer-grid">' +
         '      <div class="footer-brand">' +
-        '        <a href="' + HOME + '" class="nav-logo" style="margin-bottom:0.5rem;"><i data-lucide="shield-check" style="width:24px;height:24px;"></i> VitalSpace</a>' +
+        '        <a href="' + HOME + '" class="nav-logo" style="margin-bottom:0.5rem;"><img src="' + R + 'logo-vitalspace.png" alt="VitalSpace" style="width:36px;height:36px;object-fit:contain;"> VitalSpace</a>' +
         '        <p>Certifikovaná ozonová sanitace pro celou Českou republiku. Prodej, pronájem a servis profesionálních ozonových zařízení.</p>' +
         '      </div>' +
         '      <div>' +
