@@ -9,8 +9,9 @@
 
     // Detect if page is in a subfolder
     var path = window.location.pathname;
-    var inSub = /\/(zarizeni|pronajem|sluzby|blog|pages|private)\//.test(path);
-    var R = inSub ? '../' : '';  // root prefix
+    var inDeepSub = /\/blog\/posts\//.test(path);
+    var inSub = !inDeepSub && /\/(zarizeni|pronajem|sluzby|blog|pages|private)\//.test(path);
+    var R = inDeepSub ? '../../' : (inSub ? '../' : '');  // root prefix
 
     // Detect active section from URL
     var activeSec = '';
