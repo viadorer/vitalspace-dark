@@ -9,7 +9,7 @@
 
     // Detect if page is in a subfolder
     var path = window.location.pathname;
-    var inSub = /\/(zarizeni|pronajem|sluzby|pages|private)\//.test(path);
+    var inSub = /\/(zarizeni|pronajem|sluzby|blog|pages|private)\//.test(path);
     var R = inSub ? '../' : '';  // root prefix
 
     // Detect active section from URL
@@ -18,6 +18,7 @@
     else if (/pronajem/.test(path)) activeSec = 'pronajem';
     else if (/sluzby/.test(path)) activeSec = 'sluzby';
     else if (/o-nas/.test(path)) activeSec = 'o-nas';
+    else if (/blog/.test(path)) activeSec = 'blog';
 
     function ac(sec) { return activeSec === sec ? ' class="active"' : ''; }
 
@@ -59,6 +60,7 @@
         '      </li>' +
         '      <li><a href="' + R + 'jak-to-probiha.html"' + ac('jak-to-probiha') + '>Jak to probíhá</a></li>' +
         '      <li><a href="' + R + 'o-nas.html"' + ac('o-nas') + '>O nás</a></li>' +
+        '      <li><a href="' + R + 'blog/"' + ac('blog') + '>Blog</a></li>' +
         '    </ul>' +
         '    <div class="nav-cta">' +
         '      <button id="ozoneBtn" style="background:none;border:1px solid rgba(51,136,255,0.25);border-radius:8px;padding:0.45rem 0.75rem;cursor:pointer;color:var(--blue-400);display:flex;align-items:center;gap:0.375rem;font-size:0.8125rem;font-weight:600;font-family:inherit;transition:all 0.2s;" aria-label="Spustit ozonizaci" title="Spustit ozonizaci">' +
@@ -89,6 +91,7 @@
         '  <a href="' + R + 'sluzby/clinic.html">Clinic Standard</a>' +
         '  <div style="margin-top:1.5rem;"><a href="' + R + 'jak-to-probiha.html">Jak to probíhá</a></div>' +
         '  <div style="margin-top:0.5rem;"><a href="' + R + 'o-nas.html">O nás</a></div>' +
+        '  <div style="margin-top:0.5rem;"><a href="' + R + 'blog/">Blog</a></div>' +
         '  <div style="margin-top:1.5rem;"><a href="#kontakt" class="btn-primary" style="display:block;text-align:center;">Získat nabídku</a></div>' +
         '</div>';
     }
