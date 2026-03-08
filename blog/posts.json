@@ -1,0 +1,21 @@
+{
+  "posts": [
+    {
+      "date": "2026-03-08",
+      "slug": "zdravy-zivot-bez-toxickeho-prostredi",
+      "image": "/images/blog/zdravy-zivot-bez-toxickeho-prostredi.png",
+      "title": "Zdravý život bez toxického prostředí: Technologie 21. století",
+      "excerpt": "Žijeme v době, kdy je kvalita vnitřního prostředí klíčová pro naše zdraví a dlouhověkost. Ozonová sanitace představuje moderní řešení pro eliminaci škodlivých látek a patogenů v našich domovech i pracovištích.",
+      "category": "tips",
+      "featured": false,
+      "imageAlt": "Ozonový čistič vzduchu v moderním interiéru",
+      "keywords": "ozon, sanitace, dezinfekce, zdraví, longevity, gerontogeny, kvalita vzduchu, plísně, viry, bakterie",
+      "readTime": 7,
+      "seoTitle": "Zdravý život: Ozonová sanitace a čisté prostředí",
+      "categoryName": "Tipy & Triky",
+      "dateFormatted": "8. března 2026",
+      "seoDescription": "Ozonová sanitace pro zdravý život. Eliminace toxinů, plísní a virů. Investujte do svého zdraví s VitalSpace.",
+      "id": "zdravy-zivot-bez-toxickeho-prostredi"
+    }
+  ]
+}
