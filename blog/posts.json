@@ -2,6 +2,23 @@
   "posts": [
     {
       "date": "2026-03-08",
+      "slug": "ozonova-sanitace-longevity-reverzibilni-starnuti",
+      "image": "/images/blog/ozonova-sanitace-longevity-reverzibilni-starnuti.png",
+      "title": "Ozonová sanitace jako klíč k Longevity: Zpomalte stárnutí s čistým prostředím",
+      "excerpt": "Zjistěte, jak ozonová sanitace ovlivňuje proces stárnutí na buněčné úrovni. Eliminací gerontogenů v interiéru můžete podpořit zdraví mitochondrií, telomer a epigenetické hodiny.",
+      "category": "tips",
+      "featured": false,
+      "imageAlt": "Žena dýchající čerstvý vzduch v ozonem sanitovaném pokoji",
+      "keywords": "ozon, sanitace, longevity, stárnutí, telomery, epigenetika, mitochondrie, gerontogeny, zdraví, VitalSpace",
+      "readTime": 8,
+      "seoTitle": "Ozon a Longevity: Zpomalte stárnutí s čistým vzduchem",
+      "categoryName": "Tipy & Triky",
+      "dateFormatted": "8. března 2026",
+      "seoDescription": "Ozonová sanitace eliminuje gerontogeny, podporuje mitochondriální zdraví a zpomaluje stárnutí buněk. Investice do longevity residences.",
+      "id": "ozonova-sanitace-longevity-reverzibilni-starnuti"
+    },
+    {
+      "date": "2026-03-08",
       "slug": "zdravy-zivot-bez-toxickeho-prostredi",
       "image": "/images/blog/zdravy-zivot-bez-toxickeho-prostredi.png",
       "title": "Zdravý život bez toxického prostředí: Technologie 21. století",
