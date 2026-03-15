@@ -38,9 +38,9 @@
         '      <li class="nav-dropdown">' +
         '        <a href="' + R + 'zarizeni/"' + ac('zarizeni') + '>Zařízení</a>' +
         '        <div class="dropdown-menu">' +
-        '          <a href="' + R + 'zarizeni/ozon-cleaner-pro.html">OZON CLEANER PRO I PLUS</a>' +
-        '          <a href="' + R + 'zarizeni/ozon-clean-up.html">OZON CLEAN UP</a>' +
-        '          <a href="' + R + 'zarizeni/ozon-clean-box.html">OZON CLEAN BOX – DRY</a>' +
+        '          <a href="' + R + 'zarizeni/ozon-cleaner-pro.html">OZON Storm Pro I PLUS</a>' +
+        '          <a href="' + R + 'zarizeni/ozon-clean-up.html">OZON Breeze Up</a>' +
+        '          <a href="' + R + 'zarizeni/ozon-clean-box.html">OZON Oasis Box – DRY</a>' +
         '          <a href="' + R + 'zarizeni/srovnani.html">Srovnání zařízení</a>' +
         '        </div>' +
         '      </li>' +
@@ -79,9 +79,9 @@
         '<div class="mobile-menu" id="mobileMenu">' +
         '  <button class="mobile-close" id="mobileClose" aria-label="Zavřít"><i data-lucide="x" style="width:24px;height:24px;"></i></button>' +
         '  <div class="mobile-section-title">Zařízení</div>' +
-        '  <a href="' + R + 'zarizeni/ozon-cleaner-pro.html">OZON CLEANER PRO I PLUS</a>' +
-        '  <a href="' + R + 'zarizeni/ozon-clean-up.html">OZON CLEAN UP</a>' +
-        '  <a href="' + R + 'zarizeni/ozon-clean-box.html">OZON CLEAN BOX – DRY</a>' +
+        '  <a href="' + R + 'zarizeni/ozon-cleaner-pro.html">OZON Storm Pro I PLUS</a>' +
+        '  <a href="' + R + 'zarizeni/ozon-clean-up.html">OZON Breeze Up</a>' +
+        '  <a href="' + R + 'zarizeni/ozon-clean-box.html">OZON Oasis Box – DRY</a>' +
         '  <a href="' + R + 'zarizeni/srovnani.html">Srovnání zařízení</a>' +
         '  <div class="mobile-section-title">Pronájem</div>' +
         '  <a href="' + R + 'pronajem/dlouhodoby.html">Dlouhodobý pronájem</a>' +
@@ -112,9 +112,9 @@
         '      <div>' +
         '        <h4>Zařízení</h4>' +
         '        <ul class="footer-links">' +
-        '          <li><a href="' + R + 'zarizeni/ozon-cleaner-pro.html">OZON CLEANER PRO I PLUS</a></li>' +
-        '          <li><a href="' + R + 'zarizeni/ozon-clean-up.html">OZON CLEAN UP</a></li>' +
-        '          <li><a href="' + R + 'zarizeni/ozon-clean-box.html">OZON CLEAN BOX – DRY</a></li>' +
+        '          <li><a href="' + R + 'zarizeni/ozon-cleaner-pro.html">OZON Storm Pro I PLUS</a></li>' +
+        '          <li><a href="' + R + 'zarizeni/ozon-clean-up.html">OZON Breeze Up</a></li>' +
+        '          <li><a href="' + R + 'zarizeni/ozon-clean-box.html">OZON Oasis Box – DRY</a></li>' +
         '          <li><a href="' + R + 'zarizeni/srovnani.html">Srovnání zařízení</a></li>' +
         '        </ul>' +
         '      </div>' +
