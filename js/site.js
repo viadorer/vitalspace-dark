@@ -137,7 +137,7 @@
                 '<div class="cookie-consent-text">' +
                     'Tento web používá cookies pro zajištění správné funkčnosti a analýzu návštěvnosti. ' +
                     'Používáním webu souhlasíte s jejich využitím. ' +
-                    '<a href="#">Více informací</a>' +
+                    '<a href="' + (/\/blog\/posts\//.test(location.pathname) ? '../../' : /\/(zarizeni|pronajem|sluzby|blog|pages|private)\//.test(location.pathname) ? '../' : '') + 'pages/ochrana-osobnich-udaju.html">Více informací</a>' +
                 '</div>' +
                 '<div class="cookie-consent-actions">' +
                     '<button class="cookie-decline">Odmítnout</button>' +
