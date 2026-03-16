@@ -142,7 +142,7 @@
         '        <span>VitalSpace s.r.o. | IČO: 24614068 | Radyňská 463/33, 326 00 Plzeň</span>' +
         '        <span>Spisová značka: C 48188 vedená u Krajského soudu v Plzni</span>' +
         '      </div>' +
-        '      <div class="footer-legal"><a href="#">VOP</a><a href="#">Ochrana osobních údajů</a></div>' +
+        '      <div class="footer-legal"><a href="' + R + 'pages/vop.html">VOP</a><a href="' + R + 'pages/ochrana-osobnich-udaju.html">Ochrana osobních údajů</a></div>' +
         '    </div>' +
         '  </div>' +
         '</footer>';
