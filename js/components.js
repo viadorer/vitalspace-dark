@@ -132,13 +132,16 @@
         '        <h4>Kontakt</h4>' +
         '        <ul class="footer-contact">' +
         '          <li><i data-lucide="phone"></i> +420 603 834 921</li>' +
-        '          <li><i data-lucide="mail"></i> info@vitalspace.cz</li>' +
+        '          <li><i data-lucide="mail"></i> pavel.fogl@vitalspace.cz</li>' +
         '          <li><i data-lucide="map-pin"></i> Plzeň &amp; Praha | Celá ČR</li>' +
         '        </ul>' +
         '      </div>' +
         '    </div>' +
         '    <div class="footer-bottom">' +
-        '      <span>&copy; 2025 VitalSpace. Všechna práva vyhrazena.</span>' +
+        '      <div class="footer-company">' +
+        '        <span>VitalSpace s.r.o. | IČO: 24614068 | Radyňská 463/33, 326 00 Plzeň</span>' +
+        '        <span>Spisová značka: C 48188 vedená u Krajského soudu v Plzni</span>' +
+        '      </div>' +
         '      <div class="footer-legal"><a href="#">VOP</a><a href="#">Ochrana osobních údajů</a></div>' +
         '    </div>' +
         '  </div>' +

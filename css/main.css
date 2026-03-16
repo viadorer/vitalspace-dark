@@ -621,6 +621,14 @@ strong {
     font-size: 0.875rem;
     color: var(--gray-600);
 }
+.footer-company {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.8125rem;
+    color: var(--gray-600);
+}
 
 .disclaimer {
     background: rgba(255, 152, 0, 0.1);
