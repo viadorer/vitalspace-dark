@@ -131,7 +131,7 @@
         '      <div>' +
         '        <h4>Kontakt</h4>' +
         '        <ul class="footer-contact">' +
-        '          <li><i data-lucide="phone"></i> +420 603 834 921</li>' +
+        '          <li><i data-lucide="phone"></i> +420 775 930 816</li>' +
         '          <li><i data-lucide="mail"></i> pavel.fogl@vitalspace.cz</li>' +
         '          <li><i data-lucide="map-pin"></i> Plzeň &amp; Praha | Celá ČR</li>' +
         '        </ul>' +
