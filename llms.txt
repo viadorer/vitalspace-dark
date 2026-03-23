@@ -46,7 +46,7 @@
 - Záruka a servis: Všechna zařízení OZON CLEANER mají záruku 24 měsíců. Servis a náhradní díly okamžitě dostupné v ČR. Zaškolení v češtině při předání zařízení. Technická podpora 24/7. Pravidelné servisní prohlídky v rá...
 
 ## Právní informace
-- Vývoj se ZČU a ZÚ Ostrava: Zařízení OZON CLEANER jsou vyvinuta ve spolupráci se Západočeskou univerzitou v Plzni a Zdravotním ústavem v Ostravě. Validace účinnosti dle EN 17272:2020. Vědecky ověřená technologie.
+- Vývoj s ČVUT a ZÚ Ostrava: Zařízení OZON CLEANER jsou vyvinuta ve spolupráci s ČVUT v Praze a Zdravotním ústavem v Ostravě. Validace účinnosti dle EN 17272:2020. Vědecky ověřená technologie.
 - Registrace MZ ČR: Všechna zařízení OZON CLEANER jsou v České republice oficiálně registrována Ministerstvem zdravotnictví jako biocidní prostředky (např. pod č.j. MZDR 28935/2020/OBP). Potvrzuje schopnost likvidovat ši...
 
 ## Trh
@@ -61,10 +61,10 @@
 - Ozon - Triatomická molekula kyslíku: Ozon (O₃) je nestabilní molekula kyslíku. Vzniká koronovým výbojem, který štěpí O₂ na volné atomy, které se váží na další O₂. Má vysoký oxidační potenciál - 3 000× rychlejší než chlor, 1,5-5× účinnějš...
 
 ## Služby
-- OZON Storm Pro I Plus - Průmyslový výkon: Modulární systém pro velké prostory. Haly, sklady, sanitky, hotely. Výkon až 30 000 mg/h. Certifikováno MZ ČR jako biocidní prostředek.
+- OZON CLEANER PRO I Plus - Průmyslový výkon: Modulární systém pro velké prostory. Haly, sklady, sanitky, hotely. Výkon až 30 000 mg/h. Certifikováno MZ ČR jako biocidní prostředek.
 - Služba na klíč - GUARD: Pravidelná sanitace s měsíčním paušálem. Ideální pro zdravotnictví, školy, hotely. Garantovaná frekvence.
-- OZON Breeze Up - Stropní jednotka: Stacionární ozonizátor pro trvalou instalaci do podhledů. Ideální pro ordinace, kanceláře, byty. Automatický režim Plug and Play. Certifikováno MZ ČR.
-- OZON Oasis Box - Dezinfekce předmětů: Uzavřený okruh pro dezinfekci osobních věcí. Telefony, klíče, peněženky, zdravotnické pomůcky. 100% bezpečné, bez poškození elektroniky.
+- OZON CLEANER UP - Stropní jednotka: Stacionární ozonizátor pro trvalou instalaci do podhledů. Ideální pro ordinace, kanceláře, byty. Automatický režim Plug and Play. Certifikováno MZ ČR.
+- OZON CLEANER BOX - Dezinfekce předmětů: Uzavřený okruh pro dezinfekci osobních věcí. Telefony, klíče, peněženky, zdravotnické pomůcky. 100% bezpečné, bez poškození elektroniky.
 - Služba na klíč - RESET: Přijedeme, sanitujeme, předáme čistý prostor. Jednorázová sanitace pro byty, kanceláře, ordinace. Certifikát o provedení.
 - Pronájem - Krátkodobý: Krátkodobý pronájem od 1 490 Kč/den. Ideální pro jednorázové akce, po rekonstrukci, po povodních. Zaškolení zdarma.
 - Pronájem - Dlouhodobý: Profesionální zařízení bez počáteční investice. Od dohodnuté měsíční sazby. Servis a údržba v ceně. Flexibilní smlouva.
@@ -73,7 +73,7 @@
 - Certifikace MZ ČR: Jediná certifikovaná ozonová technologie v ČR. Registrace jako biocidní prostředek. Důvěryhodnost pro B2B segment (nemocnice, školy, úřady). Právní jistota.
 - Bez chemických reziduí: Na rozdíl od chlorových, peroxidových nebo kvartérních amoniových dezinfekcí, ozon se přirozeně rozloží na kyslík. Žádné toxické zbytky, žádné alergeny, žádné dráždění dýchacích cest.
 - 99,9 % účinnost: Validováno dle EN 17272:2020. Likviduje bakterie (včetně MRSA), viry (včetně SARS-CoV-2), plísně, spory, prvoky. Účinnější než UV záření (pronikne do stínů) a chlor (rychlejší).
-- Český výrobce - Servis 24/7: Vyvinuto v ČR ve spolupráci se ZČU. Servis a náhradní díly okamžitě dostupné. Zaškolení v češtině. Podpora 24/7. Na rozdíl od čínských generátorů bez certifikace.
+- Český výrobce - Servis 24/7: Vyvinuto v ČR ve spolupráci s ČVUT. Servis a náhradní díly okamžitě dostupné. Zaškolení v češtině. Podpora 24/7. Na rozdíl od čínských generátorů bez certifikace.
 
 ## FAQ
 - Musím před sanitací něco připravit? Ano. Před sanitací je nutné: 1) Odstranit všechny živé organismy (lidé, zvířata, rostliny). 2) Provést mechanický úklid (ozon nepůsobí přes vrstvu prachu). 3) Zavřít okna a dveře. 4) Nastavit časovač. Po sanitaci vyčkat 120 minut a vyvětrat.
