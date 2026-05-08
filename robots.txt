@@ -3,7 +3,7 @@ Allow: /
 
 Sitemap: https://vitalspace.cz/sitemap.xml
 
-# Block old/legacy pages
+# Block legacy/removed pages
 Disallow: /index-saas.html
 Disallow: /index-v3.html
 Disallow: /index-new.html
@@ -16,5 +16,4 @@ Disallow: /program-clinic.html
 Disallow: /program-prevent.html
 Disallow: /program-pronajem.html
 Disallow: /program-reset.html
-Disallow: /pages/
 Disallow: /private/
